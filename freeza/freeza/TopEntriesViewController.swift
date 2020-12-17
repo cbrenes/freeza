@@ -5,7 +5,7 @@ class TopEntriesViewController: UITableViewController {
 
     static let showImageSegueIdentifier = "showImageSegue"
     let viewModel = TopEntriesViewModel(withClient: RedditClient())
-    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     let errorLabel = UILabel()
     let tableFooterView = UIView()
     let moreButton = UIButton(type: .system)
@@ -76,7 +76,7 @@ class TopEntriesViewController: UITableViewController {
 
         func configureTableView() {
             
-            self.tableView.rowHeight = UITableViewAutomaticDimension
+            self.tableView.rowHeight = UITableView.automaticDimension
             self.tableView.estimatedRowHeight = 110.0
 
             self.tableFooterView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 80)

@@ -1,32 +1,29 @@
 import Foundation
 import UIKit
+import WebKit
 
 class URLViewController: UIViewController {
     
     var url: URL?
+    @IBOutlet weak var webView: WKWebView!
     
-    @IBOutlet private weak var webView: UIWebView!
+    fileprivate let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     
-    fileprivate let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.activityIndicatorView)
-        self.activityIndicatorView.startAnimating()
-
+        webView.configuration.mediaTypesRequiringUserActionForPlayback = .video
+        webView.navigationDelegate = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.activityIndicatorView)
+        activityIndicatorView.startAnimating()
         if let url = url {
-        
-            self.webView.loadRequest(URLRequest(url: url))
+            webView.load(URLRequest(url: url))
         }
     }
 }
 
-extension URLViewController: UIWebViewDelegate {
+extension URLViewController: WKNavigationDelegate {
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-
-        self.activityIndicatorView.stopAnimating()
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicatorView.stopAnimating()
     }
 }
