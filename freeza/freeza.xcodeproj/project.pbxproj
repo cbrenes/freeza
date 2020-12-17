@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BEB84F2BE583F99752B890E /* Pods_freezaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */; };
 		31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46D71D0B419B006C42BA /* RedditClient.swift */; };
 		31AA46DA1D0B4249006C42BA /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46D91D0B4249006C42BA /* EntryModel.swift */; };
 		31AA46DF1D0B43A0006C42BA /* RedditEntryModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */; };
@@ -22,6 +23,7 @@
 		31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC1461D0B412600E553AC /* AppDelegate.swift */; };
 		31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14D1D0B412600E553AC /* Assets.xcassets */; };
 		31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */; };
+		59BB8B9A81BB58ED02D0B06D /* Pods_freeza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34388C31C36FB7BDA62CC9DD /* Pods_freeza.framework */; };
 		78321E1E258BF12A001A2A5B /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E18258BF12A001A2A5B /* SettingsPresenter.swift */; };
 		78321E1F258BF12A001A2A5B /* SettingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E19258BF12A001A2A5B /* SettingsWorker.swift */; };
 		78321E20258BF12A001A2A5B /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E1A258BF12A001A2A5B /* SettingsRouter.swift */; };
@@ -83,6 +85,7 @@
 		31CAC1571D0B412600E553AC /* freezaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = freezaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CAC15D1D0B412600E553AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLViewController.swift; path = ViewControllers/URLViewController.swift; sourceTree = "<group>"; };
+		34388C31C36FB7BDA62CC9DD /* Pods_freeza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freeza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78321E18258BF12A001A2A5B /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsPresenter.swift; path = Scenes/Settings/SettingsPresenter.swift; sourceTree = "<group>"; };
 		78321E19258BF12A001A2A5B /* SettingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsWorker.swift; path = Scenes/Settings/SettingsWorker.swift; sourceTree = "<group>"; };
 		78321E1A258BF12A001A2A5B /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsRouter.swift; path = Scenes/Settings/SettingsRouter.swift; sourceTree = "<group>"; };
@@ -112,6 +115,11 @@
 		78321E9B258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuickStorageWorkerTests.swift; sourceTree = "<group>"; };
 		78321EB2258C0C89001A2A5B /* SettingsCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsCustomTableViewCell.swift; path = Scenes/Settings/CustomCells/SettingsCustomTableViewCell.swift; sourceTree = "<group>"; };
 		78321EB3258C0C89001A2A5B /* SettingsCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsCustomTableViewCell.xib; path = Scenes/Settings/CustomCells/SettingsCustomTableViewCell.xib; sourceTree = "<group>"; };
+		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
+		EF9C87927D54562199904464 /* Pods-freeza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.release.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.release.xcconfig"; sourceTree = "<group>"; };
+		F5AA146945BAF07FBF40D6E7 /* Pods-freezaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.release.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59BB8B9A81BB58ED02D0B06D /* Pods_freeza.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,12 +135,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BEB84F2BE583F99752B890E /* Pods_freezaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14029880BD24B25959333BB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */,
+				EF9C87927D54562199904464 /* Pods-freeza.release.xcconfig */,
+				C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */,
+				F5AA146945BAF07FBF40D6E7 /* Pods-freezaTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		31AA46D61D0B4183006C42BA /* Connectivity */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +234,8 @@
 				31CAC1451D0B412600E553AC /* freeza */,
 				31CAC15A1D0B412600E553AC /* freezaTests */,
 				31CAC1441D0B412600E553AC /* Products */,
+				14029880BD24B25959333BB8 /* Pods */,
+				DC79D014F630542BD50DA36A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -370,6 +394,15 @@
 			name = CustomCells;
 			sourceTree = "<group>";
 		};
+		DC79D014F630542BD50DA36A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34388C31C36FB7BDA62CC9DD /* Pods_freeza.framework */,
+				909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -377,9 +410,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31CAC1601D0B412600E553AC /* Build configuration list for PBXNativeTarget "freeza" */;
 			buildPhases = (
+				BC363A68408FC79D5F09BC72 /* [CP] Check Pods Manifest.lock */,
 				31CAC13F1D0B412600E553AC /* Sources */,
 				31CAC1401D0B412600E553AC /* Frameworks */,
 				31CAC1411D0B412600E553AC /* Resources */,
+				C0B9FC06013453987DEC4665 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -394,6 +429,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31CAC1631D0B412600E553AC /* Build configuration list for PBXNativeTarget "freezaTests" */;
 			buildPhases = (
+				56B6D28CE6AB9D0382CC4BC2 /* [CP] Check Pods Manifest.lock */,
 				31CAC1531D0B412600E553AC /* Sources */,
 				31CAC1541D0B412600E553AC /* Frameworks */,
 				31CAC1551D0B412600E553AC /* Resources */,
@@ -470,6 +506,73 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56B6D28CE6AB9D0382CC4BC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-freezaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC363A68408FC79D5F09BC72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-freeza-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0B9FC06013453987DEC4665 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freeza/Pods-freeza-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freeza/Pods-freeza-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		31CAC13F1D0B412600E553AC /* Sources */ = {
@@ -645,6 +748,7 @@
 		};
 		31CAC1611D0B412600E553AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = freeza/Info.plist;
@@ -658,6 +762,7 @@
 		};
 		31CAC1621D0B412600E553AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF9C87927D54562199904464 /* Pods-freeza.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = freeza/Info.plist;
@@ -671,6 +776,7 @@
 		};
 		31CAC1641D0B412600E553AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = freezaTests/Info.plist;
@@ -684,6 +790,7 @@
 		};
 		31CAC1651D0B412600E553AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5AA146945BAF07FBF40D6E7 /* Pods-freezaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = freezaTests/Info.plist;
