@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dbF-oI-kWQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorites-->
+        <scene sceneID="356-8a-YOD">
+            <objects>
+                <viewController storyboardIdentifier="FavoritesViewController" id="5xF-8Z-E45" customClass="FavoritesViewController" customModule="freeza" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uMZ-K7-3Yw"/>
+                        <viewControllerLayoutGuide type="bottom" id="KLe-HL-t3w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nOa-Rc-cqI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underConstruction" translatesAutoresizingMaskIntoConstraints="NO" id="tkG-P4-xFn">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="A8F-Mn-L3y"/>
+                                    <constraint firstAttribute="height" constant="200" id="beA-OF-Pe4"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tkG-P4-xFn" firstAttribute="centerY" secondItem="nOa-Rc-cqI" secondAttribute="centerY" id="SoZ-Mz-znS"/>
+                            <constraint firstItem="tkG-P4-xFn" firstAttribute="centerX" secondItem="nOa-Rc-cqI" secondAttribute="centerX" id="qld-7k-CSs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorites" id="OAe-0j-jb3" customClass="Favorites"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VOr-VB-XRT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3236.2318840579715" y="1303.7946428571429"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="wJN-Mi-n2j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dbF-oI-kWQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" selectedImage="star" catalog="system" id="so7-6X-3fk"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wvJ-XC-MnS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5xF-8Z-E45" kind="relationship" relationship="rootViewController" id="yKm-of-83J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="utz-du-1KC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2326.0869565217395" y="1303.7946428571429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="star" width="128" height="128"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="underConstruction" width="300" height="300"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

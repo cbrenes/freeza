@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DrB-fV-66k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7do-GC-cPT">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -107,7 +107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSb-4T-dLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528" y="534"/>
+            <point key="canvasLocation" x="2222" y="396"/>
         </scene>
         <!--URL View Controller-->
         <scene sceneID="IJ4-nv-52n">
@@ -122,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXP-eS-FZn">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
@@ -138,18 +138,39 @@
                             <constraint firstItem="fXP-eS-FZn" firstAttribute="top" secondItem="t9w-D2-lMu" secondAttribute="bottom" id="tL2-15-US9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="riG-7v-xwa"/>
                     <connections>
                         <outlet property="webView" destination="fXP-eS-FZn" id="FTK-qN-dbx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Rw-Qg-pjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3341" y="534"/>
+            <point key="canvasLocation" x="3041" y="396"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="FOr-Ti-2u1">
+            <objects>
+                <tabBarController id="7do-GC-cPT" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k5W-A6-J0O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DrB-fV-66k" kind="relationship" relationship="viewControllers" id="0V3-cH-tUa"/>
+                        <segue destination="B1h-hk-RhK" kind="relationship" relationship="viewControllers" id="sZv-2l-FyU"/>
+                        <segue destination="nOU-Kp-t1z" kind="relationship" relationship="viewControllers" id="jam-Lt-k7D"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xAb-HV-3gI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="397"/>
+        </scene>
+        <!--Top-->
         <scene sceneID="Xky-FP-QP7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DrB-fV-66k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Top" image="list.bullet.rectangle" catalog="system" selectedImage="list.bullet.rectangle" id="WVY-8p-H1O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahr-2X-kSx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -162,10 +183,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gog-sV-jhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="534"/>
+            <point key="canvasLocation" x="1385" y="396"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="NKp-A2-hio">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Favorites" id="B1h-hk-RhK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="star" catalog="system" selectedImage="star" id="1w7-py-XzK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7r-i3-khV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="909"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="iJH-FX-weY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="nOU-Kp-t1z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="9Ex-28-LLv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="92m-bm-yT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="550" y="909"/>
         </scene>
     </scenes>
     <resources>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="thumbnail-placeholder" width="90" height="90"/>
     </resources>
 </document>
