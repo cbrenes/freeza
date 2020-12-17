@@ -20,21 +20,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underConstruction" translatesAutoresizingMaskIntoConstraints="NO" id="isx-fc-lEg">
-                                <rect key="frame" x="107" y="348" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="GW5-f1-lgr"/>
-                                    <constraint firstAttribute="width" constant="200" id="dfE-g4-fYv"/>
-                                </constraints>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sWd-vH-IZR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kPo-4L-iSh" id="LxK-de-tgF"/>
+                                    <outlet property="delegate" destination="kPo-4L-iSh" id="5oj-Zi-XLL"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="isx-fc-lEg" firstAttribute="centerX" secondItem="1vd-zi-8de" secondAttribute="centerX" id="80U-mG-5Iu"/>
-                            <constraint firstItem="isx-fc-lEg" firstAttribute="centerY" secondItem="1vd-zi-8de" secondAttribute="centerY" id="ls3-1k-OSs"/>
+                            <constraint firstItem="5cU-kH-ax8" firstAttribute="top" secondItem="sWd-vH-IZR" secondAttribute="bottom" id="HXd-Ak-D1E"/>
+                            <constraint firstItem="sWd-vH-IZR" firstAttribute="top" secondItem="S6Y-oX-4ch" secondAttribute="bottom" id="fZV-Ax-fV6"/>
+                            <constraint firstAttribute="trailing" secondItem="sWd-vH-IZR" secondAttribute="trailing" id="gKR-6H-dTU"/>
+                            <constraint firstItem="sWd-vH-IZR" firstAttribute="leading" secondItem="1vd-zi-8de" secondAttribute="leading" id="q9I-EK-sAy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="bWo-nB-GYZ"/>
+                    <connections>
+                        <outlet property="tableView" destination="sWd-vH-IZR" id="hYp-hJ-zbt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQ3-fx-Uo0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,7 +68,6 @@
     </scenes>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="121"/>
-        <image name="underConstruction" width="300" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

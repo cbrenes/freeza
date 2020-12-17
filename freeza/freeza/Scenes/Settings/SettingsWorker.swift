@@ -13,5 +13,8 @@
 import UIKit
 
 class SettingsWorker {
-  
+    
+    func createDataSource(worker: LocalQuickStorageWorker) -> [Settings.Item] {
+        return [Settings.Item(type: .safe, value: worker.get(key: User.Defaults.safe.rawValue) as? Bool ?? false)]
+    }
 }

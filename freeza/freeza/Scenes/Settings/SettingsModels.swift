@@ -13,14 +13,37 @@
 import UIKit
 
 enum Settings {
-  // MARK: Use cases
-  
-  enum Something {
-    struct Request {
+    // MARK: Use cases
+    
+    enum DataSource {
+        struct Request {
+        }
+        struct Response {
+            var items: [Item]
+        }
+        struct ViewModel {
+            var items: [ItemToDisplay]
+        }
     }
-    struct Response {
+    
+    enum SetValue {
+        struct Request {
+            var indexPath: IndexPath
+            var value: Bool
+        }
     }
-    struct ViewModel {
+    
+    enum Option {
+        case safe
     }
-  }
+    
+    struct ItemToDisplay {
+        var title: String
+        var value: Bool
+    }
+    
+    struct Item {
+        var type: Option
+        var value: Bool
+    }
 }
