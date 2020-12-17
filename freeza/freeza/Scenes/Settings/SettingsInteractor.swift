@@ -13,24 +13,39 @@
 import UIKit
 
 protocol SettingsBusinessLogic {
-  func doSomething(request: Settings.Something.Request)
+    func requestDataSource(request: Settings.DataSource.Request)
+    func requestSetValue(request: Settings.SetValue.Request)
 }
 
 protocol SettingsDataStore {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
-  var presenter: SettingsPresentationLogic?
-  var worker: SettingsWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Settings.Something.Request) {
-    worker = SettingsWorker()
+    var presenter: SettingsPresentationLogic?
+    var worker = SettingsWorker()
+    var localQuickStorageWorker: LocalQuickStorageWorker
     
-    let response = Settings.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    init() {
+        localQuickStorageWorker = LocalQuickStorageWorker(localQuickStorageStore: UserDefaultsService())
+    }
+    
+    var items = [Settings.Item]()
+    
+    func requestDataSource(request: Settings.DataSource.Request) {
+        if items.isEmpty {
+            items = worker.createDataSource(worker: localQuickStorageWorker)
+        }
+        presenter?.presentDataSource(response: Settings.DataSource.Response(items: items))
+    }
+    
+    func requestSetValue(request: Settings.SetValue.Request) {
+        var item = items[request.indexPath.row]
+        item.value = request.value
+        items[request.indexPath.row] = item
+        switch item.type {
+        case .safe:
+            localQuickStorageWorker.save(value: request.value, key: User.Defaults.safe.rawValue)
+        }
+    }
 }

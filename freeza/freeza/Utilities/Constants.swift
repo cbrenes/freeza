@@ -11,14 +11,32 @@ import Foundation
 
 struct Storyboard {
     enum ReferenceName: String {
-        case Settings
-        case Favorites
+        case settings = "Settings"
+        case favorites = "Favorites"
     }
 }
 
 struct ViewControllerReference {
     enum Name: String {
-        case SettingsViewController
-        case FavoritesViewController
+        case settingsViewController = "SettingsViewController"
+        case favoritesViewController = "FavoritesViewController"
+    }
+}
+
+struct User {
+    enum Defaults: String {
+        case safe
+    }
+}
+
+struct CustomCell {
+    enum Name: String {
+        case settingsCustomTableViewCell = "SettingsCustomTableViewCell"
+    }
+}
+
+struct Localized {
+    enum Strings: String {
+        case safe = "SAFE"
     }
 }

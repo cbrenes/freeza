@@ -46,6 +46,11 @@
 		78321E76258C005B001A2A5B /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78321E75258C005B001A2A5B /* Favorites.storyboard */; };
 		78321E7F258C0218001A2A5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78321E7D258C0218001A2A5B /* Main.storyboard */; };
 		78321E80258C0218001A2A5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78321E7E258C0218001A2A5B /* LaunchScreen.storyboard */; };
+		78321E8D258C054E001A2A5B /* LocalQuickStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E8C258C054E001A2A5B /* LocalQuickStorageWorker.swift */; };
+		78321E95258C06F1001A2A5B /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E94258C06F1001A2A5B /* UserDefaultsService.swift */; };
+		78321E9C258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E9B258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift */; };
+		78321EB4258C0C89001A2A5B /* SettingsCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321EB2258C0C89001A2A5B /* SettingsCustomTableViewCell.swift */; };
+		78321EB5258C0C89001A2A5B /* SettingsCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78321EB3258C0C89001A2A5B /* SettingsCustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +107,11 @@
 		78321E75258C005B001A2A5B /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = Scenes/Favorites/Favorites.storyboard; sourceTree = "<group>"; };
 		78321E7D258C0218001A2A5B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		78321E7E258C0218001A2A5B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		78321E8C258C054E001A2A5B /* LocalQuickStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalQuickStorageWorker.swift; path = Workers/LocalQuickStorageWorker.swift; sourceTree = "<group>"; };
+		78321E94258C06F1001A2A5B /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultsService.swift; path = Services/LocalQuickStorage/UserDefaultsService.swift; sourceTree = "<group>"; };
+		78321E9B258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuickStorageWorkerTests.swift; sourceTree = "<group>"; };
+		78321EB2258C0C89001A2A5B /* SettingsCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsCustomTableViewCell.swift; path = Scenes/Settings/CustomCells/SettingsCustomTableViewCell.swift; sourceTree = "<group>"; };
+		78321EB3258C0C89001A2A5B /* SettingsCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsCustomTableViewCell.xib; path = Scenes/Settings/CustomCells/SettingsCustomTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +227,8 @@
 		31CAC1451D0B412600E553AC /* freeza */ = {
 			isa = PBXGroup;
 			children = (
+				78321E92258C06C1001A2A5B /* Services */,
+				78321E8B258C04AE001A2A5B /* Workers */,
 				78321E60258BF940001A2A5B /* Utilties */,
 				78321E15258BF0E3001A2A5B /* Scenes */,
 				31AA46D61D0B4183006C42BA /* Connectivity */,
@@ -232,6 +244,7 @@
 		31CAC15A1D0B412600E553AC /* freezaTests */ = {
 			isa = PBXGroup;
 			children = (
+				78321E9A258C07CB001A2A5B /* Worker */,
 				78321E41258BF5F2001A2A5B /* Scenes */,
 				31AA46DD1D0B438C006C42BA /* Connectivity */,
 				31AA46EA1D0B9783006C42BA /* ViewModels */,
@@ -266,6 +279,7 @@
 		78321E17258BF0F1001A2A5B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				78321EA1258C0C38001A2A5B /* CustomCells */,
 				78321E3B258BF1A9001A2A5B /* Settings.storyboard */,
 				78321E18258BF12A001A2A5B /* SettingsPresenter.swift */,
 				78321E19258BF12A001A2A5B /* SettingsWorker.swift */,
@@ -313,6 +327,47 @@
 				78321E65258BFA09001A2A5B /* Constants.swift */,
 			);
 			name = Utilties;
+			sourceTree = "<group>";
+		};
+		78321E8B258C04AE001A2A5B /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				78321E8C258C054E001A2A5B /* LocalQuickStorageWorker.swift */,
+			);
+			name = Workers;
+			sourceTree = "<group>";
+		};
+		78321E92258C06C1001A2A5B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				78321E93258C06C8001A2A5B /* LocalQuickStorage */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		78321E93258C06C8001A2A5B /* LocalQuickStorage */ = {
+			isa = PBXGroup;
+			children = (
+				78321E94258C06F1001A2A5B /* UserDefaultsService.swift */,
+			);
+			name = LocalQuickStorage;
+			sourceTree = "<group>";
+		};
+		78321E9A258C07CB001A2A5B /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				78321E9B258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift */,
+			);
+			name = Worker;
+			sourceTree = "<group>";
+		};
+		78321EA1258C0C38001A2A5B /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				78321EB2258C0C89001A2A5B /* SettingsCustomTableViewCell.swift */,
+				78321EB3258C0C89001A2A5B /* SettingsCustomTableViewCell.xib */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +456,7 @@
 				31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */,
 				78321E3C258BF1A9001A2A5B /* Settings.storyboard in Resources */,
 				78321E76258C005B001A2A5B /* Favorites.storyboard in Resources */,
+				78321EB5258C0C89001A2A5B /* SettingsCustomTableViewCell.xib in Resources */,
 				78321E80258C0218001A2A5B /* LaunchScreen.storyboard in Resources */,
 				78321E7F258C0218001A2A5B /* Main.storyboard in Resources */,
 			);
@@ -432,6 +488,8 @@
 				31AA46E91D0B9618006C42BA /* NSDate+AgeFormatter.swift in Sources */,
 				31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */,
 				78321E31258BF140001A2A5B /* FavoritesInteractor.swift in Sources */,
+				78321EB4258C0C89001A2A5B /* SettingsCustomTableViewCell.swift in Sources */,
+				78321E95258C06F1001A2A5B /* UserDefaultsService.swift in Sources */,
 				78321E1E258BF12A001A2A5B /* SettingsPresenter.swift in Sources */,
 				78321E22258BF12A001A2A5B /* SettingsViewController.swift in Sources */,
 				78321E21258BF12A001A2A5B /* SettingsModels.swift in Sources */,
@@ -442,6 +500,7 @@
 				78321E20258BF12A001A2A5B /* SettingsRouter.swift in Sources */,
 				78321E1F258BF12A001A2A5B /* SettingsWorker.swift in Sources */,
 				31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */,
+				78321E8D258C054E001A2A5B /* LocalQuickStorageWorker.swift in Sources */,
 				78321E23258BF12A001A2A5B /* SettingsInteractor.swift in Sources */,
 				78321E66258BFA09001A2A5B /* Constants.swift in Sources */,
 			);
@@ -461,6 +520,7 @@
 				31AA46EE1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift in Sources */,
 				31AA46E11D0B4D2C006C42BA /* ReditClientTests.swift in Sources */,
 				78321E4F258BF662001A2A5B /* SettingsPresenterTests.swift in Sources */,
+				78321E9C258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

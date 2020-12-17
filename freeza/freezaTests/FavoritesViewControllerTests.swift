@@ -24,7 +24,7 @@ class FavoritesViewControllerTests: XCTestCase {
     }
     
     func setupViewController() {
-        let storyboard = UIStoryboard(name: Storyboard.ReferenceName.Favorites.rawValue, bundle: nil)
+        let storyboard = UIStoryboard(name: Storyboard.ReferenceName.favorites.rawValue, bundle: nil)
         if let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController, let viewController = navigationController.viewControllers.first as? FavoritesViewController {
             self.viewController = viewController
         }

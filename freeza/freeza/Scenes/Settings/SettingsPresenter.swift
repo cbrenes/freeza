@@ -13,16 +13,21 @@
 import UIKit
 
 protocol SettingsPresentationLogic {
-  func presentSomething(response: Settings.Something.Response)
+    func presentDataSource(response: Settings.DataSource.Response)
 }
 
 class SettingsPresenter: SettingsPresentationLogic {
-  weak var viewController: SettingsDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Settings.Something.Response) {
-    let viewModel = Settings.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: SettingsDisplayLogic?
+    
+    func presentDataSource(response: Settings.DataSource.Response) {
+        let items = response.items.map({Settings.ItemToDisplay(title: getTitleName(type: $0.type), value: $0.value)})
+        viewController?.displayDataSource(viewModel: Settings.DataSource.ViewModel(items: items))
+    }
+    
+    private func getTitleName(type: Settings.Option) -> String {
+        switch type {
+        case .safe:
+            return Localized.Strings.safe.rawValue.uppercased()
+        }
+    }
 }
