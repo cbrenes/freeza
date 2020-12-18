@@ -26,6 +26,7 @@ struct ViewControllerReference {
 struct User {
     enum Defaults: String {
         case safe
+        case realmEncryptionKey
     }
 }
 

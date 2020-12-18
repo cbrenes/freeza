@@ -26,4 +26,22 @@ class RealmEntryModel: Object {
     override static func indexedProperties() -> [String] {
         return ["id", "isOver18"]
     }
+    
+    convenience init(entryModel: EntryModel) {
+        self.init()
+        id = entryModel.id ?? 0
+        isOver18 = entryModel.isOver18 ?? false
+        title = entryModel.title ?? ""
+        author = entryModel.author ?? ""
+        thumbnailURL = entryModel.thumbnailURL?.absoluteString ?? ""
+        url = entryModel.url?.absoluteString ?? ""
+        createAt = entryModel.creation ?? Date()
+        commentsCount = entryModel.commentsCount ?? 0
+    }
+}
+
+extension RealmEntryModel {
+    func toEntryModel() -> EntryModel {
+        return EntryModel(title: title, author: author, creation: createAt, thumbnailURL: URL(string: thumbnailURL), commentsCount: commentsCount, url: URL(string: url), id: id, isOver18: isOver18)
+    }
 }

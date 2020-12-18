@@ -55,6 +55,9 @@
 		78321EB5258C0C89001A2A5B /* SettingsCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78321EB3258C0C89001A2A5B /* SettingsCustomTableViewCell.xib */; };
 		78321F29258C3825001A2A5B /* RealmEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F28258C3825001A2A5B /* RealmEntryModel.swift */; };
 		78321F2F258C3A0A001A2A5B /* EntryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F2E258C3A0A001A2A5B /* EntryWorker.swift */; };
+		78321F34258C3CC4001A2A5B /* EntryRealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F33258C3CC4001A2A5B /* EntryRealmStore.swift */; };
+		78321F3A258C3F06001A2A5B /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F39258C3F06001A2A5B /* RealmHelper.swift */; };
+		78321F3E258C4339001A2A5B /* EntryWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F3D258C4339001A2A5B /* EntryWorkerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,9 @@
 		78321EB3258C0C89001A2A5B /* SettingsCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsCustomTableViewCell.xib; path = Scenes/Settings/CustomCells/SettingsCustomTableViewCell.xib; sourceTree = "<group>"; };
 		78321F28258C3825001A2A5B /* RealmEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmEntryModel.swift; path = Models/Realm/RealmEntryModel.swift; sourceTree = "<group>"; };
 		78321F2E258C3A0A001A2A5B /* EntryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryWorker.swift; path = Workers/EntryWorker.swift; sourceTree = "<group>"; };
+		78321F33258C3CC4001A2A5B /* EntryRealmStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryRealmStore.swift; path = Services/Database/Realm/EntryRealmStore.swift; sourceTree = "<group>"; };
+		78321F39258C3F06001A2A5B /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmHelper.swift; path = Utilities/RealmHelper.swift; sourceTree = "<group>"; };
+		78321F3D258C4339001A2A5B /* EntryWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryWorkerTests.swift; sourceTree = "<group>"; };
 		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -353,6 +359,7 @@
 			children = (
 				78321E61258BF953001A2A5B /* TestUtilities.swift */,
 				78321E65258BFA09001A2A5B /* Constants.swift */,
+				78321F39258C3F06001A2A5B /* RealmHelper.swift */,
 			);
 			name = Utilties;
 			sourceTree = "<group>";
@@ -369,6 +376,7 @@
 		78321E92258C06C1001A2A5B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				78321F32258C3C6A001A2A5B /* Database */,
 				78321E93258C06C8001A2A5B /* LocalQuickStorage */,
 			);
 			name = Services;
@@ -386,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				78321E9B258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift */,
+				78321F3D258C4339001A2A5B /* EntryWorkerTests.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -413,6 +422,14 @@
 				78321F28258C3825001A2A5B /* RealmEntryModel.swift */,
 			);
 			name = Realm;
+			sourceTree = "<group>";
+		};
+		78321F32258C3C6A001A2A5B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				78321F33258C3CC4001A2A5B /* EntryRealmStore.swift */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 		DC79D014F630542BD50DA36A /* Frameworks */ = {
@@ -624,8 +641,10 @@
 				78321F29258C3825001A2A5B /* RealmEntryModel.swift in Sources */,
 				78321E30258BF140001A2A5B /* FavoritesViewController.swift in Sources */,
 				78321E20258BF12A001A2A5B /* SettingsRouter.swift in Sources */,
+				78321F3A258C3F06001A2A5B /* RealmHelper.swift in Sources */,
 				78321E1F258BF12A001A2A5B /* SettingsWorker.swift in Sources */,
 				31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */,
+				78321F34258C3CC4001A2A5B /* EntryRealmStore.swift in Sources */,
 				78321E8D258C054E001A2A5B /* LocalQuickStorageWorker.swift in Sources */,
 				78321E23258BF12A001A2A5B /* SettingsInteractor.swift in Sources */,
 				78321E66258BFA09001A2A5B /* Constants.swift in Sources */,
@@ -644,6 +663,7 @@
 				31AA46DF1D0B43A0006C42BA /* RedditEntryModelTest.swift in Sources */,
 				31AA46F41D0C3F9E006C42BA /* TopEntriesViewModelTests.swift in Sources */,
 				31AA46EE1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift in Sources */,
+				78321F3E258C4339001A2A5B /* EntryWorkerTests.swift in Sources */,
 				31AA46E11D0B4D2C006C42BA /* ReditClientTests.swift in Sources */,
 				78321E4F258BF662001A2A5B /* SettingsPresenterTests.swift in Sources */,
 				78321E9C258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift in Sources */,
