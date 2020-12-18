@@ -15,7 +15,6 @@ class TopEntriesViewModel {
     }
     
     func loadEntries(withCompletion completionHandler: @escaping () -> ()) {
-        
         self.client.fetchTop(after: self.afterTag, completionHandler: { [weak self] responseDictionary in
             
                 guard let strongSelf = self else {
