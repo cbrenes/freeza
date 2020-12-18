@@ -29,7 +29,7 @@ struct EntryModel {
     let thumbnailURL: URL?
     let commentsCount: Int?
     let url: URL?
-    let id: Int?
+    let id: String?
     let isOver18: Bool?
     var isFavorite = false
 }
@@ -63,7 +63,7 @@ extension EntryModel {
         self.thumbnailURL = urlFromDictionary(withAttributeName: "thumbnail")
         self.commentsCount = dictionary["num_comments"] as? Int
         self.url = urlFromDictionary(withAttributeName: "url")
-        self.id = dictionary["id"] as? Int
+        self.id = dictionary["id"] as? String
         self.isOver18 = dictionary["over_18"] as? Bool
     }
 }

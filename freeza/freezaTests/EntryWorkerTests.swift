@@ -23,7 +23,7 @@ class EntryWorkerTests: XCTestCase {
 
     func testInsertObjectIntoTheDB() throws {
         let expect = expectation(description: "DB operations")
-        let entry = EntryModel(title: "1", author: "2", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: 2, isOver18: false)
+        let entry = EntryModel(title: "1", author: "2", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: "2", isOver18: false)
         var entryRetrievedFromDB: EntryModel?
         hasElementsStored { (result) in
             if result {
@@ -53,14 +53,14 @@ class EntryWorkerTests: XCTestCase {
     
     func testDeleteObjectIntoTheDB() throws {
         let expect = expectation(description: "DB operations")
-        let entry = EntryModel(title: "1", author: "2", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: 2, isOver18: false)
+        let entry = EntryModel(title: "1", author: "2", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: "2", isOver18: false)
         var objectWasDeletecCorrectly = false
         hasElementsStored { (result) in
             if result {
                 expect.fulfill()
             }
             self.worker.insert(entryModel: entry) {
-                self.worker.delete(id: entry.id ?? 90) {
+                self.worker.delete(id: entry.id ?? "90") {
                     self.hasElementsStored { (numberOfElements) in
                         objectWasDeletecCorrectly = !numberOfElements
                         expect.fulfill()

@@ -15,6 +15,7 @@ import UIKit
 protocol MainEntryPresentationLogic {
     func presentDataSource(response: MainEntry.DataStore.Response)
     func presentDetail(response: MainEntry.Detail.Response)
+    func presentFavorite(response: MainEntry.Favorite.Response)
 }
 
 class MainEntryPresenter: MainEntryPresentationLogic {
@@ -41,6 +42,11 @@ class MainEntryPresenter: MainEntryPresentationLogic {
             return
         }
         viewController?.displayDetailSuccessFul(viewModel: MainEntry.Detail.ViewModel.Successful(url: url))
+    }
+    
+    func presentFavorite(response: MainEntry.Favorite.Response) {
+        let item = MainEntry.ItemToDisplay(thumbnailImageURL: response.item.thumbnailURL, author: response.item.author ?? "", commentCount: " \(response.item.commentsCount ?? 0) ", time: formatTime(date: response.item.creation ?? Date()), title: response.item.title ?? "", heartImage: getHeartImage(isFavorite: response.item.isFavorite), shouldHideContent: shouldHideContent(item: response.item, safePreference: response.safePreference))
+        viewController?.displayFavorite(viewModel: MainEntry.Favorite.ViewModel(indexPath: response.indexPath, item: item))
     }
     
     private func getHeartImage(isFavorite: Bool) -> UIImage? {

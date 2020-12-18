@@ -18,24 +18,97 @@ class TopEntriesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
     var apiWorker: APIWorker
     var afterTag: String?
     var apiEntries = [EntryModel]()
+    var favorites = [String]() {
+        didSet{
+            updateDataSource()
+        }
+    }
     var localQuickStorageWorker = LocalQuickStorageWorker(store: UserDefaultsService())
+    var entryDBWorker: EntryWorker?
+    var indexPathToUpdate: IndexPath?
     
     init() {
         apiWorker = APIWorker(store: RedditAPI())
     }
     
     func requestDataStore(request: MainEntry.DataStore.Request) {
-        apiWorker.fetchTop(after: afterTag) { [weak self] (entriesList, afterTag) in
-            self?.afterTag = afterTag
-            self?.apiEntries += entriesList
-            self?.presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: self?.apiEntries ?? [EntryModel](), errorMessage: nil, safePreference: self?.localQuickStorageWorker.get(key: User.Defaults.safe.rawValue) as? Bool ?? false))
-        } errorHandler: { [weak self] (message) in
-            self?.presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: [EntryModel](), errorMessage: message, safePreference: self?.localQuickStorageWorker.get(key: User.Defaults.safe.rawValue) as? Bool ?? false))
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.apiWorker.fetchTop(after: self.afterTag) { [weak self] (entriesList, afterTag) in
+                self?.afterTag = afterTag
+                self?.apiEntries += entriesList
+                self?.validateInformationWithDB(errorMessage: nil)
+            } errorHandler: { [weak self] (message) in
+                self?.validateInformationWithDB(errorMessage: message)
+            }
         }
     }
     
     func requestDetail(request: MainEntry.Detail.Request) {
         let safe = localQuickStorageWorker.get(key: User.Defaults.safe.rawValue) as? Bool ?? false
         presenter?.presentDetail(response: MainEntry.Detail.Response(item: apiEntries[request.indexPath.row], indexPath: request.indexPath, safePreference: safe))
+    }
+    
+    func validateInformationWithDB(errorMessage: String?) {
+        if entryDBWorker == nil {
+            DispatchQueueHelper.executeInMainThread {
+                self.entryDBWorker = EntryWorker(store: EntryRealmStore())
+                self.startListeningDBChanges()
+            }
+        } else {
+            presentDataSource(errorMessage: errorMessage)
+        }
+    }
+    
+    func requestFavorite(request: MainEntry.Favorite.Request) {
+        indexPathToUpdate = request.indexPath
+        var entry = apiEntries[request.indexPath.row]
+        if !favorites.contains(entry.id ?? "") {
+            entryDBWorker?.insert(entryModel: entry) { [weak self] in
+                entry.isFavorite = true
+                self?.apiEntries[request.indexPath.row] = entry
+            } errorHandler: { (_) in
+                //pending to handle DB issues
+            }
+        } else {
+            entryDBWorker?.delete(id: entry.id ?? "") { [weak self] in
+                entry.isFavorite = false
+                self?.apiEntries[request.indexPath.row] = entry
+            } errorHandler: { (_) in
+                //pending to handle DB issues
+            }
+        }
+    }
+}
+
+extension TopEntriesInteractor {
+    func updateDataSource() {
+        if let indexPathToUpdate = indexPathToUpdate {
+            presenter?.presentFavorite(response: MainEntry.Favorite.Response(indexPath: indexPathToUpdate, item: apiEntries[indexPathToUpdate.row], safePreference: localQuickStorageWorker.get(key: User.Defaults.safe.rawValue) as? Bool ?? false))
+            self.indexPathToUpdate = nil
+        } else {
+            presentDataSource(errorMessage: nil)
+        }
+    }
+    
+    func presentDataSource(errorMessage: String?) {
+        let items = updateFavoritePropertyInApiList(apiEntries: apiEntries, favoritesId: favorites)
+        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: items, errorMessage: errorMessage, safePreference: localQuickStorageWorker.get(key: User.Defaults.safe.rawValue) as? Bool ?? false))
+        indexPathToUpdate = nil
+    }
+    
+    func updateFavoritePropertyInApiList(apiEntries: [EntryModel], favoritesId: [String]) -> [EntryModel] {
+        return apiEntries.map({EntryModel(title: $0.title, author: $0.author, creation: $0.creation, thumbnailURL: $0.thumbnailURL, commentsCount: $0.commentsCount, url: $0.url, id: $0.id, isOver18: $0.isOver18, isFavorite: favoritesId.contains($0.id ?? ""))})
+    }
+    
+    func startListeningDBChanges() {
+        entryDBWorker?.fetchAll(withObserver: true) {[weak self] (favoritesEnties) in
+            if favoritesEnties.isEmpty {
+                self?.updateDataSource()
+                return
+            }
+            self?.favorites = favoritesEnties.map({$0.id ?? ""})
+        } errorHandler: { (errorMessage) in
+            //pending to handle DB issues like the device is out of memory
+        }
     }
 }

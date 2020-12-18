@@ -10,7 +10,7 @@ import RealmSwift
 
 class RealmEntryModel: Object {
     
-    @objc dynamic var id: Int = 0
+    @objc dynamic var id = ""
     @objc dynamic var isOver18: Bool = false
     @objc dynamic var title = ""
     @objc dynamic var author = ""
@@ -29,7 +29,7 @@ class RealmEntryModel: Object {
     
     convenience init(entryModel: EntryModel) {
         self.init()
-        id = entryModel.id ?? 0
+        id = entryModel.id ?? ""
         isOver18 = entryModel.isOver18 ?? false
         title = entryModel.title ?? ""
         author = entryModel.author ?? ""

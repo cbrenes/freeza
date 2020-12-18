@@ -10,23 +10,24 @@ import XCTest
 @testable import freeza
 
 class MainEntryPresenterTests: XCTestCase {
-
+    
     var presenter: MainEntryPresenter!
-
+    
     override func setUpWithError() throws {
         presenter = MainEntryPresenter()
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
     class MainEntryDisplayLogicSpy: MainEntryDisplayLogic {
-       
+        
         var displayDataSourceSuccessFulWasCalled = false
         var displayDataSourceErrorFoundWasCalled = false
         var displayDetailSuccessFulWasCalled = false
         var displayDetailErrorFoundWasCalled = false
+        var displayFavoriteWasCalled = false
         
         var displayDataSourceSuccessFulViewModel: MainEntry.DataStore.ViewModel.Successful?
         
@@ -46,12 +47,16 @@ class MainEntryPresenterTests: XCTestCase {
         func displayDetailErrorFound(viewModel: MainEntry.Detail.ViewModel.ErrorFound) {
             displayDetailErrorFoundWasCalled = true
         }
+        
+        func displayFavorite(viewModel: MainEntry.Favorite.ViewModel) {
+            displayFavoriteWasCalled = true
+        }
     }
     
     func testPresentDataSourceWithoutErrorsShouldAskViewControllerToDisplayData() throws {
         let viewController = MainEntryDisplayLogicSpy()
         presenter.viewController = viewController
-        let items = [EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: 1, isOver18: false)]
+        let items = [EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: "1", isOver18: false)]
         
         presenter.presentDataSource(response: MainEntry.DataStore.Response(items: items, errorMessage: nil, safePreference: false))
         
@@ -62,21 +67,21 @@ class MainEntryPresenterTests: XCTestCase {
         XCTAssertEqual(viewController.displayDataSourceSuccessFulViewModel?.items.first?.title, items.first?.title)
         XCTAssertFalse(viewController.displayDataSourceSuccessFulViewModel?.items.first?.shouldHideContent ?? true)
     }
-
+    
     func testPresentDataSourceShouldAskViewControllerToDisplayHeartImageDisabled() throws {
         let viewController = MainEntryDisplayLogicSpy()
         presenter.viewController = viewController
-        let items = [EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: 1, isOver18: false, isFavorite: false)]
+        let items = [EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: "1", isOver18: false, isFavorite: false)]
         
         presenter.presentDataSource(response: MainEntry.DataStore.Response(items: items, errorMessage: nil, safePreference: false))
         
         XCTAssertEqual(viewController.displayDataSourceSuccessFulViewModel?.items.first?.heartImage, UIImage(named: Assets.images.heartDisabled.rawValue))
     }
-
+    
     func testPresentDataSourceShouldAskViewControllerToDisplayHeartImageEnabled() throws {
         let viewController = MainEntryDisplayLogicSpy()
         presenter.viewController = viewController
-        let items = [EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: 1, isOver18: false, isFavorite: true)]
+        let items = [EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: "1", isOver18: false, isFavorite: true)]
         
         presenter.presentDataSource(response: MainEntry.DataStore.Response(items: items, errorMessage: nil, safePreference: false))
         
@@ -86,7 +91,7 @@ class MainEntryPresenterTests: XCTestCase {
     func testShouldHideContentFirstCase() throws {
         let presenter = MainEntryPresenter()
         
-        let result = presenter.shouldHideContent(item: EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: 1, isOver18: true), safePreference: false)
+        let result = presenter.shouldHideContent(item: EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: "1", isOver18: true), safePreference: false)
         
         XCTAssert(result)
     }
@@ -94,7 +99,7 @@ class MainEntryPresenterTests: XCTestCase {
     func testShouldHideContentSecondCase() throws {
         let presenter = MainEntryPresenter()
         
-        let result = presenter.shouldHideContent(item: EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: 1, isOver18: false), safePreference: false)
+        let result = presenter.shouldHideContent(item: EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: "1", isOver18: false), safePreference: false)
         
         XCTAssertFalse(result)
     }
@@ -102,7 +107,7 @@ class MainEntryPresenterTests: XCTestCase {
     func testShouldHideContentThirdCase() throws {
         let presenter = MainEntryPresenter()
         
-        let result = presenter.shouldHideContent(item: EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: 1, isOver18: true), safePreference: true)
+        let result = presenter.shouldHideContent(item: EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: "1", isOver18: true), safePreference: true)
         
         XCTAssertFalse(result)
     }
@@ -110,7 +115,7 @@ class MainEntryPresenterTests: XCTestCase {
     func testShouldHideContentFourthCase() throws {
         let presenter = MainEntryPresenter()
         
-        let result = presenter.shouldHideContent(item: EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: 1, isOver18: false), safePreference: true)
+        let result = presenter.shouldHideContent(item: EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: "1", isOver18: false), safePreference: true)
         
         XCTAssertFalse(result)
     }
@@ -119,30 +124,30 @@ class MainEntryPresenterTests: XCTestCase {
         let presenter = MainEntryPresenter()
         
         let presentTime = Date()
-    
+        
         XCTAssertEqual(presenter.formatTime(date: presentTime), "Now")
         
         let futureTime = Date(timeInterval: 10, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: futureTime), "The future")
-
+        
         let aSecondAgoTime = Date(timeInterval: -1, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: aSecondAgoTime), "A second ago")
-
+        
         let twoSecondsAgoTime = Date(timeInterval: -2, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: twoSecondsAgoTime), "2 seconds ago")
-
+        
         let fiftyNineSecondsAgoTime = Date(timeInterval: -59, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: fiftyNineSecondsAgoTime), "59 seconds ago")
-
+        
         let aMinuteAgoTime = Date(timeInterval: -60, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: aMinuteAgoTime), "A minute ago")
-
+        
         let aMinuteAndHalfAgoTime = Date(timeInterval: -90, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: aMinuteAndHalfAgoTime), "A minute ago")
-
+        
         let twoMinutesAgoTime = Date(timeInterval: -60 * 2, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: twoMinutesAgoTime), "2 minutes ago")
-
+        
         let fiftyNineMinutesAgoTime = Date(timeInterval: -60 * 59, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: fiftyNineMinutesAgoTime), "59 minutes ago")
         
@@ -151,7 +156,7 @@ class MainEntryPresenterTests: XCTestCase {
         
         let anHourAndHalfAgo = Date(timeInterval: -90 * 60, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: anHourAndHalfAgo), "An hour ago")
-
+        
         let twoHoursAgo = Date(timeInterval: -2 * 60 * 60, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: twoHoursAgo), "2 hours ago")
         
@@ -160,16 +165,16 @@ class MainEntryPresenterTests: XCTestCase {
         
         let aDayAgo = Date(timeInterval: -24 * 60 * 60, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: aDayAgo), Localized.Strings.older.rawValue)
-
+        
         let aDayAndHalfAgo = Date(timeInterval: -36 * 60 * 60, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: aDayAndHalfAgo), Localized.Strings.older.rawValue)
-
+        
         let fiveDaysAndHalfAgo = Date(timeInterval: -5 * 24 * 60 * 60, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: fiveDaysAndHalfAgo), Localized.Strings.older.rawValue)
-
+        
         let sixDaysAgo = Date(timeInterval: -6 * 24 * 60 * 60, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: sixDaysAgo), Localized.Strings.older.rawValue)
-
+        
         let tenDaysAgo = Date(timeInterval: -10 * 24 * 60 * 60, since: presentTime)
         XCTAssertEqual(presenter.formatTime(date: tenDaysAgo), Localized.Strings.older.rawValue)
     }
@@ -186,7 +191,7 @@ class MainEntryPresenterTests: XCTestCase {
     func testPresentDetailShouldAskViewControllerToDisplayData() throws {
         let viewController = MainEntryDisplayLogicSpy()
         presenter.viewController = viewController
-        let item = EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: 1, isOver18: false, isFavorite: false)
+        let item = EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: "1", isOver18: false, isFavorite: false)
         
         presenter.presentDetail(response: MainEntry.Detail.Response(item: item, indexPath: IndexPath(item: 0, section: 0), safePreference: false))
         
@@ -196,7 +201,7 @@ class MainEntryPresenterTests: XCTestCase {
     func testPresentDetailShouldAskViewControllerToDisplayErrorData() throws {
         let viewController = MainEntryDisplayLogicSpy()
         presenter.viewController = viewController
-        let item = EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: 1, isOver18: true, isFavorite: false)
+        let item = EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "www.apple.com"), id: "1", isOver18: true, isFavorite: false)
         
         presenter.presentDetail(response: MainEntry.Detail.Response(item: item, indexPath: IndexPath(item: 0, section: 0), safePreference: false))
         
@@ -206,12 +211,12 @@ class MainEntryPresenterTests: XCTestCase {
     func testPresentDetailShouldAskViewControllerToDisplayErrorDataBecauseTheURLIsWrong() throws {
         let viewController = MainEntryDisplayLogicSpy()
         presenter.viewController = viewController
-        let item = EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "jdgsdgfs"), id: 1, isOver18: true, isFavorite: false)
+        let item = EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: URL(string: "www.google.com"), commentsCount: 10, url: URL(string: "jdgsdgfs"), id: "1", isOver18: true, isFavorite: false)
         
         presenter.presentDetail(response: MainEntry.Detail.Response(item: item, indexPath: IndexPath(item: 0, section: 0), safePreference: false))
         
         XCTAssert(viewController.displayDetailErrorFoundWasCalled)
     }
 }
-    
-    
+
+

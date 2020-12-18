@@ -17,6 +17,7 @@ protocol MainEntryDisplayLogic: class {
     func displayDataSourceErrorFound(viewModel: MainEntry.DataStore.ViewModel.ErrorFound)
     func displayDetailSuccessFul(viewModel: MainEntry.Detail.ViewModel.Successful)
     func displayDetailErrorFound(viewModel: MainEntry.Detail.ViewModel.ErrorFound)
+    func displayFavorite(viewModel: MainEntry.Favorite.ViewModel)
 }
 
 class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
@@ -67,8 +68,8 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
     }
     
     func registerCustomCells() {
-        let nib = UINib(nibName: CustomCell.Name.entryTableCustomTableViewCell.rawValue, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: CustomCell.Name.entryTableCustomTableViewCell.rawValue)
+        let nib = UINib(nibName: CustomCell.Name.entryCustomTableViewCell.rawValue, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: CustomCell.Name.entryCustomTableViewCell.rawValue)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -87,6 +88,11 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
     func requestDetail(indexPath: IndexPath) {
         let request = MainEntry.Detail.Request(indexPath: indexPath)
         interactor?.requestDetail(request: request)
+    }
+    
+    func requestFavorite(indexPath: IndexPath) {
+        let request = MainEntry.Favorite.Request(indexPath: indexPath)
+        interactor?.requestFavorite(request: request)
     }
     
     func dataFinishedToReload() {
@@ -116,10 +122,17 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
     }
     
     func displayDetailErrorFound(viewModel: MainEntry.Detail.ViewModel.ErrorFound) {
-        guard let cell = tableView.cellForRow(at: viewModel.indexPath) as? EntryTableCustomTableViewCell else {
+        guard let cell = tableView.cellForRow(at: viewModel.indexPath) as? EntryCustomTableViewCell else {
             return
         }
         cell.containerView.shake()
+    }
+    
+    func displayFavorite(viewModel: MainEntry.Favorite.ViewModel) {
+        DispatchQueueHelper.executeInMainThread {
+            self.items[viewModel.indexPath.row] = viewModel.item
+            self.tableView.reloadRows(at: [viewModel.indexPath], with: .automatic)
+        }
     }
     
     @objc func retryFromErrorToolbar() {
@@ -173,14 +186,21 @@ extension MainEntryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.Name.entryTableCustomTableViewCell.rawValue) as? EntryTableCustomTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.Name.entryCustomTableViewCell.rawValue) as? EntryCustomTableViewCell else {
             return UITableViewCell()
         }
+        cell.delegate = self
         cell.setupCell(item: items[indexPath.row], indexPath: indexPath)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         requestDetail(indexPath: indexPath)
+    }
+}
+
+extension MainEntryViewController: EntryCustomTableViewCellDelegate {
+    func favoriteIconWasTouched(indexPath: IndexPath) {
+        requestFavorite(indexPath: indexPath)
     }
 }

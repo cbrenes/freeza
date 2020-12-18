@@ -37,7 +37,7 @@ struct User {
 struct CustomCell {
     enum Name: String {
         case settingsCustomTableViewCell = "SettingsCustomTableViewCell"
-        case entryTableCustomTableViewCell = "EntryTableCustomTableViewCell"
+        case entryCustomTableViewCell = "EntryCustomTableViewCell"
     }
 }
 

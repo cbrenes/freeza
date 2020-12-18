@@ -44,20 +44,20 @@ class EntryRealmStore: EntryStoreProtocol {
             }
             let results = realm.objects(RealmEntryModel.self)
             if notificationToken == nil && withObserver {
-                
+                fetchAllObserver(results: results, completionHandler: completionHandler, errorHandler: errorHandler)
             }
             completionHandler(results.map({$0.toEntryModel()}))
         }
     }
     
-    func delete(id: Int, completionHandler: @escaping () -> (), errorHandler: @escaping (String) -> ()) {
+    func delete(id: String, completionHandler: @escaping () -> (), errorHandler: @escaping (String) -> ()) {
         autoreleasepool {
             do {
                 guard let realm = RealmHelper.realmInstance else {
                     errorHandler("Error trying to create the Realm Instace")
                     return
                 }
-                let predicate = NSPredicate(format: "id = %d", id)
+                let predicate = NSPredicate(format: "id = %@", id)
                 if let elementToDelete = realm.objects(RealmEntryModel.self).filter(predicate).first {
                     try realm.write {
                         realm.delete(elementToDelete)
