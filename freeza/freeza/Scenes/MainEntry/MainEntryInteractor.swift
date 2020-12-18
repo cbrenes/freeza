@@ -14,6 +14,7 @@ import UIKit
 
 protocol MainEntryBusinessLogic {
     func requestDataStore(request: MainEntry.DataStore.Request)
+    func requestDetail(request: MainEntry.Detail.Request)
     var presenter: MainEntryPresentationLogic? {get set}
 }
 
@@ -37,5 +38,9 @@ class MainEntryInteractor: MainEntryBusinessLogic, MainEntryDataStore {
     
     func requestDataStore(request: MainEntry.DataStore.Request) {
         businessLogic.requestDataStore(request: request)
+    }
+    
+    func requestDetail(request: MainEntry.Detail.Request) {
+        businessLogic.requestDetail(request: request)
     }
 }

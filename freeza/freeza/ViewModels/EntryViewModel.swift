@@ -18,7 +18,7 @@ class EntryViewModel {
                 return "---"
             }
             
-            return creation.age()
+            return ""// creation.age()
         }
     }
     

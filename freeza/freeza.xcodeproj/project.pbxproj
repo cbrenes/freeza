@@ -15,10 +15,7 @@
 		31AA46E31D0B885C006C42BA /* TopEntriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E21D0B885C006C42BA /* TopEntriesViewModel.swift */; };
 		31AA46E51D0B8DA9006C42BA /* EntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E41D0B8DA9006C42BA /* EntryViewModel.swift */; };
 		31AA46E71D0B8F23006C42BA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E61D0B8F23006C42BA /* Client.swift */; };
-		31AA46E91D0B9618006C42BA /* NSDate+AgeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E81D0B9618006C42BA /* NSDate+AgeFormatter.swift */; };
-		31AA46EE1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46ED1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift */; };
 		31AA46F41D0C3F9E006C42BA /* TopEntriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46F31D0C3F9E006C42BA /* TopEntriesViewModelTests.swift */; };
-		31AA46F91D0C526D006C42BA /* TopEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46F81D0C526D006C42BA /* TopEntriesViewController.swift */; };
 		31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC1461D0B412600E553AC /* AppDelegate.swift */; };
 		31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14D1D0B412600E553AC /* Assets.xcassets */; };
 		31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */; };
@@ -36,7 +33,6 @@
 		78321E4B258BF650001A2A5B /* SettingsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E4A258BF650001A2A5B /* SettingsInteractorTests.swift */; };
 		78321E4F258BF662001A2A5B /* SettingsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E4E258BF662001A2A5B /* SettingsPresenterTests.swift */; };
 		78321E55258BF6F8001A2A5B /* FavoritesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E54258BF6F8001A2A5B /* FavoritesInteractorTests.swift */; };
-		78321E59258BF705001A2A5B /* FavoritesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E58258BF705001A2A5B /* FavoritesPresenterTests.swift */; };
 		78321E5D258BF721001A2A5B /* FavoritesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E5C258BF721001A2A5B /* FavoritesViewControllerTests.swift */; };
 		78321E62258BF953001A2A5B /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E61258BF953001A2A5B /* TestUtilities.swift */; };
 		78321E66258BFA09001A2A5B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E65258BFA09001A2A5B /* Constants.swift */; };
@@ -56,13 +52,23 @@
 		78321F4D258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */; };
 		78474BB3258C597E00C78ACE /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BB2258C597E00C78ACE /* UIView+Animations.swift */; };
 		78474BD4258C5F6400C78ACE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78474BD3258C5F6400C78ACE /* Favorites.storyboard */; };
-		78474BD8258C60ED00C78ACE /* UIView+Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BD7258C60ED00C78ACE /* UIView+Effects.swift */; };
+		78474BD8258C60ED00C78ACE /* UIImage+Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BD7258C60ED00C78ACE /* UIImage+Effects.swift */; };
 		78474BE2258CDBD900C78ACE /* MainEntryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDC258CDBD900C78ACE /* MainEntryPresenter.swift */; };
 		78474BE3258CDBD900C78ACE /* MainEntryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */; };
 		78474BE4258CDBD900C78ACE /* MainEntryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */; };
 		78474BE5258CDBD900C78ACE /* MainEntryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDF258CDBD900C78ACE /* MainEntryModels.swift */; };
 		78474BE6258CDBD900C78ACE /* MainEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */; };
 		78474BE7258CDBD900C78ACE /* MainEntryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BE1258CDBD900C78ACE /* MainEntryInteractor.swift */; };
+		78474C09258CF3B400C78ACE /* TopEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474C03258CF3B400C78ACE /* TopEntriesViewController.swift */; };
+		78474C0A258CF3B400C78ACE /* TopEntriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474C04258CF3B400C78ACE /* TopEntriesInteractor.swift */; };
+		78474C14258CF54F00C78ACE /* TopEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78474C13258CF54F00C78ACE /* TopEntry.storyboard */; };
+		7879A5CB258CFBD900E0896F /* MainEntryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A5CA258CFBD900E0896F /* MainEntryPresenterTests.swift */; };
+		7879A5D3258CFD0800E0896F /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A5D2258CFD0800E0896F /* APIWorker.swift */; };
+		7879A5D8258CFDF600E0896F /* RedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A5D7258CFDF600E0896F /* RedditAPI.swift */; };
+		7879A5DF258D02A500E0896F /* TopEntriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A5DE258D02A500E0896F /* TopEntriesInteractorTests.swift */; };
+		7879A5E5258D02D000E0896F /* TopEntriesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A5E4258D02D000E0896F /* TopEntriesViewControllerTests.swift */; };
+		7879A615258D12D000E0896F /* DispatchQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A614258D12D000E0896F /* DispatchQueueHelper.swift */; };
+		7879A624258D2F1E00E0896F /* RedditMockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A623258D2F1E00E0896F /* RedditMockAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,10 +89,7 @@
 		31AA46E21D0B885C006C42BA /* TopEntriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopEntriesViewModel.swift; path = ViewModels/TopEntriesViewModel.swift; sourceTree = "<group>"; };
 		31AA46E41D0B8DA9006C42BA /* EntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryViewModel.swift; path = ViewModels/EntryViewModel.swift; sourceTree = "<group>"; };
 		31AA46E61D0B8F23006C42BA /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Connectivity/Client.swift; sourceTree = "<group>"; };
-		31AA46E81D0B9618006C42BA /* NSDate+AgeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+AgeFormatter.swift"; path = "ViewModels/NSDate+AgeFormatter.swift"; sourceTree = "<group>"; };
-		31AA46ED1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+AgeFormatterTests.swift"; sourceTree = "<group>"; };
 		31AA46F31D0C3F9E006C42BA /* TopEntriesViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopEntriesViewModelTests.swift; sourceTree = "<group>"; };
-		31AA46F81D0C526D006C42BA /* TopEntriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopEntriesViewController.swift; path = ViewControllers/TopEntriesViewController.swift; sourceTree = "<group>"; };
 		31CAC1431D0B412600E553AC /* freeza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freeza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CAC1461D0B412600E553AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Support/AppDelegate.swift; sourceTree = "<group>"; };
 		31CAC14D1D0B412600E553AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,7 +111,6 @@
 		78321E4A258BF650001A2A5B /* SettingsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorTests.swift; sourceTree = "<group>"; };
 		78321E4E258BF662001A2A5B /* SettingsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterTests.swift; sourceTree = "<group>"; };
 		78321E54258BF6F8001A2A5B /* FavoritesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractorTests.swift; sourceTree = "<group>"; };
-		78321E58258BF705001A2A5B /* FavoritesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenterTests.swift; sourceTree = "<group>"; };
 		78321E5C258BF721001A2A5B /* FavoritesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerTests.swift; sourceTree = "<group>"; };
 		78321E61258BF953001A2A5B /* TestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestUtilities.swift; path = freeza/Utilities/TestUtilities.swift; sourceTree = SOURCE_ROOT; };
 		78321E65258BFA09001A2A5B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
@@ -128,13 +130,23 @@
 		78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EntryTableCustomTableViewCell.xib; path = TableViewCells/EntryTableCustomTableViewCell/EntryTableCustomTableViewCell.xib; sourceTree = "<group>"; };
 		78474BB2258C597E00C78ACE /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Animations.swift"; path = "Utilities/UIView+Animations.swift"; sourceTree = "<group>"; };
 		78474BD3258C5F6400C78ACE /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = Storyboards/Favorites.storyboard; sourceTree = "<group>"; };
-		78474BD7258C60ED00C78ACE /* UIView+Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Effects.swift"; path = "Utilities/UIView+Effects.swift"; sourceTree = "<group>"; };
-		78474BDC258CDBD900C78ACE /* MainEntryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryPresenter.swift; path = MainEntry/MainEntryPresenter.swift; sourceTree = "<group>"; };
-		78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryWorker.swift; path = MainEntry/MainEntryWorker.swift; sourceTree = "<group>"; };
-		78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryRouter.swift; path = MainEntry/MainEntryRouter.swift; sourceTree = "<group>"; };
-		78474BDF258CDBD900C78ACE /* MainEntryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryModels.swift; path = MainEntry/MainEntryModels.swift; sourceTree = "<group>"; };
-		78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryViewController.swift; path = MainEntry/MainEntryViewController.swift; sourceTree = "<group>"; };
-		78474BE1258CDBD900C78ACE /* MainEntryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryInteractor.swift; path = MainEntry/MainEntryInteractor.swift; sourceTree = "<group>"; };
+		78474BD7258C60ED00C78ACE /* UIImage+Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+Effects.swift"; path = "Utilities/UIImage+Effects.swift"; sourceTree = "<group>"; };
+		78474BDC258CDBD900C78ACE /* MainEntryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryPresenter.swift; path = Scenes/MainEntry/MainEntryPresenter.swift; sourceTree = "<group>"; };
+		78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryWorker.swift; path = Scenes/MainEntry/MainEntryWorker.swift; sourceTree = "<group>"; };
+		78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryRouter.swift; path = Scenes/MainEntry/MainEntryRouter.swift; sourceTree = "<group>"; };
+		78474BDF258CDBD900C78ACE /* MainEntryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryModels.swift; path = Scenes/MainEntry/MainEntryModels.swift; sourceTree = "<group>"; };
+		78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryViewController.swift; path = Scenes/MainEntry/MainEntryViewController.swift; sourceTree = "<group>"; };
+		78474BE1258CDBD900C78ACE /* MainEntryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryInteractor.swift; path = Scenes/MainEntry/MainEntryInteractor.swift; sourceTree = "<group>"; };
+		78474C03258CF3B400C78ACE /* TopEntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopEntriesViewController.swift; path = Scenes/TopEntries/TopEntriesViewController.swift; sourceTree = "<group>"; };
+		78474C04258CF3B400C78ACE /* TopEntriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopEntriesInteractor.swift; path = Scenes/TopEntries/TopEntriesInteractor.swift; sourceTree = "<group>"; };
+		78474C13258CF54F00C78ACE /* TopEntry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TopEntry.storyboard; path = Storyboards/TopEntry.storyboard; sourceTree = "<group>"; };
+		7879A5CA258CFBD900E0896F /* MainEntryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntryPresenterTests.swift; sourceTree = "<group>"; };
+		7879A5D2258CFD0800E0896F /* APIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIWorker.swift; path = Workers/APIWorker.swift; sourceTree = "<group>"; };
+		7879A5D7258CFDF600E0896F /* RedditAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedditAPI.swift; path = Services/RedditAPI/RedditAPI.swift; sourceTree = "<group>"; };
+		7879A5DE258D02A500E0896F /* TopEntriesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesInteractorTests.swift; sourceTree = "<group>"; };
+		7879A5E4258D02D000E0896F /* TopEntriesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesViewControllerTests.swift; sourceTree = "<group>"; };
+		7879A614258D12D000E0896F /* DispatchQueueHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DispatchQueueHelper.swift; path = Utilities/DispatchQueueHelper.swift; sourceTree = "<group>"; };
+		7879A623258D2F1E00E0896F /* RedditMockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedditMockAPI.swift; path = Services/RedditAPI/RedditMockAPI.swift; sourceTree = "<group>"; };
 		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,7 +197,6 @@
 		31AA46DB1D0B4252006C42BA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				31AA46F81D0C526D006C42BA /* TopEntriesViewController.swift */,
 				31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */,
 			);
 			name = ViewControllers;
@@ -195,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				31AA46E41D0B8DA9006C42BA /* EntryViewModel.swift */,
-				31AA46E81D0B9618006C42BA /* NSDate+AgeFormatter.swift */,
 				31AA46E21D0B885C006C42BA /* TopEntriesViewModel.swift */,
 			);
 			name = ViewModels;
@@ -213,7 +223,6 @@
 		31AA46EA1D0B9783006C42BA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				31AA46ED1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift */,
 				31AA46F31D0C3F9E006C42BA /* TopEntriesViewModelTests.swift */,
 			);
 			name = ViewModels;
@@ -300,6 +309,7 @@
 		78321E15258BF0E3001A2A5B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				78474BF6258CF20500C78ACE /* TopEntries */,
 				78474BDB258CDBA100C78ACE /* MainEntry */,
 				78321E17258BF0F1001A2A5B /* Settings */,
 				78321E16258BF0E9001A2A5B /* Favorites */,
@@ -335,6 +345,8 @@
 		78321E41258BF5F2001A2A5B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7879A5DD258D028600E0896F /* TopEntries */,
+				7879A5C3258CFBA700E0896F /* MainEntry */,
 				78321E43258BF605001A2A5B /* Settings */,
 				78321E42258BF5FD001A2A5B /* Favorites */,
 			);
@@ -345,7 +357,6 @@
 			isa = PBXGroup;
 			children = (
 				78321E54258BF6F8001A2A5B /* FavoritesInteractorTests.swift */,
-				78321E58258BF705001A2A5B /* FavoritesPresenterTests.swift */,
 				78321E5C258BF721001A2A5B /* FavoritesViewControllerTests.swift */,
 			);
 			name = Favorites;
@@ -368,7 +379,8 @@
 				78321E65258BFA09001A2A5B /* Constants.swift */,
 				78321F39258C3F06001A2A5B /* RealmHelper.swift */,
 				78474BB2258C597E00C78ACE /* UIView+Animations.swift */,
-				78474BD7258C60ED00C78ACE /* UIView+Effects.swift */,
+				78474BD7258C60ED00C78ACE /* UIImage+Effects.swift */,
+				7879A614258D12D000E0896F /* DispatchQueueHelper.swift */,
 			);
 			name = Utilties;
 			sourceTree = "<group>";
@@ -378,6 +390,7 @@
 			children = (
 				78321E8C258C054E001A2A5B /* LocalQuickStorageWorker.swift */,
 				78321F2E258C3A0A001A2A5B /* EntryWorker.swift */,
+				7879A5D2258CFD0800E0896F /* APIWorker.swift */,
 			);
 			name = Workers;
 			sourceTree = "<group>";
@@ -385,6 +398,7 @@
 		78321E92258C06C1001A2A5B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7879A5D6258CFDCD00E0896F /* RedditAPI */,
 				78321F32258C3C6A001A2A5B /* Database */,
 				78321E93258C06C8001A2A5B /* LocalQuickStorage */,
 			);
@@ -479,6 +493,42 @@
 			name = MainEntry;
 			sourceTree = "<group>";
 		};
+		78474BF6258CF20500C78ACE /* TopEntries */ = {
+			isa = PBXGroup;
+			children = (
+				78474C13258CF54F00C78ACE /* TopEntry.storyboard */,
+				78474C03258CF3B400C78ACE /* TopEntriesViewController.swift */,
+				78474C04258CF3B400C78ACE /* TopEntriesInteractor.swift */,
+			);
+			name = TopEntries;
+			sourceTree = "<group>";
+		};
+		7879A5C3258CFBA700E0896F /* MainEntry */ = {
+			isa = PBXGroup;
+			children = (
+				7879A5CA258CFBD900E0896F /* MainEntryPresenterTests.swift */,
+			);
+			name = MainEntry;
+			sourceTree = "<group>";
+		};
+		7879A5D6258CFDCD00E0896F /* RedditAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7879A5D7258CFDF600E0896F /* RedditAPI.swift */,
+				7879A623258D2F1E00E0896F /* RedditMockAPI.swift */,
+			);
+			name = RedditAPI;
+			sourceTree = "<group>";
+		};
+		7879A5DD258D028600E0896F /* TopEntries */ = {
+			isa = PBXGroup;
+			children = (
+				7879A5DE258D02A500E0896F /* TopEntriesInteractorTests.swift */,
+				7879A5E4258D02D000E0896F /* TopEntriesViewControllerTests.swift */,
+			);
+			name = TopEntries;
+			sourceTree = "<group>";
+		};
 		DC79D014F630542BD50DA36A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +591,7 @@
 				TargetAttributes = {
 					31CAC1421D0B412600E553AC = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YZ2TPBNCEE;
 						LastSwiftMigration = 1220;
 					};
 					31CAC1561D0B412600E553AC = {
@@ -581,6 +632,7 @@
 				78474BD4258C5F6400C78ACE /* Favorites.storyboard in Resources */,
 				78321E7F258C0218001A2A5B /* Main.storyboard in Resources */,
 				78321F4D258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib in Resources */,
+				78474C14258CF54F00C78ACE /* TopEntry.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,17 +727,20 @@
 				78474BB3258C597E00C78ACE /* UIView+Animations.swift in Sources */,
 				31AA46E51D0B8DA9006C42BA /* EntryViewModel.swift in Sources */,
 				31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */,
-				31AA46E91D0B9618006C42BA /* NSDate+AgeFormatter.swift in Sources */,
 				31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */,
 				78474BE2258CDBD900C78ACE /* MainEntryPresenter.swift in Sources */,
 				78321E31258BF140001A2A5B /* FavoritesInteractor.swift in Sources */,
+				7879A624258D2F1E00E0896F /* RedditMockAPI.swift in Sources */,
 				78321EB4258C0C89001A2A5B /* SettingsCustomTableViewCell.swift in Sources */,
+				7879A5D3258CFD0800E0896F /* APIWorker.swift in Sources */,
+				78474C09258CF3B400C78ACE /* TopEntriesViewController.swift in Sources */,
 				78321E95258C06F1001A2A5B /* UserDefaultsService.swift in Sources */,
+				7879A615258D12D000E0896F /* DispatchQueueHelper.swift in Sources */,
 				78321E1E258BF12A001A2A5B /* SettingsPresenter.swift in Sources */,
 				78474BE7258CDBD900C78ACE /* MainEntryInteractor.swift in Sources */,
 				78321E22258BF12A001A2A5B /* SettingsViewController.swift in Sources */,
+				78474C0A258CF3B400C78ACE /* TopEntriesInteractor.swift in Sources */,
 				78321E21258BF12A001A2A5B /* SettingsModels.swift in Sources */,
-				31AA46F91D0C526D006C42BA /* TopEntriesViewController.swift in Sources */,
 				78321F29258C3825001A2A5B /* RealmEntryModel.swift in Sources */,
 				78474BE4258CDBD900C78ACE /* MainEntryRouter.swift in Sources */,
 				78474BE5258CDBD900C78ACE /* MainEntryModels.swift in Sources */,
@@ -693,12 +748,13 @@
 				78321E20258BF12A001A2A5B /* SettingsRouter.swift in Sources */,
 				78321F3A258C3F06001A2A5B /* RealmHelper.swift in Sources */,
 				78321E1F258BF12A001A2A5B /* SettingsWorker.swift in Sources */,
-				78474BD8258C60ED00C78ACE /* UIView+Effects.swift in Sources */,
+				78474BD8258C60ED00C78ACE /* UIImage+Effects.swift in Sources */,
 				78474BE3258CDBD900C78ACE /* MainEntryWorker.swift in Sources */,
 				31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */,
 				78321F34258C3CC4001A2A5B /* EntryRealmStore.swift in Sources */,
 				78321E8D258C054E001A2A5B /* LocalQuickStorageWorker.swift in Sources */,
 				78321E23258BF12A001A2A5B /* SettingsInteractor.swift in Sources */,
+				7879A5D8258CFDF600E0896F /* RedditAPI.swift in Sources */,
 				78321E66258BFA09001A2A5B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,17 +764,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				78321E5D258BF721001A2A5B /* FavoritesViewControllerTests.swift in Sources */,
-				78321E59258BF705001A2A5B /* FavoritesPresenterTests.swift in Sources */,
 				78321E45258BF62A001A2A5B /* SettingsViewControllerTests.swift in Sources */,
 				78321E4B258BF650001A2A5B /* SettingsInteractorTests.swift in Sources */,
 				78321E55258BF6F8001A2A5B /* FavoritesInteractorTests.swift in Sources */,
+				7879A5DF258D02A500E0896F /* TopEntriesInteractorTests.swift in Sources */,
+				7879A5CB258CFBD900E0896F /* MainEntryPresenterTests.swift in Sources */,
 				31AA46DF1D0B43A0006C42BA /* RedditEntryModelTest.swift in Sources */,
 				31AA46F41D0C3F9E006C42BA /* TopEntriesViewModelTests.swift in Sources */,
-				31AA46EE1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift in Sources */,
 				78321F3E258C4339001A2A5B /* EntryWorkerTests.swift in Sources */,
 				31AA46E11D0B4D2C006C42BA /* ReditClientTests.swift in Sources */,
 				78321E4F258BF662001A2A5B /* SettingsPresenterTests.swift in Sources */,
 				78321E9C258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift in Sources */,
+				7879A5E5258D02D000E0896F /* TopEntriesViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,9 +903,10 @@
 			baseConfigurationReference = CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YZ2TPBNCEE;
 				INFOPLIST_FILE = freeza/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zerously.freeza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.veuxlabs.freeza;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -860,9 +918,10 @@
 			baseConfigurationReference = EF9C87927D54562199904464 /* Pods-freeza.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YZ2TPBNCEE;
 				INFOPLIST_FILE = freeza/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zerously.freeza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.veuxlabs.freeza;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;

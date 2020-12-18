@@ -21,9 +21,17 @@ class FavoritesInteractorTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    class FavoritesPresentationLogicSpy: FavoritesPresentationLogic {
-        func presentSomething(response: Favorites.Something.Response) {
-            
+    class FavoritesPresentationLogicSpy: MainEntryPresentationLogic {
+        
+        var presentDataSourceWasCalled = false
+        var presentDetailWasCalled = false
+        
+        func presentDataSource(response: MainEntry.DataStore.Response) {
+            presentDataSourceWasCalled = true
+        }
+        
+        func presentDetail(response: MainEntry.Detail.Response) {
+            presentDetailWasCalled = true
         }
     }
 }
