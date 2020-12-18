@@ -23,12 +23,26 @@ class TopEntriesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
             updateDataSource()
         }
     }
-    var localQuickStorageWorker = LocalQuickStorageWorker(store: UserDefaultsService())
     var entryDBWorker: EntryWorker?
     var indexPathToUpdate: IndexPath?
+    var userDefaultObserver: NSKeyValueObservation?
+    var safeMode: Bool = LocalQuickStorageWorker(store: UserDefaultsService()).get(key: User.Defaults.safe.rawValue) as? Bool ?? false {
+        didSet {
+            updateDataSource()
+        }
+    }
     
     init() {
-        apiWorker = APIWorker(store: RedditAPI())
+        apiWorker = APIWorker(store: RedditMockAPI())
+        userDefaultObserver = UserDefaults.standard.observe(\.safe, options: [.initial, .new], changeHandler: {[weak self] (defaults, change) in
+            if let newValue = change.newValue {
+                self?.safeMode = newValue
+            }
+        })
+    }
+    
+    deinit {
+        userDefaultObserver?.invalidate()
     }
     
     func requestDataStore(request: MainEntry.DataStore.Request) {
@@ -44,8 +58,7 @@ class TopEntriesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
     }
     
     func requestDetail(request: MainEntry.Detail.Request) {
-        let safe = localQuickStorageWorker.get(key: User.Defaults.safe.rawValue) as? Bool ?? false
-        presenter?.presentDetail(response: MainEntry.Detail.Response(item: apiEntries[request.indexPath.row], indexPath: request.indexPath, safePreference: safe))
+        presenter?.presentDetail(response: MainEntry.Detail.Response(item: apiEntries[request.indexPath.row], indexPath: request.indexPath, safePreference: safeMode))
     }
     
     func validateInformationWithDB(errorMessage: String?) {
@@ -83,7 +96,7 @@ class TopEntriesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
 extension TopEntriesInteractor {
     func updateDataSource() {
         if let indexPathToUpdate = indexPathToUpdate {
-            presenter?.presentFavorite(response: MainEntry.Favorite.Response(indexPath: indexPathToUpdate, item: apiEntries[indexPathToUpdate.row], safePreference: localQuickStorageWorker.get(key: User.Defaults.safe.rawValue) as? Bool ?? false))
+            presenter?.presentFavorite(response: MainEntry.Favorite.Response(indexPath: indexPathToUpdate, item: apiEntries[indexPathToUpdate.row], safePreference: safeMode))
             self.indexPathToUpdate = nil
         } else {
             presentDataSource(errorMessage: nil)
@@ -92,7 +105,7 @@ extension TopEntriesInteractor {
     
     func presentDataSource(errorMessage: String?) {
         let items = updateFavoritePropertyInApiList(apiEntries: apiEntries, favoritesId: favorites)
-        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: items, errorMessage: errorMessage, safePreference: localQuickStorageWorker.get(key: User.Defaults.safe.rawValue) as? Bool ?? false))
+        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: items, errorMessage: errorMessage, safePreference: safeMode))
         indexPathToUpdate = nil
     }
     

@@ -8,11 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1BEB84F2BE583F99752B890E /* Pods_freezaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */; };
-		31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46D71D0B419B006C42BA /* RedditClient.swift */; };
 		31AA46DA1D0B4249006C42BA /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46D91D0B4249006C42BA /* EntryModel.swift */; };
-		31AA46DF1D0B43A0006C42BA /* RedditEntryModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */; };
-		31AA46E11D0B4D2C006C42BA /* ReditClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */; };
-		31AA46E71D0B8F23006C42BA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E61D0B8F23006C42BA /* Client.swift */; };
 		31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC1461D0B412600E553AC /* AppDelegate.swift */; };
 		31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14D1D0B412600E553AC /* Assets.xcassets */; };
 		31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */; };
@@ -67,6 +63,7 @@
 		7879A615258D12D000E0896F /* DispatchQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A614258D12D000E0896F /* DispatchQueueHelper.swift */; };
 		7879A624258D2F1E00E0896F /* RedditMockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A623258D2F1E00E0896F /* RedditMockAPI.swift */; };
 		7879A63F258D54F600E0896F /* TimerHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A63E258D54F600E0896F /* TimerHelperTests.swift */; };
+		7879A64F258D5E2C00E0896F /* UserDefaults+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A64E258D5E2C00E0896F /* UserDefaults+Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,11 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		31AA46D71D0B419B006C42BA /* RedditClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedditClient.swift; path = Connectivity/RedditClient.swift; sourceTree = "<group>"; };
 		31AA46D91D0B4249006C42BA /* EntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryModel.swift; path = Models/Structs/EntryModel.swift; sourceTree = "<group>"; };
-		31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditEntryModelTest.swift; sourceTree = "<group>"; };
-		31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReditClientTests.swift; sourceTree = "<group>"; };
-		31AA46E61D0B8F23006C42BA /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Connectivity/Client.swift; sourceTree = "<group>"; };
 		31CAC1431D0B412600E553AC /* freeza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freeza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CAC1461D0B412600E553AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Support/AppDelegate.swift; sourceTree = "<group>"; };
 		31CAC14D1D0B412600E553AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +136,7 @@
 		7879A614258D12D000E0896F /* DispatchQueueHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DispatchQueueHelper.swift; path = Utilities/DispatchQueueHelper.swift; sourceTree = "<group>"; };
 		7879A623258D2F1E00E0896F /* RedditMockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedditMockAPI.swift; path = Services/RedditAPI/RedditMockAPI.swift; sourceTree = "<group>"; };
 		7879A63E258D54F600E0896F /* TimerHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHelperTests.swift; sourceTree = "<group>"; };
+		7879A64E258D5E2C00E0896F /* UserDefaults+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserDefaults+Custom.swift"; path = "Utilities/UserDefaults+Custom.swift"; sourceTree = "<group>"; };
 		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,30 +175,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		31AA46D61D0B4183006C42BA /* Connectivity */ = {
-			isa = PBXGroup;
-			children = (
-				31AA46E61D0B8F23006C42BA /* Client.swift */,
-				31AA46D71D0B419B006C42BA /* RedditClient.swift */,
-			);
-			name = Connectivity;
-			sourceTree = "<group>";
-		};
 		31AA46DB1D0B4252006C42BA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		31AA46DD1D0B438C006C42BA /* Connectivity */ = {
-			isa = PBXGroup;
-			children = (
-				31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */,
-				31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */,
-			);
-			name = Connectivity;
 			sourceTree = "<group>";
 		};
 		31AA46FA1D0C5461006C42BA /* TableViewCells */ = {
@@ -262,7 +238,6 @@
 				78321E8B258C04AE001A2A5B /* Workers */,
 				78321E60258BF940001A2A5B /* Utilties */,
 				78321E15258BF0E3001A2A5B /* Scenes */,
-				31AA46D61D0B4183006C42BA /* Connectivity */,
 				31AA46FC1D0C5480006C42BA /* Storyboards */,
 				31AA46FB1D0C5470006C42BA /* Support */,
 				31AA46FA1D0C5461006C42BA /* TableViewCells */,
@@ -277,7 +252,6 @@
 				7879A63D258D54E200E0896F /* Helpers */,
 				78321E9A258C07CB001A2A5B /* Worker */,
 				78321E41258BF5F2001A2A5B /* Scenes */,
-				31AA46DD1D0B438C006C42BA /* Connectivity */,
 				31CAC15D1D0B412600E553AC /* Info.plist */,
 			);
 			path = freezaTests;
@@ -358,6 +332,7 @@
 				78474BB2258C597E00C78ACE /* UIView+Animations.swift */,
 				78474BD7258C60ED00C78ACE /* UIImage+Effects.swift */,
 				7879A614258D12D000E0896F /* DispatchQueueHelper.swift */,
+				7879A64E258D5E2C00E0896F /* UserDefaults+Custom.swift */,
 			);
 			name = Utilties;
 			sourceTree = "<group>";
@@ -699,7 +674,7 @@
 				78321F2F258C3A0A001A2A5B /* EntryWorker.swift in Sources */,
 				78474BE6258CDBD900C78ACE /* MainEntryViewController.swift in Sources */,
 				78321F4C258C4C9D001A2A5B /* EntryCustomTableViewCell.swift in Sources */,
-				31AA46E71D0B8F23006C42BA /* Client.swift in Sources */,
+				7879A64F258D5E2C00E0896F /* UserDefaults+Custom.swift in Sources */,
 				31AA46DA1D0B4249006C42BA /* EntryModel.swift in Sources */,
 				78474BB3258C597E00C78ACE /* UIView+Animations.swift in Sources */,
 				31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */,
@@ -726,7 +701,6 @@
 				78321E1F258BF12A001A2A5B /* SettingsWorker.swift in Sources */,
 				78474BD8258C60ED00C78ACE /* UIImage+Effects.swift in Sources */,
 				78474BE3258CDBD900C78ACE /* MainEntryWorker.swift in Sources */,
-				31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */,
 				78321F34258C3CC4001A2A5B /* EntryRealmStore.swift in Sources */,
 				78321E8D258C054E001A2A5B /* LocalQuickStorageWorker.swift in Sources */,
 				78321E23258BF12A001A2A5B /* SettingsInteractor.swift in Sources */,
@@ -745,10 +719,8 @@
 				78321E55258BF6F8001A2A5B /* FavoritesInteractorTests.swift in Sources */,
 				7879A5DF258D02A500E0896F /* TopEntriesInteractorTests.swift in Sources */,
 				7879A5CB258CFBD900E0896F /* MainEntryPresenterTests.swift in Sources */,
-				31AA46DF1D0B43A0006C42BA /* RedditEntryModelTest.swift in Sources */,
 				78321F3E258C4339001A2A5B /* EntryWorkerTests.swift in Sources */,
 				7879A63F258D54F600E0896F /* TimerHelperTests.swift in Sources */,
-				31AA46E11D0B4D2C006C42BA /* ReditClientTests.swift in Sources */,
 				78321E4F258BF662001A2A5B /* SettingsPresenterTests.swift in Sources */,
 				78321E9C258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift in Sources */,
 				7879A5E5258D02D000E0896F /* TopEntriesViewControllerTests.swift in Sources */,
