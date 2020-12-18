@@ -12,11 +12,15 @@ class TopEntriesViewController: UITableViewController {
     var urlToDisplay: URL?
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        self.configureViews()
-        self.loadEntries()
+        registerCustomCells()
+        configureViews()
+        loadEntries()
+    }
+    
+    func registerCustomCells() {
+        let nib = UINib(nibName: CustomCell.Name.entryTableCustomTableViewCell.rawValue, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: CustomCell.Name.entryTableCustomTableViewCell.rawValue)
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -132,27 +136,48 @@ class TopEntriesViewController: UITableViewController {
 
 extension TopEntriesViewController { // UITableViewDataSource
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01 // this code reduce the size of the header to almost zero, zero is not valid as an output for this reason I used 0.01
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return self.viewModel.entries.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let entryTableViewCell = tableView.dequeueReusableCell(withIdentifier: EntryTableViewCell.cellId, for: indexPath as IndexPath) as! EntryTableViewCell
-        
-        entryTableViewCell.entry = self.viewModel.entries[indexPath.row]
-        entryTableViewCell.delegate = self
-        
-        return entryTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.Name.entryTableCustomTableViewCell.rawValue) as? EntryTableCustomTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.entry = self.viewModel.entries[indexPath.row]
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.Name.entryTableCustomTableViewCell.rawValue) as? EntryTableCustomTableViewCell else {
+            return
+        }
+        shake(view: cell.contentView)
+        print("👾 ROW WAS PRESSED")
+    }
+    
+    func shake(view: UIView, for duration: TimeInterval = 0.5, withTranslation translation: CGFloat = 10) {
+        let propertyAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.3) {
+            view.transform = CGAffineTransform(translationX: translation, y: 0)
+        }
+
+        propertyAnimator.addAnimations({
+            view.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, delayFactor: 0.2)
+
+        propertyAnimator.startAnimation()
     }
 }
 
-extension TopEntriesViewController: EntryTableViewCellDelegate {
- 
-    func presentImage(withURL url: URL) {
-        
-        self.urlToDisplay = url
-        self.performSegue(withIdentifier: TopEntriesViewController.showImageSegueIdentifier, sender: self)
-    }
-}
+//extension TopEntriesViewController: EntryTableViewCellDelegate {
+//
+//    func presentImage(withURL url: URL) {
+//
+//        self.urlToDisplay = url
+//        self.performSegue(withIdentifier: TopEntriesViewController.showImageSegueIdentifier, sender: self)
+//    }
+//}

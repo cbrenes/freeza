@@ -19,7 +19,6 @@
 		31AA46EE1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46ED1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift */; };
 		31AA46F41D0C3F9E006C42BA /* TopEntriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46F31D0C3F9E006C42BA /* TopEntriesViewModelTests.swift */; };
 		31AA46F91D0C526D006C42BA /* TopEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46F81D0C526D006C42BA /* TopEntriesViewController.swift */; };
-		31AA46FE1D0C54A5006C42BA /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46FD1D0C54A5006C42BA /* EntryTableViewCell.swift */; };
 		31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC1461D0B412600E553AC /* AppDelegate.swift */; };
 		31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14D1D0B412600E553AC /* Assets.xcassets */; };
 		31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */; };
@@ -84,7 +83,6 @@
 		31AA46ED1D0B97EE006C42BA /* NSDate+AgeFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+AgeFormatterTests.swift"; sourceTree = "<group>"; };
 		31AA46F31D0C3F9E006C42BA /* TopEntriesViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopEntriesViewModelTests.swift; sourceTree = "<group>"; };
 		31AA46F81D0C526D006C42BA /* TopEntriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopEntriesViewController.swift; path = ViewControllers/TopEntriesViewController.swift; sourceTree = "<group>"; };
-		31AA46FD1D0C54A5006C42BA /* EntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryTableViewCell.swift; path = TableViewCells/EntryTableViewCell.swift; sourceTree = "<group>"; };
 		31CAC1431D0B412600E553AC /* freeza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freeza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CAC1461D0B412600E553AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Support/AppDelegate.swift; sourceTree = "<group>"; };
 		31CAC14D1D0B412600E553AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				78321F49258C4C6C001A2A5B /* EntryTableCustomTableViewCell */,
-				31AA46FD1D0C54A5006C42BA /* EntryTableViewCell.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -667,7 +664,6 @@
 				78321E1E258BF12A001A2A5B /* SettingsPresenter.swift in Sources */,
 				78321E22258BF12A001A2A5B /* SettingsViewController.swift in Sources */,
 				78321E21258BF12A001A2A5B /* SettingsModels.swift in Sources */,
-				31AA46FE1D0C54A5006C42BA /* EntryTableViewCell.swift in Sources */,
 				31AA46F91D0C526D006C42BA /* TopEntriesViewController.swift in Sources */,
 				78321E2F258BF140001A2A5B /* FavoritesModels.swift in Sources */,
 				78321F29258C3825001A2A5B /* RealmEntryModel.swift in Sources */,
