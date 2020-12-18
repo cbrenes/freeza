@@ -33,6 +33,7 @@ struct User {
 struct CustomCell {
     enum Name: String {
         case settingsCustomTableViewCell = "SettingsCustomTableViewCell"
+        case entryTableCustomTableViewCell = "EntryTableCustomTableViewCell"
     }
 }
 
@@ -40,5 +41,12 @@ struct Localized {
     enum Strings: String {
         case safe = "SAFE"
         case older = "Older"
+    }
+}
+
+struct Assets {
+    enum images: String {
+        case heartDisabled
+        case heartEnabled
     }
 }
