@@ -31,6 +31,7 @@ struct EntryModel {
     let url: URL?
     let id: Int?
     let isOver18: Bool?
+    var isFavorite = false
 }
 
 extension EntryModel {

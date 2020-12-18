@@ -39,7 +39,7 @@ struct CustomCell {
 
 struct Localized {
     enum Strings: String {
-        case safe = "SAFE"
+        case safe = "Safe (NSFW disabled)"
         case older = "Older"
     }
 }
