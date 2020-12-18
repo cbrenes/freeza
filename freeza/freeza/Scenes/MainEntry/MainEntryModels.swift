@@ -19,13 +19,34 @@ enum MainEntry {
         }
         struct Response {
             var items: [EntryModel]
+            var errorMessage: String?
+            var safePreference: Bool
         }
         struct ViewModel {
             struct Successful {
                 var items: [ItemToDisplay]
             }
             struct ErrorFound {
-                
+                var message: String
+            }
+        }
+    }
+    
+    enum Detail {
+        struct Request {
+            var indexPath: IndexPath
+        }
+        struct Response {
+            var item: EntryModel
+            var indexPath: IndexPath
+            var safePreference: Bool
+        }
+        struct ViewModel {
+            struct Successful {
+                var url: URL
+            }
+            struct ErrorFound {
+                var indexPath: IndexPath
             }
         }
     }
@@ -33,10 +54,10 @@ enum MainEntry {
     struct ItemToDisplay {
         var thumbnailImageURL: URL?
         var author: String
-        var commentCount: Int
+        var commentCount: String
         var time: String
         var title: String
-        var heartImage: UIImage
+        var heartImage: UIImage?
         var shouldHideContent: Bool
     }
 }

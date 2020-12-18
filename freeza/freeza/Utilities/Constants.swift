@@ -13,6 +13,8 @@ struct Storyboard {
     enum ReferenceName: String {
         case settings = "Settings"
         case favorites = "Favorites"
+        case topEntry = "TopEntry"
+        case main = "Main"
     }
 }
 
@@ -20,6 +22,8 @@ struct ViewControllerReference {
     enum Name: String {
         case settingsViewController = "SettingsViewController"
         case favoritesViewController = "FavoritesViewController"
+        case topEntriesViewController = "TopEntriesViewController"
+        case urlViewController = "URLViewController"
     }
 }
 

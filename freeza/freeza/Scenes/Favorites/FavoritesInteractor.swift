@@ -12,35 +12,16 @@
 
 import UIKit
 
-//protocol FavoritesBusinessLogic {
-//  func doSomething(request: Favorites.Something.Request)
-//}
-//
-//protocol FavoritesDataStore {
-//  //var name: String { get set }
-//}
-//
-//class FavoritesInteractor: FavoritesBusinessLogic, FavoritesDataStore {
-//  var presenter: FavoritesPresentationLogic?
-//  var worker: FavoritesWorker?
-//  //var name: String = ""
-//
-//  // MARK: Do something
-//
-//  func doSomething(request: Favorites.Something.Request) {
-//    worker = FavoritesWorker()
-//
-//    let response = Favorites.Something.Response()
-//    presenter?.presentSomething(response: response)
-//  }
-//}
-
 
 class FavoritesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
-    
+
     var presenter: MainEntryPresentationLogic?
     
     func requestDataStore(request: MainEntry.DataStore.Request) {
         //presenter?.presentDataSource(response: MainEntry.DataStore.Response(prueba: "Favorites"))
+    }
+    
+    func requestDetail(request: MainEntry.Detail.Request) {
+        
     }
 }
