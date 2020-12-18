@@ -17,6 +17,10 @@ struct TestUtilities {
         window.addSubview(viewController.view)
         RunLoop.current.run(until: Date())
     }
+    
+    static func isRunningTests() -> Bool {
+        return UserDefaults.standard.bool(forKey: User.Defaults.isRunningTargetTests.rawValue)
+    }
 }
 
 class TableViewSpy: UITableView {

@@ -17,12 +17,12 @@ class TopEntriesViewController: MainEntryViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup(businessLogic: MainEntryInteractor(businessLogic: TopEntriesInteractor()))
+        setup(businessLogic: MainEntryStoreInteractor(businessLogic: TopEntriesInteractor()))
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup(businessLogic: MainEntryInteractor(businessLogic: TopEntriesInteractor()))
+        setup(businessLogic: MainEntryStoreInteractor(businessLogic: TopEntriesInteractor()))
     }
     
     // MARK: View lifecycle

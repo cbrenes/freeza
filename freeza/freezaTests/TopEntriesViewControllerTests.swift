@@ -53,7 +53,7 @@ class TopEntriesViewControllerTests: XCTestCase {
     
     func testViewDidLoadShouldRequestDataSource() throws {
         let interactor = TopEntryBusinessLogicSpy()
-        viewController.interactor = MainEntryInteractor(businessLogic: interactor)
+        viewController.interactor = MainEntryStoreInteractor(businessLogic: interactor)
         TestUtilities.loadView(window: &window, viewController: viewController)
         
         viewController.viewDidLoad()
@@ -63,7 +63,7 @@ class TopEntriesViewControllerTests: XCTestCase {
     
     func testViewDidLoadShouldCallAMethodToRegisterTheCustomCells() throws {
         let interactor = TopEntryBusinessLogicSpy()
-        viewController.interactor = MainEntryInteractor(businessLogic: interactor)
+        viewController.interactor = MainEntryStoreInteractor(businessLogic: interactor)
         TestUtilities.loadView(window: &window, viewController: viewController)
         
         let tableView = TableViewSpy()
@@ -75,7 +75,7 @@ class TopEntriesViewControllerTests: XCTestCase {
     
     func testDidSelectRowShouldRequestDetail() throws {
         let interactor = TopEntryBusinessLogicSpy()
-        viewController.interactor = MainEntryInteractor(businessLogic: interactor)
+        viewController.interactor = MainEntryStoreInteractor(businessLogic: interactor)
         TestUtilities.loadView(window: &window, viewController: viewController)
         
         viewController.viewDidLoad()
@@ -88,7 +88,7 @@ class TopEntriesViewControllerTests: XCTestCase {
     
     func testCellForRowAtDisplayCorrectInfo() throws {
         let interactor = TopEntryBusinessLogicSpy()
-        viewController.interactor = MainEntryInteractor(businessLogic: interactor)
+        viewController.interactor = MainEntryStoreInteractor(businessLogic: interactor)
         TestUtilities.loadView(window: &window, viewController: viewController)
         
         viewController.viewDidLoad()
@@ -105,7 +105,7 @@ class TopEntriesViewControllerTests: XCTestCase {
     
     func testEntryCustomTableViewCellHasSetTheDelegates() throws {
         let interactor = TopEntryBusinessLogicSpy()
-        viewController.interactor = MainEntryInteractor(businessLogic: interactor)
+        viewController.interactor = MainEntryStoreInteractor(businessLogic: interactor)
         TestUtilities.loadView(window: &window, viewController: viewController)
         
         viewController.viewDidLoad()
@@ -120,7 +120,7 @@ class TopEntriesViewControllerTests: XCTestCase {
     
     func testDisplayDataSourceShouldReloadTableView() {
         let interactor = TopEntryBusinessLogicSpy()
-        viewController.interactor = MainEntryInteractor(businessLogic: interactor)
+        viewController.interactor = MainEntryStoreInteractor(businessLogic: interactor)
         TestUtilities.loadView(window: &window, viewController: viewController)
         
         let tableView = TableViewSpy()
@@ -133,7 +133,7 @@ class TopEntriesViewControllerTests: XCTestCase {
     
     func testDisplayFavoriteReloadTheCell() {
         let interactor = TopEntryBusinessLogicSpy()
-        viewController.interactor = MainEntryInteractor(businessLogic: interactor)
+        viewController.interactor = MainEntryStoreInteractor(businessLogic: interactor)
         TestUtilities.loadView(window: &window, viewController: viewController)
         var item = MainEntry.ItemToDisplay(thumbnailImageURL: URL(string: "www.google.com"), author: "author", commentCount: "39", time: "time", title: "title", heartImage: UIImage(named: Assets.images.heartEnabled.rawValue), shouldHideContent: false)
         

@@ -56,7 +56,7 @@ class TopEntriesInteractorTests: XCTestCase {
     func testRequestDetailShouldCallPresenterToFormatData() throws {
         let presenter = TopEntriesPresentationLogicSpy()
         interactor.presenter = presenter
-        interactor.apiEntries = [EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: "1", isOver18: true)]
+        interactor.entriesDataSource = [EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: "1", isOver18: true)]
         
         interactor.requestDetail(request: MainEntry.Detail.Request(indexPath: IndexPath(row: 0, section: 0)))
         
@@ -66,7 +66,7 @@ class TopEntriesInteractorTests: XCTestCase {
     func testRequestPresentFavoriteShouldCallPresenterToFormatData() throws {
         let presenter = TopEntriesPresentationLogicSpy()
         interactor.presenter = presenter
-        interactor.apiEntries = [EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: "1", isOver18: true)]
+        interactor.entriesDataSource = [EntryModel(title: "", author: "", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: "1", isOver18: true)]
         
         interactor.validateInformationWithDB(errorMessage: nil)
         interactor.requestFavorite(request: MainEntry.Favorite.Request(indexPath: IndexPath(row: 0, section: 0)))

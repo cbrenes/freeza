@@ -31,6 +31,7 @@ struct User {
     enum Defaults: String {
         case safe
         case realmEncryptionKey
+        case isRunningTargetTests
     }
 }
 

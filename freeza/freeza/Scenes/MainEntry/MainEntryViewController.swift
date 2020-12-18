@@ -21,7 +21,7 @@ protocol MainEntryDisplayLogic: class {
 }
 
 class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
-    var interactor: MainEntryInteractor?
+    var interactor: MainEntryStoreInteractor?
     var mainRouter: (NSObjectProtocol & MainEntryRoutingLogic & MainEntryDataPassing)?
     
     @IBOutlet weak var tableView: UITableView!
@@ -35,7 +35,7 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
     func setup(businessLogic: MainEntryBusinessLogic) {
         let viewController = self
         let presenter = MainEntryPresenter()
-        let interactor = MainEntryInteractor(businessLogic: businessLogic)
+        let interactor = MainEntryStoreInteractor(businessLogic: businessLogic)
         let mainRouter = MainEntryRouter()
         viewController.interactor = interactor
         viewController.mainRouter = mainRouter
