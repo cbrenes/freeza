@@ -79,7 +79,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="DrB-fV-66k" kind="relationship" relationship="viewControllers" id="0V3-cH-tUa"/>
-                        <segue destination="B1h-hk-RhK" kind="relationship" relationship="viewControllers" id="sZv-2l-FyU"/>
+                        <segue destination="HO3-WT-Gqo" kind="relationship" relationship="viewControllers" id="LoS-a5-8Aj"/>
                         <segue destination="nOU-Kp-t1z" kind="relationship" relationship="viewControllers" id="jam-Lt-k7D"/>
                     </connections>
                 </tabBarController>
@@ -106,30 +106,30 @@
             </objects>
             <point key="canvasLocation" x="1385" y="396"/>
         </scene>
-        <!--Favorites-->
-        <scene sceneID="NKp-A2-hio">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Favorites" id="B1h-hk-RhK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="star" catalog="system" selectedImage="star" id="1w7-py-XzK"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p7r-i3-khV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="283" y="909"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="iJH-FX-weY">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="nOU-Kp-t1z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9Ex-28-LLv"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="gearshape" catalog="system" selectedImage="gearshape" id="9Ex-28-LLv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92m-bm-yT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="550" y="909"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="fby-9p-ShM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Favorites" id="HO3-WT-Gqo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="1pc-VW-8Gu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpK-It-c2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="909"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

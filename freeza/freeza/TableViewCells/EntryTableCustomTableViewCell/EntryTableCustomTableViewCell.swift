@@ -17,6 +17,7 @@ class EntryTableCustomTableViewCell: UITableViewCell {
     @IBOutlet weak var entryTitleLabel: UILabel!
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var thumbnailImageContainerView: UIView!
+    @IBOutlet weak var containerView: UIView!
     
     var entry: EntryViewModel? {
         didSet {
