@@ -9,13 +9,14 @@
 import UIKit
 
 class EntryTableCustomTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var commentsCountLabel: UILabel!
     @IBOutlet weak var entryTitleLabel: UILabel!
     @IBOutlet weak var favoriteImageView: UIImageView!
+    @IBOutlet weak var thumbnailImageContainerView: UIView!
     
     var entry: EntryViewModel? {
         didSet {
@@ -25,18 +26,22 @@ class EntryTableCustomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        selectionStyle = .none
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.configureViews()
     }
     
     @IBAction func favoriteIconWasTouched(_ sender: Any) {
-        
+        print("👾 favoriteIconWasTouched")
     }
     
-
     private func configureViews() {
         func configureThumbnailImageView() {
-            self.thumbnailImageView.layer.borderColor = UIColor.black.cgColor
-            self.thumbnailImageView.layer.borderWidth = 1
+            self.thumbnailImageContainerView.layer.borderColor = UIColor.black.cgColor
+            self.thumbnailImageContainerView.layer.borderWidth = 1
         }
         
         func configureCommentsCountLabel() {
