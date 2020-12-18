@@ -58,6 +58,8 @@
 		78321F34258C3CC4001A2A5B /* EntryRealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F33258C3CC4001A2A5B /* EntryRealmStore.swift */; };
 		78321F3A258C3F06001A2A5B /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F39258C3F06001A2A5B /* RealmHelper.swift */; };
 		78321F3E258C4339001A2A5B /* EntryWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F3D258C4339001A2A5B /* EntryWorkerTests.swift */; };
+		78321F4C258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F4A258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift */; };
+		78321F4D258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		78321F33258C3CC4001A2A5B /* EntryRealmStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryRealmStore.swift; path = Services/Database/Realm/EntryRealmStore.swift; sourceTree = "<group>"; };
 		78321F39258C3F06001A2A5B /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmHelper.swift; path = Utilities/RealmHelper.swift; sourceTree = "<group>"; };
 		78321F3D258C4339001A2A5B /* EntryWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryWorkerTests.swift; sourceTree = "<group>"; };
+		78321F4A258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableCustomTableViewCell.swift; sourceTree = "<group>"; };
+		78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTableCustomTableViewCell.xib; sourceTree = "<group>"; };
 		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 		31AA46FA1D0C5461006C42BA /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				78321F49258C4C6C001A2A5B /* EntryTableCustomTableViewCell */,
 				31AA46FD1D0C54A5006C42BA /* EntryTableViewCell.swift */,
 			);
 			name = TableViewCells;
@@ -448,6 +453,15 @@
 			name = Structs;
 			sourceTree = "<group>";
 		};
+		78321F49258C4C6C001A2A5B /* EntryTableCustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				78321F4A258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift */,
+				78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */,
+			);
+			name = EntryTableCustomTableViewCell;
+			sourceTree = "<group>";
+		};
 		DC79D014F630542BD50DA36A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +563,7 @@
 				78321EB5258C0C89001A2A5B /* SettingsCustomTableViewCell.xib in Resources */,
 				78321E80258C0218001A2A5B /* LaunchScreen.storyboard in Resources */,
 				78321E7F258C0218001A2A5B /* Main.storyboard in Resources */,
+				78321F4D258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +654,7 @@
 				78321F2F258C3A0A001A2A5B /* EntryWorker.swift in Sources */,
 				78321E2C258BF140001A2A5B /* FavoritesPresenter.swift in Sources */,
 				78321E2E258BF140001A2A5B /* FavoritesRouter.swift in Sources */,
+				78321F4C258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift in Sources */,
 				31AA46E71D0B8F23006C42BA /* Client.swift in Sources */,
 				31AA46DA1D0B4249006C42BA /* EntryModel.swift in Sources */,
 				31AA46E51D0B8DA9006C42BA /* EntryViewModel.swift in Sources */,
