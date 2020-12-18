@@ -61,17 +61,6 @@ class TopEntriesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
         presenter?.presentDetail(response: MainEntry.Detail.Response(item: apiEntries[request.indexPath.row], indexPath: request.indexPath, safePreference: safeMode))
     }
     
-    func validateInformationWithDB(errorMessage: String?) {
-        if entryDBWorker == nil {
-            DispatchQueueHelper.executeInMainThread {
-                self.entryDBWorker = EntryWorker(store: EntryRealmStore())
-                self.startListeningDBChanges()
-            }
-        } else {
-            presentDataSource(errorMessage: errorMessage)
-        }
-    }
-    
     func requestFavorite(request: MainEntry.Favorite.Request) {
         indexPathToUpdate = request.indexPath
         var entry = apiEntries[request.indexPath.row]
@@ -115,13 +104,20 @@ extension TopEntriesInteractor {
     
     func startListeningDBChanges() {
         entryDBWorker?.fetchAll(withObserver: true) {[weak self] (favoritesEnties) in
-            if favoritesEnties.isEmpty {
-                self?.updateDataSource()
-                return
-            }
             self?.favorites = favoritesEnties.map({$0.id ?? ""})
         } errorHandler: { (errorMessage) in
             //pending to handle DB issues like the device is out of memory
+        }
+    }
+    
+    func validateInformationWithDB(errorMessage: String?) {
+        if entryDBWorker == nil {
+            DispatchQueueHelper.executeInMainThread {
+                self.entryDBWorker = EntryWorker(store: EntryRealmStore())
+                self.startListeningDBChanges()
+            }
+        } else {
+            presentDataSource(errorMessage: errorMessage)
         }
     }
 }
