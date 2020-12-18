@@ -53,6 +53,8 @@
 		78321E9C258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E9B258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift */; };
 		78321EB4258C0C89001A2A5B /* SettingsCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321EB2258C0C89001A2A5B /* SettingsCustomTableViewCell.swift */; };
 		78321EB5258C0C89001A2A5B /* SettingsCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78321EB3258C0C89001A2A5B /* SettingsCustomTableViewCell.xib */; };
+		78321F29258C3825001A2A5B /* RealmEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F28258C3825001A2A5B /* RealmEntryModel.swift */; };
+		78321F2F258C3A0A001A2A5B /* EntryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F2E258C3A0A001A2A5B /* EntryWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		78321E9B258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuickStorageWorkerTests.swift; sourceTree = "<group>"; };
 		78321EB2258C0C89001A2A5B /* SettingsCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsCustomTableViewCell.swift; path = Scenes/Settings/CustomCells/SettingsCustomTableViewCell.swift; sourceTree = "<group>"; };
 		78321EB3258C0C89001A2A5B /* SettingsCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsCustomTableViewCell.xib; path = Scenes/Settings/CustomCells/SettingsCustomTableViewCell.xib; sourceTree = "<group>"; };
+		78321F28258C3825001A2A5B /* RealmEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmEntryModel.swift; path = Models/Realm/RealmEntryModel.swift; sourceTree = "<group>"; };
+		78321F2E258C3A0A001A2A5B /* EntryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryWorker.swift; path = Workers/EntryWorker.swift; sourceTree = "<group>"; };
 		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,7 +154,6 @@
 				C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */,
 				F5AA146945BAF07FBF40D6E7 /* Pods-freezaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -251,6 +254,7 @@
 		31CAC1451D0B412600E553AC /* freeza */ = {
 			isa = PBXGroup;
 			children = (
+				78321F26258C37F5001A2A5B /* Models */,
 				78321E92258C06C1001A2A5B /* Services */,
 				78321E8B258C04AE001A2A5B /* Workers */,
 				78321E60258BF940001A2A5B /* Utilties */,
@@ -357,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				78321E8C258C054E001A2A5B /* LocalQuickStorageWorker.swift */,
+				78321F2E258C3A0A001A2A5B /* EntryWorker.swift */,
 			);
 			name = Workers;
 			sourceTree = "<group>";
@@ -392,6 +397,22 @@
 				78321EB3258C0C89001A2A5B /* SettingsCustomTableViewCell.xib */,
 			);
 			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		78321F26258C37F5001A2A5B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78321F27258C37FD001A2A5B /* Realm */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		78321F27258C37FD001A2A5B /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				78321F28258C3825001A2A5B /* RealmEntryModel.swift */,
+			);
+			name = Realm;
 			sourceTree = "<group>";
 		};
 		DC79D014F630542BD50DA36A /* Frameworks */ = {
@@ -582,6 +603,7 @@
 				78321E62258BF953001A2A5B /* TestUtilities.swift in Sources */,
 				31AA46E31D0B885C006C42BA /* TopEntriesViewModel.swift in Sources */,
 				78321E2D258BF140001A2A5B /* FavoritesWorker.swift in Sources */,
+				78321F2F258C3A0A001A2A5B /* EntryWorker.swift in Sources */,
 				78321E2C258BF140001A2A5B /* FavoritesPresenter.swift in Sources */,
 				78321E2E258BF140001A2A5B /* FavoritesRouter.swift in Sources */,
 				31AA46E71D0B8F23006C42BA /* Client.swift in Sources */,
@@ -599,6 +621,7 @@
 				31AA46FE1D0C54A5006C42BA /* EntryTableViewCell.swift in Sources */,
 				31AA46F91D0C526D006C42BA /* TopEntriesViewController.swift in Sources */,
 				78321E2F258BF140001A2A5B /* FavoritesModels.swift in Sources */,
+				78321F29258C3825001A2A5B /* RealmEntryModel.swift in Sources */,
 				78321E30258BF140001A2A5B /* FavoritesViewController.swift in Sources */,
 				78321E20258BF12A001A2A5B /* SettingsRouter.swift in Sources */,
 				78321E1F258BF12A001A2A5B /* SettingsWorker.swift in Sources */,
