@@ -12,10 +12,7 @@
 		31AA46DA1D0B4249006C42BA /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46D91D0B4249006C42BA /* EntryModel.swift */; };
 		31AA46DF1D0B43A0006C42BA /* RedditEntryModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */; };
 		31AA46E11D0B4D2C006C42BA /* ReditClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */; };
-		31AA46E31D0B885C006C42BA /* TopEntriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E21D0B885C006C42BA /* TopEntriesViewModel.swift */; };
-		31AA46E51D0B8DA9006C42BA /* EntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E41D0B8DA9006C42BA /* EntryViewModel.swift */; };
 		31AA46E71D0B8F23006C42BA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E61D0B8F23006C42BA /* Client.swift */; };
-		31AA46F41D0C3F9E006C42BA /* TopEntriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46F31D0C3F9E006C42BA /* TopEntriesViewModelTests.swift */; };
 		31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC1461D0B412600E553AC /* AppDelegate.swift */; };
 		31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14D1D0B412600E553AC /* Assets.xcassets */; };
 		31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */; };
@@ -48,8 +45,8 @@
 		78321F34258C3CC4001A2A5B /* EntryRealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F33258C3CC4001A2A5B /* EntryRealmStore.swift */; };
 		78321F3A258C3F06001A2A5B /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F39258C3F06001A2A5B /* RealmHelper.swift */; };
 		78321F3E258C4339001A2A5B /* EntryWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F3D258C4339001A2A5B /* EntryWorkerTests.swift */; };
-		78321F4C258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F4A258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift */; };
-		78321F4D258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */; };
+		78321F4C258C4C9D001A2A5B /* EntryCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F4A258C4C9D001A2A5B /* EntryCustomTableViewCell.swift */; };
+		78321F4D258C4C9D001A2A5B /* EntryCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78321F4B258C4C9D001A2A5B /* EntryCustomTableViewCell.xib */; };
 		78474BB3258C597E00C78ACE /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BB2258C597E00C78ACE /* UIView+Animations.swift */; };
 		78474BD4258C5F6400C78ACE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78474BD3258C5F6400C78ACE /* Favorites.storyboard */; };
 		78474BD8258C60ED00C78ACE /* UIImage+Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BD7258C60ED00C78ACE /* UIImage+Effects.swift */; };
@@ -69,6 +66,7 @@
 		7879A5E5258D02D000E0896F /* TopEntriesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A5E4258D02D000E0896F /* TopEntriesViewControllerTests.swift */; };
 		7879A615258D12D000E0896F /* DispatchQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A614258D12D000E0896F /* DispatchQueueHelper.swift */; };
 		7879A624258D2F1E00E0896F /* RedditMockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A623258D2F1E00E0896F /* RedditMockAPI.swift */; };
+		7879A63F258D54F600E0896F /* TimerHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A63E258D54F600E0896F /* TimerHelperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,10 +84,7 @@
 		31AA46D91D0B4249006C42BA /* EntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryModel.swift; path = Models/Structs/EntryModel.swift; sourceTree = "<group>"; };
 		31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditEntryModelTest.swift; sourceTree = "<group>"; };
 		31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReditClientTests.swift; sourceTree = "<group>"; };
-		31AA46E21D0B885C006C42BA /* TopEntriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopEntriesViewModel.swift; path = ViewModels/TopEntriesViewModel.swift; sourceTree = "<group>"; };
-		31AA46E41D0B8DA9006C42BA /* EntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryViewModel.swift; path = ViewModels/EntryViewModel.swift; sourceTree = "<group>"; };
 		31AA46E61D0B8F23006C42BA /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Connectivity/Client.swift; sourceTree = "<group>"; };
-		31AA46F31D0C3F9E006C42BA /* TopEntriesViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopEntriesViewModelTests.swift; sourceTree = "<group>"; };
 		31CAC1431D0B412600E553AC /* freeza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freeza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CAC1461D0B412600E553AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Support/AppDelegate.swift; sourceTree = "<group>"; };
 		31CAC14D1D0B412600E553AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,8 +121,8 @@
 		78321F33258C3CC4001A2A5B /* EntryRealmStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryRealmStore.swift; path = Services/Database/Realm/EntryRealmStore.swift; sourceTree = "<group>"; };
 		78321F39258C3F06001A2A5B /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmHelper.swift; path = Utilities/RealmHelper.swift; sourceTree = "<group>"; };
 		78321F3D258C4339001A2A5B /* EntryWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryWorkerTests.swift; sourceTree = "<group>"; };
-		78321F4A258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryTableCustomTableViewCell.swift; path = TableViewCells/EntryTableCustomTableViewCell/EntryTableCustomTableViewCell.swift; sourceTree = "<group>"; };
-		78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EntryTableCustomTableViewCell.xib; path = TableViewCells/EntryTableCustomTableViewCell/EntryTableCustomTableViewCell.xib; sourceTree = "<group>"; };
+		78321F4A258C4C9D001A2A5B /* EntryCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryCustomTableViewCell.swift; path = TableViewCells/EntryTableCustomTableViewCell/EntryCustomTableViewCell.swift; sourceTree = "<group>"; };
+		78321F4B258C4C9D001A2A5B /* EntryCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EntryCustomTableViewCell.xib; path = TableViewCells/EntryTableCustomTableViewCell/EntryCustomTableViewCell.xib; sourceTree = "<group>"; };
 		78474BB2258C597E00C78ACE /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Animations.swift"; path = "Utilities/UIView+Animations.swift"; sourceTree = "<group>"; };
 		78474BD3258C5F6400C78ACE /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = Storyboards/Favorites.storyboard; sourceTree = "<group>"; };
 		78474BD7258C60ED00C78ACE /* UIImage+Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+Effects.swift"; path = "Utilities/UIImage+Effects.swift"; sourceTree = "<group>"; };
@@ -147,6 +142,7 @@
 		7879A5E4258D02D000E0896F /* TopEntriesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesViewControllerTests.swift; sourceTree = "<group>"; };
 		7879A614258D12D000E0896F /* DispatchQueueHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DispatchQueueHelper.swift; path = Utilities/DispatchQueueHelper.swift; sourceTree = "<group>"; };
 		7879A623258D2F1E00E0896F /* RedditMockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedditMockAPI.swift; path = Services/RedditAPI/RedditMockAPI.swift; sourceTree = "<group>"; };
+		7879A63E258D54F600E0896F /* TimerHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHelperTests.swift; sourceTree = "<group>"; };
 		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -202,15 +198,6 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		31AA46DC1D0B425F006C42BA /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				31AA46E41D0B8DA9006C42BA /* EntryViewModel.swift */,
-				31AA46E21D0B885C006C42BA /* TopEntriesViewModel.swift */,
-			);
-			name = ViewModels;
-			sourceTree = "<group>";
-		};
 		31AA46DD1D0B438C006C42BA /* Connectivity */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,14 +205,6 @@
 				31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */,
 			);
 			name = Connectivity;
-			sourceTree = "<group>";
-		};
-		31AA46EA1D0B9783006C42BA /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				31AA46F31D0C3F9E006C42BA /* TopEntriesViewModelTests.swift */,
-			);
-			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		31AA46FA1D0C5461006C42BA /* TableViewCells */ = {
@@ -288,7 +267,6 @@
 				31AA46FB1D0C5470006C42BA /* Support */,
 				31AA46FA1D0C5461006C42BA /* TableViewCells */,
 				31AA46DB1D0B4252006C42BA /* ViewControllers */,
-				31AA46DC1D0B425F006C42BA /* ViewModels */,
 			);
 			path = freeza;
 			sourceTree = "<group>";
@@ -296,11 +274,10 @@
 		31CAC15A1D0B412600E553AC /* freezaTests */ = {
 			isa = PBXGroup;
 			children = (
-				78321F41258C4781001A2A5B /* Model */,
+				7879A63D258D54E200E0896F /* Helpers */,
 				78321E9A258C07CB001A2A5B /* Worker */,
 				78321E41258BF5F2001A2A5B /* Scenes */,
 				31AA46DD1D0B438C006C42BA /* Connectivity */,
-				31AA46EA1D0B9783006C42BA /* ViewModels */,
 				31CAC15D1D0B412600E553AC /* Info.plist */,
 			);
 			path = freezaTests;
@@ -456,13 +433,6 @@
 			name = Database;
 			sourceTree = "<group>";
 		};
-		78321F41258C4781001A2A5B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		78321F42258C47D0001A2A5B /* Structs */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,8 +444,8 @@
 		78321F49258C4C6C001A2A5B /* EntryTableCustomTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				78321F4A258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift */,
-				78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */,
+				78321F4A258C4C9D001A2A5B /* EntryCustomTableViewCell.swift */,
+				78321F4B258C4C9D001A2A5B /* EntryCustomTableViewCell.xib */,
 			);
 			name = EntryTableCustomTableViewCell;
 			sourceTree = "<group>";
@@ -527,6 +497,14 @@
 				7879A5E4258D02D000E0896F /* TopEntriesViewControllerTests.swift */,
 			);
 			name = TopEntries;
+			sourceTree = "<group>";
+		};
+		7879A63D258D54E200E0896F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7879A63E258D54F600E0896F /* TimerHelperTests.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		DC79D014F630542BD50DA36A /* Frameworks */ = {
@@ -631,7 +609,7 @@
 				78321E80258C0218001A2A5B /* LaunchScreen.storyboard in Resources */,
 				78474BD4258C5F6400C78ACE /* Favorites.storyboard in Resources */,
 				78321E7F258C0218001A2A5B /* Main.storyboard in Resources */,
-				78321F4D258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib in Resources */,
+				78321F4D258C4C9D001A2A5B /* EntryCustomTableViewCell.xib in Resources */,
 				78474C14258CF54F00C78ACE /* TopEntry.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,14 +696,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				78321E62258BF953001A2A5B /* TestUtilities.swift in Sources */,
-				31AA46E31D0B885C006C42BA /* TopEntriesViewModel.swift in Sources */,
 				78321F2F258C3A0A001A2A5B /* EntryWorker.swift in Sources */,
 				78474BE6258CDBD900C78ACE /* MainEntryViewController.swift in Sources */,
-				78321F4C258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift in Sources */,
+				78321F4C258C4C9D001A2A5B /* EntryCustomTableViewCell.swift in Sources */,
 				31AA46E71D0B8F23006C42BA /* Client.swift in Sources */,
 				31AA46DA1D0B4249006C42BA /* EntryModel.swift in Sources */,
 				78474BB3258C597E00C78ACE /* UIView+Animations.swift in Sources */,
-				31AA46E51D0B8DA9006C42BA /* EntryViewModel.swift in Sources */,
 				31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */,
 				31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */,
 				78474BE2258CDBD900C78ACE /* MainEntryPresenter.swift in Sources */,
@@ -770,8 +746,8 @@
 				7879A5DF258D02A500E0896F /* TopEntriesInteractorTests.swift in Sources */,
 				7879A5CB258CFBD900E0896F /* MainEntryPresenterTests.swift in Sources */,
 				31AA46DF1D0B43A0006C42BA /* RedditEntryModelTest.swift in Sources */,
-				31AA46F41D0C3F9E006C42BA /* TopEntriesViewModelTests.swift in Sources */,
 				78321F3E258C4339001A2A5B /* EntryWorkerTests.swift in Sources */,
+				7879A63F258D54F600E0896F /* TimerHelperTests.swift in Sources */,
 				31AA46E11D0B4D2C006C42BA /* ReditClientTests.swift in Sources */,
 				78321E4F258BF662001A2A5B /* SettingsPresenterTests.swift in Sources */,
 				78321E9C258C07F6001A2A5B /* LocalQuickStorageWorkerTests.swift in Sources */,

@@ -15,6 +15,7 @@ import UIKit
 protocol MainEntryBusinessLogic {
     func requestDataStore(request: MainEntry.DataStore.Request)
     func requestDetail(request: MainEntry.Detail.Request)
+    func requestFavorite(request: MainEntry.Favorite.Request)
     var presenter: MainEntryPresentationLogic? {get set}
 }
 
@@ -42,5 +43,9 @@ class MainEntryInteractor: MainEntryBusinessLogic, MainEntryDataStore {
     
     func requestDetail(request: MainEntry.Detail.Request) {
         businessLogic.requestDetail(request: request)
+    }
+    
+    func requestFavorite(request: MainEntry.Favorite.Request) {
+        businessLogic.requestFavorite(request: request)
     }
 }

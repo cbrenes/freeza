@@ -25,6 +25,7 @@ class FavoritesInteractorTests: XCTestCase {
         
         var presentDataSourceWasCalled = false
         var presentDetailWasCalled = false
+        var presentFavoriteWasCalled = false
         
         func presentDataSource(response: MainEntry.DataStore.Response) {
             presentDataSourceWasCalled = true
@@ -32,6 +33,10 @@ class FavoritesInteractorTests: XCTestCase {
         
         func presentDetail(response: MainEntry.Detail.Response) {
             presentDetailWasCalled = true
+        }
+        
+        func presentFavorite(response: MainEntry.Favorite.Response) {
+            presentFavoriteWasCalled = true
         }
     }
 }

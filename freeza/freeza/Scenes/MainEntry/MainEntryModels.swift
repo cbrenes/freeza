@@ -51,6 +51,21 @@ enum MainEntry {
         }
     }
     
+    enum Favorite {
+        struct Request {
+            var indexPath: IndexPath
+        }
+        struct Response {
+            var indexPath: IndexPath
+            var item: EntryModel
+            var safePreference: Bool
+        }
+        struct ViewModel {
+            var indexPath: IndexPath
+            var item: ItemToDisplay
+        }
+    }
+    
     struct ItemToDisplay {
         var thumbnailImageURL: URL?
         var author: String

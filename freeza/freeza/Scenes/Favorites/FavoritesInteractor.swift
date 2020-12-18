@@ -14,7 +14,7 @@ import UIKit
 
 
 class FavoritesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
-
+    
     var presenter: MainEntryPresentationLogic?
     
     func requestDataStore(request: MainEntry.DataStore.Request) {
@@ -22,6 +22,10 @@ class FavoritesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
     }
     
     func requestDetail(request: MainEntry.Detail.Request) {
+        
+    }
+    
+    func requestFavorite(request: MainEntry.Favorite.Request) {
         
     }
 }

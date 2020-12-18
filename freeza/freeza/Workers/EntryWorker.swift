@@ -15,7 +15,7 @@ import Foundation
 protocol EntryStoreProtocol {
     func insert(entryModel: EntryModel, completionHandler: @escaping () -> (), errorHandler: @escaping (_ message: String) -> ())
     func fetchAll(withObserver: Bool, completionHandler: @escaping (_ entries: [EntryModel]) -> (), errorHandler: @escaping (_ message: String) -> ())
-    func delete(id: Int, completionHandler: @escaping () -> (), errorHandler: @escaping (_ message: String) -> ())
+    func delete(id: String, completionHandler: @escaping () -> (), errorHandler: @escaping (_ message: String) -> ())
 }
 
 class EntryWorker {
@@ -34,7 +34,7 @@ class EntryWorker {
         store.fetchAll(withObserver: withObserver, completionHandler: completionHandler, errorHandler: errorHandler)
     }
     
-    func delete(id: Int, completionHandler: @escaping () -> (), errorHandler: @escaping (_ message: String) -> ()) {
+    func delete(id: String, completionHandler: @escaping () -> (), errorHandler: @escaping (_ message: String) -> ()) {
         store.delete(id: id, completionHandler: completionHandler, errorHandler: errorHandler)
     }
 }

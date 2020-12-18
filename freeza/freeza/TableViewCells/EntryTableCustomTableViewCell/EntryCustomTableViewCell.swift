@@ -1,5 +1,5 @@
 //
-//  EntryTableCustomTableViewCell.swift
+//  EntryCustomTableViewCell.swift
 //  freeza
 //
 //  Created by Cesar Brenes on 12/17/20.
@@ -8,7 +8,11 @@
 
 import UIKit
 
-class EntryTableCustomTableViewCell: UITableViewCell {
+protocol EntryCustomTableViewCellDelegate: class {
+    func favoriteIconWasTouched(indexPath: IndexPath)
+}
+
+class EntryCustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
@@ -18,6 +22,9 @@ class EntryTableCustomTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var thumbnailImageContainerView: UIView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var heartContainerView: UIControl!
+    
+    weak var delegate: EntryCustomTableViewCellDelegate?
     
     var indexPath = IndexPath(row: 0, section: 0)
     
@@ -44,20 +51,6 @@ class EntryTableCustomTableViewCell: UITableViewCell {
         configureCommentsCountLabel()
     }
     
-    //    private func configureForEntry() {
-    //        guard let entry = self.entry else {
-    //            return
-    //        }
-    //        self.thumbnailImageView.image = entry.thumbnail
-    //        self.authorLabel.text = entry.author
-    //        self.commentsCountLabel.text = entry.commentsCount
-    //        self.ageLabel.text = entry.age
-    //        self.entryTitleLabel.text = entry.title
-    //        entry.loadThumbnail { [weak self] in
-    //            self?.thumbnailImageView.image = entry.thumbnail
-    //        }
-    //    }
-    
     func setupCell(item: MainEntry.ItemToDisplay, indexPath: IndexPath) {
         authorLabel.text = item.author
         commentsCountLabel.text = item.commentCount
@@ -65,6 +58,7 @@ class EntryTableCustomTableViewCell: UITableViewCell {
         entryTitleLabel.text = item.title
         favoriteImageView.image = item.heartImage
         self.indexPath = indexPath
+        heartContainerView.isUserInteractionEnabled = true
         loadThumbnail(thumbnailURL: item.thumbnailImageURL) { [weak self](image) in
             if item.shouldHideContent {
                 self?.thumbnailImageView.image = image.blur(10)
@@ -75,11 +69,11 @@ class EntryTableCustomTableViewCell: UITableViewCell {
     }
     
     @IBAction func favoriteIconWasTouched(_ sender: Any) {
-        print("👾 favoriteIconWasTouched")
+        heartContainerView.isUserInteractionEnabled = false
+        delegate?.favoriteIconWasTouched(indexPath: indexPath)
     }
     
     func loadThumbnail(thumbnailURL: URL?, withCompletion completion: @escaping (_ image: UIImage) -> ()) {
-        
         guard let thumbnailURL = thumbnailURL else {
             
             return
