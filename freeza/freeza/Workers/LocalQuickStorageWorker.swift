@@ -20,21 +20,21 @@ protocol LocalQuickStorageProtocol {
 
 class LocalQuickStorageWorker {
     
-    var localQuickStorageStore: LocalQuickStorageProtocol
+    var store: LocalQuickStorageProtocol
     
-    init(localQuickStorageStore: LocalQuickStorageProtocol) {
-        self.localQuickStorageStore = localQuickStorageStore
+    init(store: LocalQuickStorageProtocol) {
+        self.store = store
     }
     
     func save(value: Any, key: String) {
-        localQuickStorageStore.save(value: value, key: key)
+        store.save(value: value, key: key)
     }
     
     func get(key: String) -> Any? {
-        return localQuickStorageStore.get(key: key)
+        return store.get(key: key)
     }
     
     func clear(key: String) {
-        localQuickStorageStore.clear(key: key)
+        store.clear(key: key)
     }
 }

@@ -5,7 +5,8 @@ class TopEntriesViewModel {
     var hasError = false
     var errorMessage: String? = nil
     var entries = [EntryViewModel]()
-
+    var localQuickStorageWorker = LocalQuickStorageWorker(store: UserDefaultsService())
+    
     private let client: Client
     private var afterTag: String? = nil
 

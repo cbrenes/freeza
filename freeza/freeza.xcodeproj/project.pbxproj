@@ -72,7 +72,7 @@
 
 /* Begin PBXFileReference section */
 		31AA46D71D0B419B006C42BA /* RedditClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedditClient.swift; path = Connectivity/RedditClient.swift; sourceTree = "<group>"; };
-		31AA46D91D0B4249006C42BA /* EntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryModel.swift; path = Connectivity/EntryModel.swift; sourceTree = "<group>"; };
+		31AA46D91D0B4249006C42BA /* EntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryModel.swift; path = Models/Structs/EntryModel.swift; sourceTree = "<group>"; };
 		31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditEntryModelTest.swift; sourceTree = "<group>"; };
 		31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReditClientTests.swift; sourceTree = "<group>"; };
 		31AA46E21D0B885C006C42BA /* TopEntriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopEntriesViewModel.swift; path = ViewModels/TopEntriesViewModel.swift; sourceTree = "<group>"; };
@@ -167,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				31AA46E61D0B8F23006C42BA /* Client.swift */,
-				31AA46D91D0B4249006C42BA /* EntryModel.swift */,
 				31AA46D71D0B419B006C42BA /* RedditClient.swift */,
 			);
 			name = Connectivity;
@@ -278,6 +277,7 @@
 		31CAC15A1D0B412600E553AC /* freezaTests */ = {
 			isa = PBXGroup;
 			children = (
+				78321F41258C4781001A2A5B /* Model */,
 				78321E9A258C07CB001A2A5B /* Worker */,
 				78321E41258BF5F2001A2A5B /* Scenes */,
 				31AA46DD1D0B438C006C42BA /* Connectivity */,
@@ -411,6 +411,7 @@
 		78321F26258C37F5001A2A5B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				78321F42258C47D0001A2A5B /* Structs */,
 				78321F27258C37FD001A2A5B /* Realm */,
 			);
 			name = Models;
@@ -430,6 +431,21 @@
 				78321F33258C3CC4001A2A5B /* EntryRealmStore.swift */,
 			);
 			name = Database;
+			sourceTree = "<group>";
+		};
+		78321F41258C4781001A2A5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		78321F42258C47D0001A2A5B /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				31AA46D91D0B4249006C42BA /* EntryModel.swift */,
+			);
+			name = Structs;
 			sourceTree = "<group>";
 		};
 		DC79D014F630542BD50DA36A /* Frameworks */ = {

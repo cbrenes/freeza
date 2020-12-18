@@ -53,7 +53,7 @@ class SettingsInteractorTests: XCTestCase {
     func testSetValueSavesTheValueInTheWorker() throws {
         let presenter = SettingsPresentationLogicSpy()
         interactor.presenter = presenter
-        let worker = LocalQuickStorageWorkerSpy(localQuickStorageStore: UserDefaultsService())
+        let worker = LocalQuickStorageWorkerSpy(store: UserDefaultsService())
         interactor.localQuickStorageWorker = worker
         interactor.items = [Settings.Item(type: .safe, value: false)]
         

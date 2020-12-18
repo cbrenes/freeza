@@ -39,17 +39,9 @@ extension Date {
             
             return "\(secondsAgo / (60 * 60)) hours ago"
 
-        } else if secondsAgo < 2 * 24 * 60 * 60 {
-            
-            return "A day ago"
-
-        } else if secondsAgo < 6 * 24 * 60 * 60 {
-            
-            return "\(secondsAgo / (24 * 60 * 60)) days ago"
-            
         } else {
             
-            return "A long time ago"
+            return Localized.Strings.older.rawValue
         }
     }
 }
