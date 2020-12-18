@@ -44,7 +44,6 @@
 		78321E5D258BF721001A2A5B /* FavoritesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E5C258BF721001A2A5B /* FavoritesViewControllerTests.swift */; };
 		78321E62258BF953001A2A5B /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E61258BF953001A2A5B /* TestUtilities.swift */; };
 		78321E66258BFA09001A2A5B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E65258BFA09001A2A5B /* Constants.swift */; };
-		78321E76258C005B001A2A5B /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78321E75258C005B001A2A5B /* Favorites.storyboard */; };
 		78321E7F258C0218001A2A5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78321E7D258C0218001A2A5B /* Main.storyboard */; };
 		78321E80258C0218001A2A5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78321E7E258C0218001A2A5B /* LaunchScreen.storyboard */; };
 		78321E8D258C054E001A2A5B /* LocalQuickStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E8C258C054E001A2A5B /* LocalQuickStorageWorker.swift */; };
@@ -59,6 +58,9 @@
 		78321F3E258C4339001A2A5B /* EntryWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F3D258C4339001A2A5B /* EntryWorkerTests.swift */; };
 		78321F4C258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321F4A258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift */; };
 		78321F4D258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */; };
+		78474BB3258C597E00C78ACE /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BB2258C597E00C78ACE /* UIView+Animations.swift */; };
+		78474BD4258C5F6400C78ACE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78474BD3258C5F6400C78ACE /* Favorites.storyboard */; };
+		78474BD8258C60ED00C78ACE /* UIView+Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BD7258C60ED00C78ACE /* UIView+Effects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +114,6 @@
 		78321E5C258BF721001A2A5B /* FavoritesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerTests.swift; sourceTree = "<group>"; };
 		78321E61258BF953001A2A5B /* TestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestUtilities.swift; path = freeza/Utilities/TestUtilities.swift; sourceTree = SOURCE_ROOT; };
 		78321E65258BFA09001A2A5B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
-		78321E75258C005B001A2A5B /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = Scenes/Favorites/Favorites.storyboard; sourceTree = "<group>"; };
 		78321E7D258C0218001A2A5B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		78321E7E258C0218001A2A5B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78321E8C258C054E001A2A5B /* LocalQuickStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalQuickStorageWorker.swift; path = Workers/LocalQuickStorageWorker.swift; sourceTree = "<group>"; };
@@ -125,8 +126,11 @@
 		78321F33258C3CC4001A2A5B /* EntryRealmStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryRealmStore.swift; path = Services/Database/Realm/EntryRealmStore.swift; sourceTree = "<group>"; };
 		78321F39258C3F06001A2A5B /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmHelper.swift; path = Utilities/RealmHelper.swift; sourceTree = "<group>"; };
 		78321F3D258C4339001A2A5B /* EntryWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryWorkerTests.swift; sourceTree = "<group>"; };
-		78321F4A258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableCustomTableViewCell.swift; sourceTree = "<group>"; };
-		78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTableCustomTableViewCell.xib; sourceTree = "<group>"; };
+		78321F4A258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryTableCustomTableViewCell.swift; path = TableViewCells/EntryTableCustomTableViewCell/EntryTableCustomTableViewCell.swift; sourceTree = "<group>"; };
+		78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EntryTableCustomTableViewCell.xib; path = TableViewCells/EntryTableCustomTableViewCell/EntryTableCustomTableViewCell.xib; sourceTree = "<group>"; };
+		78474BB2258C597E00C78ACE /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Animations.swift"; path = "Utilities/UIView+Animations.swift"; sourceTree = "<group>"; };
+		78474BD3258C5F6400C78ACE /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = Storyboards/Favorites.storyboard; sourceTree = "<group>"; };
+		78474BD7258C60ED00C78ACE /* UIView+Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Effects.swift"; path = "Utilities/UIView+Effects.swift"; sourceTree = "<group>"; };
 		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -301,7 +305,7 @@
 		78321E16258BF0E9001A2A5B /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				78321E75258C005B001A2A5B /* Favorites.storyboard */,
+				78474BD3258C5F6400C78ACE /* Favorites.storyboard */,
 				78321E26258BF140001A2A5B /* FavoritesPresenter.swift */,
 				78321E27258BF140001A2A5B /* FavoritesWorker.swift */,
 				78321E28258BF140001A2A5B /* FavoritesRouter.swift */,
@@ -362,6 +366,8 @@
 				78321E61258BF953001A2A5B /* TestUtilities.swift */,
 				78321E65258BFA09001A2A5B /* Constants.swift */,
 				78321F39258C3F06001A2A5B /* RealmHelper.swift */,
+				78474BB2258C597E00C78ACE /* UIView+Animations.swift */,
+				78474BD7258C60ED00C78ACE /* UIView+Effects.swift */,
 			);
 			name = Utilties;
 			sourceTree = "<group>";
@@ -556,9 +562,9 @@
 			files = (
 				31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */,
 				78321E3C258BF1A9001A2A5B /* Settings.storyboard in Resources */,
-				78321E76258C005B001A2A5B /* Favorites.storyboard in Resources */,
 				78321EB5258C0C89001A2A5B /* SettingsCustomTableViewCell.xib in Resources */,
 				78321E80258C0218001A2A5B /* LaunchScreen.storyboard in Resources */,
+				78474BD4258C5F6400C78ACE /* Favorites.storyboard in Resources */,
 				78321E7F258C0218001A2A5B /* Main.storyboard in Resources */,
 				78321F4D258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib in Resources */,
 			);
@@ -654,6 +660,7 @@
 				78321F4C258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift in Sources */,
 				31AA46E71D0B8F23006C42BA /* Client.swift in Sources */,
 				31AA46DA1D0B4249006C42BA /* EntryModel.swift in Sources */,
+				78474BB3258C597E00C78ACE /* UIView+Animations.swift in Sources */,
 				31AA46E51D0B8DA9006C42BA /* EntryViewModel.swift in Sources */,
 				31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */,
 				31AA46E91D0B9618006C42BA /* NSDate+AgeFormatter.swift in Sources */,
@@ -671,6 +678,7 @@
 				78321E20258BF12A001A2A5B /* SettingsRouter.swift in Sources */,
 				78321F3A258C3F06001A2A5B /* RealmHelper.swift in Sources */,
 				78321E1F258BF12A001A2A5B /* SettingsWorker.swift in Sources */,
+				78474BD8258C60ED00C78ACE /* UIView+Effects.swift in Sources */,
 				31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */,
 				78321F34258C3CC4001A2A5B /* EntryRealmStore.swift in Sources */,
 				78321E8D258C054E001A2A5B /* LocalQuickStorageWorker.swift in Sources */,

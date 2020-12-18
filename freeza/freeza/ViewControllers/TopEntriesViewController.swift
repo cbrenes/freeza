@@ -153,31 +153,11 @@ extension TopEntriesViewController { // UITableViewDataSource
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.Name.entryTableCustomTableViewCell.rawValue) as? EntryTableCustomTableViewCell else {
+        guard let cell = tableView.cellForRow(at: indexPath) as? EntryTableCustomTableViewCell else {
             return
         }
-        shake(view: cell.contentView)
-        print("👾 ROW WAS PRESSED")
-    }
-    
-    func shake(view: UIView, for duration: TimeInterval = 0.5, withTranslation translation: CGFloat = 10) {
-        let propertyAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.3) {
-            view.transform = CGAffineTransform(translationX: translation, y: 0)
-        }
-
-        propertyAnimator.addAnimations({
-            view.transform = CGAffineTransform(translationX: 0, y: 0)
-        }, delayFactor: 0.2)
-
-        propertyAnimator.startAnimation()
+        //cell.containerView.shake() this has the logic for the shake animation
+        self.urlToDisplay = cell.entry?.url
+        self.performSegue(withIdentifier: TopEntriesViewController.showImageSegueIdentifier, sender: self)
     }
 }
-
-//extension TopEntriesViewController: EntryTableViewCellDelegate {
-//
-//    func presentImage(withURL url: URL) {
-//
-//        self.urlToDisplay = url
-//        self.performSegue(withIdentifier: TopEntriesViewController.showImageSegueIdentifier, sender: self)
-//    }
-//}
