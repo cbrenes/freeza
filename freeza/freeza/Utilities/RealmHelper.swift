@@ -30,7 +30,7 @@ class RealmHelper {
     // I am encrypting the realm file. The key is stored in userDefaults
     private static var realmKey: Data {
         var key = Data(count: 64)
-        let localStorageWorker = LocalQuickStorageWorker(localQuickStorageStore: UserDefaultsService())
+        let localStorageWorker = LocalQuickStorageWorker(store: UserDefaultsService())
         guard let existingKey = localStorageWorker.get(key: User.Defaults.realmEncryptionKey.rawValue) as? Data else {
             // Generate a random encryption key
             key.withUnsafeMutableBytes {(rawMutableBufferPointer) in

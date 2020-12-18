@@ -45,18 +45,18 @@ class AgeFormatterTests: XCTestCase {
         XCTAssertEqual(twentyThreeHoursAgo.age(sinceDate: presentTime), "23 hours ago")
         
         let aDayAgo = Date(timeInterval: -24 * 60 * 60, since: presentTime)
-        XCTAssertEqual(aDayAgo.age(sinceDate: presentTime), "A day ago")
+        XCTAssertEqual(aDayAgo.age(sinceDate: presentTime), Localized.Strings.older.rawValue)
 
         let aDayAndHalfAgo = Date(timeInterval: -36 * 60 * 60, since: presentTime)
-        XCTAssertEqual(aDayAndHalfAgo.age(sinceDate: presentTime), "A day ago")
+        XCTAssertEqual(aDayAndHalfAgo.age(sinceDate: presentTime), Localized.Strings.older.rawValue)
 
         let fiveDaysAndHalfAgo = Date(timeInterval: -5 * 24 * 60 * 60, since: presentTime)
-        XCTAssertEqual(fiveDaysAndHalfAgo.age(sinceDate: presentTime), "5 days ago")
+        XCTAssertEqual(fiveDaysAndHalfAgo.age(sinceDate: presentTime), Localized.Strings.older.rawValue)
 
         let sixDaysAgo = Date(timeInterval: -6 * 24 * 60 * 60, since: presentTime)
-        XCTAssertEqual(sixDaysAgo.age(sinceDate: presentTime), "A long time ago")
+        XCTAssertEqual(sixDaysAgo.age(sinceDate: presentTime), Localized.Strings.older.rawValue)
 
         let tenDaysAgo = Date(timeInterval: -10 * 24 * 60 * 60, since: presentTime)
-        XCTAssertEqual(tenDaysAgo.age(sinceDate: presentTime), "A long time ago")
+        XCTAssertEqual(tenDaysAgo.age(sinceDate: presentTime), Localized.Strings.older.rawValue)
     }
 }
