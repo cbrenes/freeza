@@ -12,44 +12,31 @@
 
 import UIKit
 
-class TopEntriesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
+class TopEntriesInteractor: MainEntryInteractor {
     
-    var presenter: MainEntryPresentationLogic?
     var apiWorker: APIWorker
     var afterTag: String?
-    var apiEntries = [EntryModel]()
     var favorites = [String]() {
         didSet{
             updateDataSource()
         }
     }
-    var entryDBWorker: EntryWorker?
     var indexPathToUpdate: IndexPath?
-    var userDefaultObserver: NSKeyValueObservation?
-    var safeMode: Bool = LocalQuickStorageWorker(store: UserDefaultsService()).get(key: User.Defaults.safe.rawValue) as? Bool ?? false {
-        didSet {
-            updateDataSource()
-        }
-    }
     
-    init() {
+    override init() {
         apiWorker = APIWorker(store: RedditMockAPI())
-        userDefaultObserver = UserDefaults.standard.observe(\.safe, options: [.initial, .new], changeHandler: {[weak self] (defaults, change) in
-            if let newValue = change.newValue {
-                self?.safeMode = newValue
-            }
-        })
+        super.init()
     }
     
     deinit {
         userDefaultObserver?.invalidate()
     }
     
-    func requestDataStore(request: MainEntry.DataStore.Request) {
+    override func requestDataStore(request: MainEntry.DataStore.Request) {
         DispatchQueue.global(qos: .userInitiated).async {
             self.apiWorker.fetchTop(after: self.afterTag) { [weak self] (entriesList, afterTag) in
                 self?.afterTag = afterTag
-                self?.apiEntries += entriesList
+                self?.entriesDataSource += entriesList
                 self?.validateInformationWithDB(errorMessage: nil)
             } errorHandler: { [weak self] (message) in
                 self?.validateInformationWithDB(errorMessage: message)
@@ -57,54 +44,39 @@ class TopEntriesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
         }
     }
     
-    func requestDetail(request: MainEntry.Detail.Request) {
-        presenter?.presentDetail(response: MainEntry.Detail.Response(item: apiEntries[request.indexPath.row], indexPath: request.indexPath, safePreference: safeMode))
-    }
-    
-    func validateInformationWithDB(errorMessage: String?) {
-        if entryDBWorker == nil {
-            DispatchQueueHelper.executeInMainThread {
-                self.entryDBWorker = EntryWorker(store: EntryRealmStore())
-                self.startListeningDBChanges()
-            }
-        } else {
-            presentDataSource(errorMessage: errorMessage)
-        }
-    }
-    
-    func requestFavorite(request: MainEntry.Favorite.Request) {
+    override func requestFavorite(request: MainEntry.Favorite.Request) {
         indexPathToUpdate = request.indexPath
-        var entry = apiEntries[request.indexPath.row]
+        var entry = entriesDataSource[request.indexPath.row]
         if !favorites.contains(entry.id ?? "") {
             entryDBWorker?.insert(entryModel: entry) { [weak self] in
                 entry.isFavorite = true
-                self?.apiEntries[request.indexPath.row] = entry
-            } errorHandler: { (_) in
-                //pending to handle DB issues
+                self?.entriesDataSource[request.indexPath.row] = entry
+            } errorHandler: { [weak self] (errorMessage) in
+                self?.presentDataSourceWithError(errorMessage: errorMessage)
             }
         } else {
             entryDBWorker?.delete(id: entry.id ?? "") { [weak self] in
                 entry.isFavorite = false
-                self?.apiEntries[request.indexPath.row] = entry
-            } errorHandler: { (_) in
-                //pending to handle DB issues
+                self?.entriesDataSource[request.indexPath.row] = entry
+            } errorHandler: { [weak self] (errorMessage) in
+                self?.presentDataSourceWithError(errorMessage: errorMessage)
             }
         }
     }
-}
-
-extension TopEntriesInteractor {
-    func updateDataSource() {
+    
+    override func updateDataSource() {
         if let indexPathToUpdate = indexPathToUpdate {
-            presenter?.presentFavorite(response: MainEntry.Favorite.Response(indexPath: indexPathToUpdate, item: apiEntries[indexPathToUpdate.row], safePreference: safeMode))
+            presenter?.presentFavorite(response: MainEntry.Favorite.Response(indexPath: indexPathToUpdate, item: entriesDataSource[indexPathToUpdate.row], safePreference: safeMode))
             self.indexPathToUpdate = nil
         } else {
             presentDataSource(errorMessage: nil)
         }
     }
-    
+}
+
+extension TopEntriesInteractor {
     func presentDataSource(errorMessage: String?) {
-        let items = updateFavoritePropertyInApiList(apiEntries: apiEntries, favoritesId: favorites)
+        let items = updateFavoritePropertyInApiList(apiEntries: entriesDataSource, favoritesId: favorites)
         presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: items, errorMessage: errorMessage, safePreference: safeMode))
         indexPathToUpdate = nil
     }
@@ -115,13 +87,20 @@ extension TopEntriesInteractor {
     
     func startListeningDBChanges() {
         entryDBWorker?.fetchAll(withObserver: true) {[weak self] (favoritesEnties) in
-            if favoritesEnties.isEmpty {
-                self?.updateDataSource()
-                return
-            }
             self?.favorites = favoritesEnties.map({$0.id ?? ""})
-        } errorHandler: { (errorMessage) in
-            //pending to handle DB issues like the device is out of memory
+        } errorHandler: { [weak self] (errorMessage) in
+            self?.presentDataSourceWithError(errorMessage: errorMessage)
+        }
+    }
+    
+    func validateInformationWithDB(errorMessage: String?) {
+        if entryDBWorker == nil {
+            DispatchQueueHelper.executeInMainThread {
+                self.entryDBWorker = EntryWorker(store: EntryRealmStore())
+                self.startListeningDBChanges()
+            }
+        } else {
+            presentDataSource(errorMessage: errorMessage)
         }
     }
 }

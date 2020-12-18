@@ -51,7 +51,7 @@
 		78474BE4258CDBD900C78ACE /* MainEntryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */; };
 		78474BE5258CDBD900C78ACE /* MainEntryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDF258CDBD900C78ACE /* MainEntryModels.swift */; };
 		78474BE6258CDBD900C78ACE /* MainEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */; };
-		78474BE7258CDBD900C78ACE /* MainEntryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BE1258CDBD900C78ACE /* MainEntryInteractor.swift */; };
+		78474BE7258CDBD900C78ACE /* MainEntryStoreInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BE1258CDBD900C78ACE /* MainEntryStoreInteractor.swift */; };
 		78474C09258CF3B400C78ACE /* TopEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474C03258CF3B400C78ACE /* TopEntriesViewController.swift */; };
 		78474C0A258CF3B400C78ACE /* TopEntriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474C04258CF3B400C78ACE /* TopEntriesInteractor.swift */; };
 		78474C14258CF54F00C78ACE /* TopEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78474C13258CF54F00C78ACE /* TopEntry.storyboard */; };
@@ -64,6 +64,7 @@
 		7879A624258D2F1E00E0896F /* RedditMockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A623258D2F1E00E0896F /* RedditMockAPI.swift */; };
 		7879A63F258D54F600E0896F /* TimerHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A63E258D54F600E0896F /* TimerHelperTests.swift */; };
 		7879A64F258D5E2C00E0896F /* UserDefaults+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A64E258D5E2C00E0896F /* UserDefaults+Custom.swift */; };
+		7879A65F258D762300E0896F /* MainEntryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879A65E258D762300E0896F /* MainEntryInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +125,7 @@
 		78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryRouter.swift; path = Scenes/MainEntry/MainEntryRouter.swift; sourceTree = "<group>"; };
 		78474BDF258CDBD900C78ACE /* MainEntryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryModels.swift; path = Scenes/MainEntry/MainEntryModels.swift; sourceTree = "<group>"; };
 		78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryViewController.swift; path = Scenes/MainEntry/MainEntryViewController.swift; sourceTree = "<group>"; };
-		78474BE1258CDBD900C78ACE /* MainEntryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryInteractor.swift; path = Scenes/MainEntry/MainEntryInteractor.swift; sourceTree = "<group>"; };
+		78474BE1258CDBD900C78ACE /* MainEntryStoreInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryStoreInteractor.swift; path = Scenes/MainEntry/MainEntryStoreInteractor.swift; sourceTree = "<group>"; };
 		78474C03258CF3B400C78ACE /* TopEntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopEntriesViewController.swift; path = Scenes/TopEntries/TopEntriesViewController.swift; sourceTree = "<group>"; };
 		78474C04258CF3B400C78ACE /* TopEntriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopEntriesInteractor.swift; path = Scenes/TopEntries/TopEntriesInteractor.swift; sourceTree = "<group>"; };
 		78474C13258CF54F00C78ACE /* TopEntry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TopEntry.storyboard; path = Storyboards/TopEntry.storyboard; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		7879A623258D2F1E00E0896F /* RedditMockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedditMockAPI.swift; path = Services/RedditAPI/RedditMockAPI.swift; sourceTree = "<group>"; };
 		7879A63E258D54F600E0896F /* TimerHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHelperTests.swift; sourceTree = "<group>"; };
 		7879A64E258D5E2C00E0896F /* UserDefaults+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserDefaults+Custom.swift"; path = "Utilities/UserDefaults+Custom.swift"; sourceTree = "<group>"; };
+		7879A65E258D762300E0896F /* MainEntryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryInteractor.swift; path = Scenes/MainEntry/MainEntryInteractor.swift; sourceTree = "<group>"; };
 		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		78321E15258BF0E3001A2A5B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7879A662258D787500E0896F /* New Group */,
 				78474BF6258CF20500C78ACE /* TopEntries */,
 				78474BDB258CDBA100C78ACE /* MainEntry */,
 				78321E17258BF0F1001A2A5B /* Settings */,
@@ -432,8 +435,9 @@
 				78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */,
 				78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */,
 				78474BDF258CDBD900C78ACE /* MainEntryModels.swift */,
+				7879A65E258D762300E0896F /* MainEntryInteractor.swift */,
 				78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */,
-				78474BE1258CDBD900C78ACE /* MainEntryInteractor.swift */,
+				78474BE1258CDBD900C78ACE /* MainEntryStoreInteractor.swift */,
 			);
 			name = MainEntry;
 			sourceTree = "<group>";
@@ -480,6 +484,13 @@
 				7879A63E258D54F600E0896F /* TimerHelperTests.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		7879A662258D787500E0896F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		DC79D014F630542BD50DA36A /* Frameworks */ = {
@@ -673,6 +684,7 @@
 				78321E62258BF953001A2A5B /* TestUtilities.swift in Sources */,
 				78321F2F258C3A0A001A2A5B /* EntryWorker.swift in Sources */,
 				78474BE6258CDBD900C78ACE /* MainEntryViewController.swift in Sources */,
+				7879A65F258D762300E0896F /* MainEntryInteractor.swift in Sources */,
 				78321F4C258C4C9D001A2A5B /* EntryCustomTableViewCell.swift in Sources */,
 				7879A64F258D5E2C00E0896F /* UserDefaults+Custom.swift in Sources */,
 				31AA46DA1D0B4249006C42BA /* EntryModel.swift in Sources */,
@@ -688,7 +700,7 @@
 				78321E95258C06F1001A2A5B /* UserDefaultsService.swift in Sources */,
 				7879A615258D12D000E0896F /* DispatchQueueHelper.swift in Sources */,
 				78321E1E258BF12A001A2A5B /* SettingsPresenter.swift in Sources */,
-				78474BE7258CDBD900C78ACE /* MainEntryInteractor.swift in Sources */,
+				78474BE7258CDBD900C78ACE /* MainEntryStoreInteractor.swift in Sources */,
 				78321E22258BF12A001A2A5B /* SettingsViewController.swift in Sources */,
 				78474C0A258CF3B400C78ACE /* TopEntriesInteractor.swift in Sources */,
 				78321E21258BF12A001A2A5B /* SettingsModels.swift in Sources */,

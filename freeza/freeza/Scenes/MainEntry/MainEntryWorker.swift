@@ -12,8 +12,9 @@
 
 import UIKit
 
-class MainEntryWorker
-{
+class MainEntryWorker {
+    
+    
   func doSomeWork()
   {
   }

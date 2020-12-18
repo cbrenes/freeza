@@ -13,19 +13,32 @@
 import UIKit
 
 
-class FavoritesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
+class FavoritesInteractor: MainEntryInteractor {
     
-    var presenter: MainEntryPresentationLogic?
-    
-    func requestDataStore(request: MainEntry.DataStore.Request) {
-        //presenter?.presentDataSource(response: MainEntry.DataStore.Response(prueba: "Favorites"))
+    override init() {
+        super.init()
+        entryDBWorker = EntryWorker(store: EntryRealmStore())
     }
     
-    func requestDetail(request: MainEntry.Detail.Request) {
+    override func requestDataStore(request: MainEntry.DataStore.Request) {
+        entryDBWorker?.fetchAll(withObserver: true) { [weak self] (entries) in
+            self?.entriesDataSource = entries
+            self?.presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: self?.entriesDataSource ?? [EntryModel](), errorMessage: nil, safePreference: self?.safeMode ?? false))
+        } errorHandler: { [weak self] (errorMessage) in
+            self?.presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: [EntryModel](), errorMessage: errorMessage, safePreference: self?.safeMode ?? false))
+        }
         
     }
+
+    override  func requestFavorite(request: MainEntry.Favorite.Request) {
+        let entry = entriesDataSource[request.indexPath.row]
+        entryDBWorker?.delete(id: entry.id ?? "") {
+        } errorHandler: { [weak self] (errorMessage) in
+            self?.presentDataSourceWithError(errorMessage: errorMessage)
+        }
+    }
     
-    func requestFavorite(request: MainEntry.Favorite.Request) {
-        
+    override func updateDataSource() {
+        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: entriesDataSource, errorMessage: nil, safePreference: safeMode))
     }
 }
