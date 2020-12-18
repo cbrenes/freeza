@@ -29,10 +29,6 @@
 		78321E21258BF12A001A2A5B /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E1B258BF12A001A2A5B /* SettingsModels.swift */; };
 		78321E22258BF12A001A2A5B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E1C258BF12A001A2A5B /* SettingsViewController.swift */; };
 		78321E23258BF12A001A2A5B /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E1D258BF12A001A2A5B /* SettingsInteractor.swift */; };
-		78321E2C258BF140001A2A5B /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E26258BF140001A2A5B /* FavoritesPresenter.swift */; };
-		78321E2D258BF140001A2A5B /* FavoritesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E27258BF140001A2A5B /* FavoritesWorker.swift */; };
-		78321E2E258BF140001A2A5B /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E28258BF140001A2A5B /* FavoritesRouter.swift */; };
-		78321E2F258BF140001A2A5B /* FavoritesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E29258BF140001A2A5B /* FavoritesModels.swift */; };
 		78321E30258BF140001A2A5B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E2A258BF140001A2A5B /* FavoritesViewController.swift */; };
 		78321E31258BF140001A2A5B /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E2B258BF140001A2A5B /* FavoritesInteractor.swift */; };
 		78321E3C258BF1A9001A2A5B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78321E3B258BF1A9001A2A5B /* Settings.storyboard */; };
@@ -61,6 +57,12 @@
 		78474BB3258C597E00C78ACE /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BB2258C597E00C78ACE /* UIView+Animations.swift */; };
 		78474BD4258C5F6400C78ACE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78474BD3258C5F6400C78ACE /* Favorites.storyboard */; };
 		78474BD8258C60ED00C78ACE /* UIView+Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BD7258C60ED00C78ACE /* UIView+Effects.swift */; };
+		78474BE2258CDBD900C78ACE /* MainEntryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDC258CDBD900C78ACE /* MainEntryPresenter.swift */; };
+		78474BE3258CDBD900C78ACE /* MainEntryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */; };
+		78474BE4258CDBD900C78ACE /* MainEntryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */; };
+		78474BE5258CDBD900C78ACE /* MainEntryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDF258CDBD900C78ACE /* MainEntryModels.swift */; };
+		78474BE6258CDBD900C78ACE /* MainEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */; };
+		78474BE7258CDBD900C78ACE /* MainEntryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BE1258CDBD900C78ACE /* MainEntryInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,10 +101,6 @@
 		78321E1B258BF12A001A2A5B /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsModels.swift; path = Scenes/Settings/SettingsModels.swift; sourceTree = "<group>"; };
 		78321E1C258BF12A001A2A5B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Scenes/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
 		78321E1D258BF12A001A2A5B /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsInteractor.swift; path = Scenes/Settings/SettingsInteractor.swift; sourceTree = "<group>"; };
-		78321E26258BF140001A2A5B /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesPresenter.swift; path = Scenes/Favorites/FavoritesPresenter.swift; sourceTree = "<group>"; };
-		78321E27258BF140001A2A5B /* FavoritesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesWorker.swift; path = Scenes/Favorites/FavoritesWorker.swift; sourceTree = "<group>"; };
-		78321E28258BF140001A2A5B /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesRouter.swift; path = Scenes/Favorites/FavoritesRouter.swift; sourceTree = "<group>"; };
-		78321E29258BF140001A2A5B /* FavoritesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesModels.swift; path = Scenes/Favorites/FavoritesModels.swift; sourceTree = "<group>"; };
 		78321E2A258BF140001A2A5B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Scenes/Favorites/FavoritesViewController.swift; sourceTree = "<group>"; };
 		78321E2B258BF140001A2A5B /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesInteractor.swift; path = Scenes/Favorites/FavoritesInteractor.swift; sourceTree = "<group>"; };
 		78321E3B258BF1A9001A2A5B /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Scenes/Settings/Settings.storyboard; sourceTree = "<group>"; };
@@ -131,6 +129,12 @@
 		78474BB2258C597E00C78ACE /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Animations.swift"; path = "Utilities/UIView+Animations.swift"; sourceTree = "<group>"; };
 		78474BD3258C5F6400C78ACE /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = Storyboards/Favorites.storyboard; sourceTree = "<group>"; };
 		78474BD7258C60ED00C78ACE /* UIView+Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Effects.swift"; path = "Utilities/UIView+Effects.swift"; sourceTree = "<group>"; };
+		78474BDC258CDBD900C78ACE /* MainEntryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryPresenter.swift; path = MainEntry/MainEntryPresenter.swift; sourceTree = "<group>"; };
+		78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryWorker.swift; path = MainEntry/MainEntryWorker.swift; sourceTree = "<group>"; };
+		78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryRouter.swift; path = MainEntry/MainEntryRouter.swift; sourceTree = "<group>"; };
+		78474BDF258CDBD900C78ACE /* MainEntryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryModels.swift; path = MainEntry/MainEntryModels.swift; sourceTree = "<group>"; };
+		78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryViewController.swift; path = MainEntry/MainEntryViewController.swift; sourceTree = "<group>"; };
+		78474BE1258CDBD900C78ACE /* MainEntryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryInteractor.swift; path = MainEntry/MainEntryInteractor.swift; sourceTree = "<group>"; };
 		909A33091845AEBB4ED300C4 /* Pods_freezaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freezaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EC1E143D91C81BF8284811 /* Pods-freezaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freezaTests.debug.xcconfig"; path = "Target Support Files/Pods-freezaTests/Pods-freezaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0298C6E706765A2C7201CD /* Pods-freeza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeza.debug.xcconfig"; path = "Target Support Files/Pods-freeza/Pods-freeza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 		78321E15258BF0E3001A2A5B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				78474BDB258CDBA100C78ACE /* MainEntry */,
 				78321E17258BF0F1001A2A5B /* Settings */,
 				78321E16258BF0E9001A2A5B /* Favorites */,
 			);
@@ -306,10 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				78474BD3258C5F6400C78ACE /* Favorites.storyboard */,
-				78321E26258BF140001A2A5B /* FavoritesPresenter.swift */,
-				78321E27258BF140001A2A5B /* FavoritesWorker.swift */,
-				78321E28258BF140001A2A5B /* FavoritesRouter.swift */,
-				78321E29258BF140001A2A5B /* FavoritesModels.swift */,
 				78321E2A258BF140001A2A5B /* FavoritesViewController.swift */,
 				78321E2B258BF140001A2A5B /* FavoritesInteractor.swift */,
 			);
@@ -463,6 +464,19 @@
 				78321F4B258C4C9D001A2A5B /* EntryTableCustomTableViewCell.xib */,
 			);
 			name = EntryTableCustomTableViewCell;
+			sourceTree = "<group>";
+		};
+		78474BDB258CDBA100C78ACE /* MainEntry */ = {
+			isa = PBXGroup;
+			children = (
+				78474BDC258CDBD900C78ACE /* MainEntryPresenter.swift */,
+				78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */,
+				78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */,
+				78474BDF258CDBD900C78ACE /* MainEntryModels.swift */,
+				78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */,
+				78474BE1258CDBD900C78ACE /* MainEntryInteractor.swift */,
+			);
+			name = MainEntry;
 			sourceTree = "<group>";
 		};
 		DC79D014F630542BD50DA36A /* Frameworks */ = {
@@ -653,10 +667,8 @@
 			files = (
 				78321E62258BF953001A2A5B /* TestUtilities.swift in Sources */,
 				31AA46E31D0B885C006C42BA /* TopEntriesViewModel.swift in Sources */,
-				78321E2D258BF140001A2A5B /* FavoritesWorker.swift in Sources */,
 				78321F2F258C3A0A001A2A5B /* EntryWorker.swift in Sources */,
-				78321E2C258BF140001A2A5B /* FavoritesPresenter.swift in Sources */,
-				78321E2E258BF140001A2A5B /* FavoritesRouter.swift in Sources */,
+				78474BE6258CDBD900C78ACE /* MainEntryViewController.swift in Sources */,
 				78321F4C258C4C9D001A2A5B /* EntryTableCustomTableViewCell.swift in Sources */,
 				31AA46E71D0B8F23006C42BA /* Client.swift in Sources */,
 				31AA46DA1D0B4249006C42BA /* EntryModel.swift in Sources */,
@@ -665,20 +677,24 @@
 				31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */,
 				31AA46E91D0B9618006C42BA /* NSDate+AgeFormatter.swift in Sources */,
 				31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */,
+				78474BE2258CDBD900C78ACE /* MainEntryPresenter.swift in Sources */,
 				78321E31258BF140001A2A5B /* FavoritesInteractor.swift in Sources */,
 				78321EB4258C0C89001A2A5B /* SettingsCustomTableViewCell.swift in Sources */,
 				78321E95258C06F1001A2A5B /* UserDefaultsService.swift in Sources */,
 				78321E1E258BF12A001A2A5B /* SettingsPresenter.swift in Sources */,
+				78474BE7258CDBD900C78ACE /* MainEntryInteractor.swift in Sources */,
 				78321E22258BF12A001A2A5B /* SettingsViewController.swift in Sources */,
 				78321E21258BF12A001A2A5B /* SettingsModels.swift in Sources */,
 				31AA46F91D0C526D006C42BA /* TopEntriesViewController.swift in Sources */,
-				78321E2F258BF140001A2A5B /* FavoritesModels.swift in Sources */,
 				78321F29258C3825001A2A5B /* RealmEntryModel.swift in Sources */,
+				78474BE4258CDBD900C78ACE /* MainEntryRouter.swift in Sources */,
+				78474BE5258CDBD900C78ACE /* MainEntryModels.swift in Sources */,
 				78321E30258BF140001A2A5B /* FavoritesViewController.swift in Sources */,
 				78321E20258BF12A001A2A5B /* SettingsRouter.swift in Sources */,
 				78321F3A258C3F06001A2A5B /* RealmHelper.swift in Sources */,
 				78321E1F258BF12A001A2A5B /* SettingsWorker.swift in Sources */,
 				78474BD8258C60ED00C78ACE /* UIView+Effects.swift in Sources */,
+				78474BE3258CDBD900C78ACE /* MainEntryWorker.swift in Sources */,
 				31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */,
 				78321F34258C3CC4001A2A5B /* EntryRealmStore.swift in Sources */,
 				78321E8D258C054E001A2A5B /* LocalQuickStorageWorker.swift in Sources */,

@@ -27,7 +27,7 @@ class SettingsPresenter: SettingsPresentationLogic {
     private func getTitleName(type: Settings.Option) -> String {
         switch type {
         case .safe:
-            return Localized.Strings.safe.rawValue.uppercased()
+            return Localized.Strings.safe.rawValue
         }
     }
 }
