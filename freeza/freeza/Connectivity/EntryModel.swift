@@ -10,7 +10,9 @@ struct EntryModel {
     let url: URL?
     let id: Int?
     let isOver18: Bool?
-    
+}
+
+extension EntryModel {
     init(withDictionary dictionary: [String: AnyObject]) {
         
         func dateFromDictionary(withAttributeName attribute: String) -> Date? {
