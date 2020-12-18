@@ -42,6 +42,6 @@ class RealmEntryModel: Object {
 
 extension RealmEntryModel {
     func toEntryModel() -> EntryModel {
-        return EntryModel(title: title, author: author, creation: createAt, thumbnailURL: URL(string: thumbnailURL), commentsCount: commentsCount, url: URL(string: url), id: id, isOver18: isOver18)
+        return EntryModel(title: title, author: author, creation: createAt, thumbnailURL: URL(string: thumbnailURL), commentsCount: commentsCount, url: URL(string: url), id: id, isOver18: isOver18, isFavorite: true)
     }
 }

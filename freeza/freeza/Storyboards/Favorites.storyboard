@@ -19,9 +19,24 @@
                     <view key="view" contentMode="scaleToFill" id="jOc-aC-Q2i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="KXX-42-IKQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KXX-42-IKQ" firstAttribute="top" secondItem="7hI-F6-r1C" secondAttribute="bottom" id="4nn-po-cry"/>
+                            <constraint firstItem="kkq-Kq-8iW" firstAttribute="top" secondItem="KXX-42-IKQ" secondAttribute="bottom" id="BSl-1J-RQC"/>
+                            <constraint firstItem="KXX-42-IKQ" firstAttribute="leading" secondItem="jOc-aC-Q2i" secondAttribute="leading" id="bTT-Xt-piq"/>
+                            <constraint firstAttribute="trailing" secondItem="KXX-42-IKQ" secondAttribute="trailing" id="jfo-MF-WX0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="Xy8-04-oi3"/>
+                    <connections>
+                        <outlet property="tableView" destination="KXX-42-IKQ" id="QD3-7P-N1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dH-h6-L7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
