@@ -22,12 +22,12 @@ class FavoritesViewController: MainEntryViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup(businessLogic: MainEntryInteractor(businessLogic: FavoritesInteractor()))
+        setup(businessLogic: MainEntryStoreInteractor(businessLogic: FavoritesInteractor()))
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup(businessLogic: MainEntryInteractor(businessLogic: FavoritesInteractor()))
+        setup(businessLogic: MainEntryStoreInteractor(businessLogic: FavoritesInteractor()))
     }
 
     // MARK: Routing
