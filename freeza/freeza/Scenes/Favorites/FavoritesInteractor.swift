@@ -13,12 +13,67 @@
 import UIKit
 
 
-class FavoritesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
+class FavoritesInteractor: CesarInteractor {
     
+    var favoriteEntries = [EntryModel]()
+    
+    override init() {
+        super.init()
+        entryDBWorker = EntryWorker(store: EntryRealmStore())
+    }
+    
+    override func requestDataStore(request: MainEntry.DataStore.Request) {
+        entryDBWorker?.fetchAll(withObserver: true) { [weak self] (entries) in
+            self?.favoriteEntries = entries
+            self?.presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: self?.favoriteEntries ?? [EntryModel](), errorMessage: nil, safePreference: self?.safeMode ?? false))
+        } errorHandler: { [weak self] (errorMessage) in
+            self?.presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: [EntryModel](), errorMessage: errorMessage, safePreference: self?.safeMode ?? false))
+        }
+        
+    }
+    
+    override  func requestDetail(request: MainEntry.Detail.Request) {
+        presenter?.presentDetail(response: MainEntry.Detail.Response(item: favoriteEntries[request.indexPath.row], indexPath: request.indexPath, safePreference: safeMode))
+    }
+    
+    override  func requestFavorite(request: MainEntry.Favorite.Request) {
+        let entry = favoriteEntries[request.indexPath.row]
+        entryDBWorker?.delete(id: entry.id ?? "") {
+        } errorHandler: { [weak self] (errorMessage) in
+            self?.presentDataSourceWithError(errorMessage: errorMessage)
+        }
+    }
+    
+    override func updateDataSource() {
+        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: favoriteEntries, errorMessage: nil, safePreference: safeMode))
+    }
+}
+
+class CesarInteractor: MainEntryBusinessLogic, MainEntryDataStore {
     var presenter: MainEntryPresentationLogic?
     
+    var entryDBWorker: EntryWorker?
+    var userDefaultObserver: NSKeyValueObservation?
+    var safeMode: Bool = LocalQuickStorageWorker(store: UserDefaultsService()).get(key: User.Defaults.safe.rawValue) as? Bool ?? false {
+        didSet {
+            updateDataSource()
+        }
+    }
+    
+    init() {
+        userDefaultObserver = UserDefaults.standard.observe(\.safe, options: [.initial, .new], changeHandler: {[weak self] (defaults, change) in
+            if let newValue = change.newValue {
+                self?.safeMode = newValue
+            }
+        })
+    }
+    
+    deinit {
+        userDefaultObserver?.invalidate()
+    }
+    
     func requestDataStore(request: MainEntry.DataStore.Request) {
-        //presenter?.presentDataSource(response: MainEntry.DataStore.Response(prueba: "Favorites"))
+        
     }
     
     func requestDetail(request: MainEntry.Detail.Request) {
@@ -27,5 +82,13 @@ class FavoritesInteractor: MainEntryBusinessLogic, MainEntryDataStore {
     
     func requestFavorite(request: MainEntry.Favorite.Request) {
         
+    }
+    
+    func updateDataSource() {
+        
+    }
+    
+    func presentDataSourceWithError(errorMessage: String) {
+        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: [EntryModel](), errorMessage: errorMessage, safePreference: safeMode))
     }
 }
