@@ -27,7 +27,7 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
     var localQuickStorageWorker: LocalQuickStorageWorker
     
     init() {
-        localQuickStorageWorker = LocalQuickStorageWorker(localQuickStorageStore: UserDefaultsService())
+        localQuickStorageWorker = LocalQuickStorageWorker(store: UserDefaultsService())
     }
     
     var items = [Settings.Item]()

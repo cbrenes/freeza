@@ -13,6 +13,8 @@ struct Storyboard {
     enum ReferenceName: String {
         case settings = "Settings"
         case favorites = "Favorites"
+        case topEntry = "TopEntry"
+        case main = "Main"
     }
 }
 
@@ -20,23 +22,35 @@ struct ViewControllerReference {
     enum Name: String {
         case settingsViewController = "SettingsViewController"
         case favoritesViewController = "FavoritesViewController"
+        case topEntriesViewController = "TopEntriesViewController"
+        case urlViewController = "URLViewController"
     }
 }
 
 struct User {
     enum Defaults: String {
         case safe
+        case realmEncryptionKey
     }
 }
 
 struct CustomCell {
     enum Name: String {
         case settingsCustomTableViewCell = "SettingsCustomTableViewCell"
+        case entryCustomTableViewCell = "EntryCustomTableViewCell"
     }
 }
 
 struct Localized {
     enum Strings: String {
-        case safe = "SAFE"
+        case safe = "Safe (NSFW disabled)"
+        case older = "Older"
+    }
+}
+
+struct Assets {
+    enum images: String {
+        case heartDisabled
+        case heartEnabled
     }
 }

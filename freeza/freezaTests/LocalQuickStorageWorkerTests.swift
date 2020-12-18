@@ -14,7 +14,7 @@ class LocalQuickStorageWorkerTests: XCTestCase {
     var worker: LocalQuickStorageWorker!
 
     override func setUpWithError() throws {
-        worker = LocalQuickStorageWorker(localQuickStorageStore: UserDefaultsService())
+        worker = LocalQuickStorageWorker(store: UserDefaultsService())
     }
 
     override func tearDownWithError() throws {
