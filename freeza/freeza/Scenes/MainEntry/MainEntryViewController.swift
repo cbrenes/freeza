@@ -95,7 +95,7 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
     }
     
     func dataFinishedToReload() {
-        DispatchQueueHelper.executeInMainThread { [weak self] in 
+        DispatchQueueHelper.executeInMainThread { [weak self] in
             self?.activityIndicatorView.stopAnimating()
         }
     }
@@ -181,7 +181,7 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
 extension MainEntryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.01 // this code reduce the size of the header to almost zero, zero is not valid as an output for this reason I used 0.01
+        return 0.01 // this code reduces the size of the header to almost zero, zero is not valid as an output for this reason I used 0.01
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

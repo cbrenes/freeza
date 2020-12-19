@@ -29,6 +29,7 @@ class URLDetailInteractor: URLDetailBusinessLogic, URLDetailDataStore {
     
     func requestUIInfo(request: URLDetail.UIInfo.Request) {
         if let item = item {
+            startObsertingDBChanges(id: item.id ?? "")
             presenter?.presentUIInfo(response: URLDetail.UIInfo.Response(item: item))
         }
     }
@@ -58,4 +59,19 @@ class URLDetailInteractor: URLDetailBusinessLogic, URLDetailDataStore {
             presenter?.presentFavoriteAction(response: URLDetail.FavoriteAction.Response(item: item, errorFound: errorMessage))
         }
     }
+    
+    func startObsertingDBChanges(id: String) {
+        entryDBWorker.fetch(id: id, withObserver: true) { [weak self] (entry) in
+            guard let _ = entry else {
+                self?.item?.isFavorite = false
+                self?.presentFavoriteAction(errorMessage: nil)
+                return
+            }
+            self?.item?.isFavorite = true
+            self?.presentFavoriteAction(errorMessage: nil)
+        } errorHandler: { [weak self] (error) in
+            self?.presentFavoriteAction(errorMessage: error)
+        }
+    }
+    
 }
