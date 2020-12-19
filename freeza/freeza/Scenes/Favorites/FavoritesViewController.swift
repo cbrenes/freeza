@@ -36,7 +36,7 @@ class FavoritesViewController: MainEntryViewController {
         super.displayDataSourceErrorFound(viewModel: viewModel)
         DispatchQueueHelper.executeInMainThread { [weak self] in
             self?.items.removeAll()
-            self?.tableView.reloadData()
+            self?.tableView?.reloadData()
         }
     }
 }
