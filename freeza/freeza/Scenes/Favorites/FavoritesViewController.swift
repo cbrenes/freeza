@@ -31,4 +31,12 @@ class FavoritesViewController: MainEntryViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func displayDataSourceErrorFound(viewModel: MainEntry.DataStore.ViewModel.ErrorFound) {
+        super.displayDataSourceErrorFound(viewModel: viewModel)
+        DispatchQueueHelper.executeInMainThread { [weak self] in
+            self?.items.removeAll()
+            self?.tableView.reloadData()
+        }
+    }
 }

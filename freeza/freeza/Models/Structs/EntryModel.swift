@@ -1,26 +1,5 @@
 import Foundation
 
-//struct EntryModel: Decodable {
-//
-//    let title: String?
-//    let author: String?
-//    let creation: Date?
-//    let thumbnailURL: URL?
-//    let commentsCount: Int?
-//    let url: URL?
-//    let id: Int?
-//    let isOver18: Bool?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case title
-//        case author
-//        case creation = "created_utc"
-//        case thumbnailURL = "thumbnail"
-//        case commentsCount = "num_comments"
-//        case url:
-//    }
-//}
-
 struct EntryModel {
     
     let title: String?
