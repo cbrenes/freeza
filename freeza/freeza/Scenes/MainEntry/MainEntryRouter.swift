@@ -12,22 +12,18 @@
 
 import UIKit
 
-@objc protocol MainEntryRoutingLogic {
-    func goToDetailViewController(url: URL)
+protocol MainEntryRoutingLogic {
+    func goToDetailViewController(item: EntryModel)
 }
 
-protocol MainEntryDataPassing {
-  var dataStore: MainEntryDataStore? { get }
-}
 
-class MainEntryRouter: NSObject, MainEntryRoutingLogic, MainEntryDataPassing {
+class MainEntryRouter: NSObject, MainEntryRoutingLogic {
   weak var viewController: MainEntryViewController?
-  var dataStore: MainEntryDataStore?
   
-    func goToDetailViewController(url: URL) {
-        let storyboard = UIStoryboard(name: Storyboard.ReferenceName.main.rawValue, bundle: nil)
-        if let urlViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerReference.Name.urlViewController.rawValue) as? URLViewController {
-            urlViewController.url = url
+    func goToDetailViewController(item: EntryModel) {
+        let storyboard = UIStoryboard(name: Storyboard.ReferenceName.urlDetail.rawValue, bundle: nil)
+        if let urlViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerReference.Name.urlDetailViewController.rawValue) as? URLDetailViewController {
+            urlViewController.router?.dataStore?.item = item
             viewController?.navigationController?.pushViewController(urlViewController, animated: true)
         }
     }

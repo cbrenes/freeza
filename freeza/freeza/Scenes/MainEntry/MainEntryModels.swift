@@ -43,7 +43,7 @@ enum MainEntry {
         }
         struct ViewModel {
             struct Successful {
-                var url: URL
+                var item: EntryModel
             }
             struct ErrorFound {
                 var indexPath: IndexPath

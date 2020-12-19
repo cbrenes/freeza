@@ -19,11 +19,7 @@ protocol MainEntryBusinessLogic {
     var presenter: MainEntryPresentationLogic? {get set}
 }
 
-protocol MainEntryDataStore {
-    
-}
-
-class MainEntryStoreInteractor: MainEntryBusinessLogic, MainEntryDataStore {
+class MainEntryStoreInteractor: MainEntryBusinessLogic {
     
     var businessLogic: MainEntryBusinessLogic
     

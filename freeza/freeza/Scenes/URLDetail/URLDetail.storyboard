@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aCN-S2-Zc5">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--URL Detail View Controller-->
+        <scene sceneID="IJ4-nv-52n">
+            <objects>
+                <viewController storyboardIdentifier="URLDetailViewController" id="aCN-S2-Zc5" customClass="URLDetailViewController" customModule="freeza" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t9w-D2-lMu"/>
+                        <viewControllerLayoutGuide type="bottom" id="JKD-gb-plb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DT3-yg-Xda">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXP-eS-FZn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fXP-eS-FZn" secondAttribute="trailing" id="JNQ-Zf-Y03"/>
+                            <constraint firstItem="JKD-gb-plb" firstAttribute="top" secondItem="fXP-eS-FZn" secondAttribute="bottom" id="Jwo-VT-14p"/>
+                            <constraint firstItem="fXP-eS-FZn" firstAttribute="leading" secondItem="DT3-yg-Xda" secondAttribute="leading" id="sZt-wb-tM4"/>
+                            <constraint firstItem="fXP-eS-FZn" firstAttribute="top" secondItem="t9w-D2-lMu" secondAttribute="bottom" id="tL2-15-US9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="riG-7v-xwa"/>
+                    <connections>
+                        <outlet property="webView" destination="fXP-eS-FZn" id="UdM-Do-Aw3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Rw-Qg-pjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1319" y="403"/>
+        </scene>
+    </scenes>
+</document>
