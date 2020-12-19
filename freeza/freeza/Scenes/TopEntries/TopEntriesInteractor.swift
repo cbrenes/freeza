@@ -24,7 +24,7 @@ class TopEntriesInteractor: MainEntryInteractor {
     var indexPathToUpdate: IndexPath?
     
     override init() {
-        apiWorker = APIWorker(store: RedditMockAPI())
+        apiWorker = APIWorker(store: RedditAPI())
         super.init()
     }
     
