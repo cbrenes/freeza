@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Storyboard {
     enum ReferenceName: String {
         case settings = "Settings"
@@ -49,6 +48,7 @@ struct Localized {
         case older = "Older"
         case issuesWiththeDB = "Issues with the Database found"
         case ok = "ok"
+        case weDontHaveElementsToShow = "We don't have elements to show"
     }
 }
 
