@@ -13,15 +13,16 @@
 import UIKit
 
 enum URLDetail {
-  // MARK: Use cases
-  enum UIInfo {
-    struct Request {
+    // MARK: Use cases
+    enum UIInfo {
+        struct Request {
+        }
+        struct Response {
+            var item: EntryModel
+        }
+        struct ViewModel {
+            var url: URL
+            var image: UIImage?
+        }
     }
-    struct Response {
-        var item: EntryModel
-    }
-    struct ViewModel {
-        var url: URL
-    }
-  }
 }
