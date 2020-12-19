@@ -22,8 +22,44 @@ class SettingsInteractorTests: XCTestCase {
     }
     
     class SettingsPresentationLogicSpy: SettingsPresentationLogic {
-        func presentSomething(response: Settings.Something.Response) {
-            
+        
+        var presentDataSourceWasCalled = false
+        
+        func presentDataSource(response: Settings.DataSource.Response) {
+            presentDataSourceWasCalled = true
         }
+    }
+    
+    class LocalQuickStorageWorkerSpy: LocalQuickStorageWorker {
+        
+        var saveWasCalled = false
+        
+        override func save(value: Any, key: String) {
+            saveWasCalled = true
+        }
+    }
+    
+    func testRequestDataSourceShouldAskPresenterToFormatData() throws {
+        let presenter = SettingsPresentationLogicSpy()
+        interactor.presenter = presenter
+        
+        interactor.requestDataSource(request: Settings.DataSource.Request())
+        
+        XCTAssertEqual(interactor.items.count, 1, "The app should show 1 row")
+        XCTAssertEqual(interactor.items.first?.type, .safe, "The app should show safe type as first option")
+        XCTAssert(presenter.presentDataSourceWasCalled)
+    }
+    
+    func testSetValueSavesTheValueInTheWorker() throws {
+        let presenter = SettingsPresentationLogicSpy()
+        interactor.presenter = presenter
+        let worker = LocalQuickStorageWorkerSpy(store: UserDefaultsService())
+        interactor.localQuickStorageWorker = worker
+        interactor.items = [Settings.Item(type: .safe, value: false)]
+        
+        interactor.requestSetValue(request: Settings.SetValue.Request(indexPath: IndexPath(item: 0, section: 0), value: true))
+        
+        XCTAssert(worker.saveWasCalled)
+        XCTAssert(interactor.items.first?.value ?? false)
     }
 }

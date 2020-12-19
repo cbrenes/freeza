@@ -12,25 +12,36 @@
 
 import UIKit
 
-protocol FavoritesBusinessLogic {
-  func doSomething(request: Favorites.Something.Request)
-}
 
-protocol FavoritesDataStore {
-  //var name: String { get set }
-}
-
-class FavoritesInteractor: FavoritesBusinessLogic, FavoritesDataStore {
-  var presenter: FavoritesPresentationLogic?
-  var worker: FavoritesWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Favorites.Something.Request) {
-    worker = FavoritesWorker()
+class FavoritesInteractor: MainEntryInteractor {
     
-    let response = Favorites.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    override init() {
+        super.init()
+        entryDBWorker = EntryWorker(store: EntryRealmStore())
+    }
+    
+    override func requestDataStore(request: MainEntry.DataStore.Request) {
+        startObservingDBChanges()
+    }
+    
+    override  func requestFavorite(request: MainEntry.Favorite.Request) {
+        let entry = entriesDataSource[request.indexPath.row]
+        entryDBWorker?.delete(id: entry.id ?? "") {
+        } errorHandler: { [weak self] (errorMessage) in
+            self?.presentDataSourceWithError(errorMessage: errorMessage)
+        }
+    }
+    
+    override func updateDataSource() {
+        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: entriesDataSource, errorMessage: nil, safePreference: safeMode))
+    }
+    
+    func startObservingDBChanges() {
+        entryDBWorker?.fetchAll(withObserver: true) { [weak self] (entries) in
+            self?.entriesDataSource = entries
+            self?.presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: self?.entriesDataSource ?? [EntryModel](), errorMessage: nil, safePreference: self?.safeMode ?? false))
+        } errorHandler: { [weak self] (errorMessage) in
+            self?.presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: [EntryModel](), errorMessage: errorMessage, safePreference: self?.safeMode ?? false))
+        }
+    }
 }
