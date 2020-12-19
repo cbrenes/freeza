@@ -22,6 +22,7 @@ class URLDetailViewController: UIViewController, URLDetailDisplayLogic {
     var router: (NSObjectProtocol & URLDetailDataPassing)?
     
     @IBOutlet weak var webView: WKWebView!
+    var favoriteButtonOutlet = UIButton(type: .custom)
     let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -68,10 +69,25 @@ class URLDetailViewController: UIViewController, URLDetailDisplayLogic {
         requestUIInformation()
     }
     
+    @objc func didTapFavoriteButton(sender: AnyObject){
+        print("👻👻👻")
+    }
+    
     func setupViewController() {
         webView.configuration.mediaTypesRequiringUserActionForPlayback = .video
         webView.navigationDelegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.activityIndicatorView)
+        addRightNavigationButtonItems()
+    }
+    
+    func addRightNavigationButtonItems() {
+        favoriteButtonOutlet.frame = CGRect(x: 0.0, y: 0.0, width: 28, height: 28)
+        favoriteButtonOutlet.addTarget(self, action: #selector(didTapFavoriteButton(sender:)), for: UIControl.Event.touchUpInside)
+        let favoriteBarItem = UIBarButtonItem(customView: favoriteButtonOutlet)
+        let widthAnchor = favoriteBarItem.customView?.widthAnchor.constraint(equalToConstant: 30)
+        widthAnchor?.isActive = true
+        let heightAnchor = favoriteBarItem.customView?.heightAnchor.constraint(equalToConstant: 30)
+        heightAnchor?.isActive = true
+        navigationItem.rightBarButtonItems = [favoriteBarItem, UIBarButtonItem(customView: self.activityIndicatorView)]
     }
     
     // MARK: Request methods
@@ -85,6 +101,7 @@ class URLDetailViewController: UIViewController, URLDetailDisplayLogic {
     func displayUIInfo(viewModel: URLDetail.UIInfo.ViewModel) {
         DispatchQueueHelper.executeInMainThread { [weak self] in
             self?.webView.load(URLRequest(url: viewModel.url))
+            self?.favoriteButtonOutlet.setImage(viewModel.image, for: .normal)
         }
     }
 }

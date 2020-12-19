@@ -21,7 +21,8 @@ class URLDetailPresenter: URLDetailPresentationLogic {
     
     func presentUIInfo(response: URLDetail.UIInfo.Response) {
         if let url = response.item.url {
-            viewController?.displayUIInfo(viewModel: URLDetail.UIInfo.ViewModel(url: url))
+            let heartImage = response.item.isFavorite ? UIImage(named: Assets.images.heartEnabled.rawValue) :  UIImage(named: Assets.images.heartDisabled.rawValue)
+            viewController?.displayUIInfo(viewModel: URLDetail.UIInfo.ViewModel(url: url, image: heartImage))
         }
     }
 }
