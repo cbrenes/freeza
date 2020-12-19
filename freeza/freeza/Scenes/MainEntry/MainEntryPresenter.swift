@@ -37,11 +37,11 @@ class MainEntryPresenter: MainEntryPresentationLogic {
             viewController?.displayDetailErrorFound(viewModel: MainEntry.Detail.ViewModel.ErrorFound(indexPath: response.indexPath))
             return
         }
-        guard let url = response.item.url else {
+        guard let _ = response.item.url else {
             viewController?.displayDetailErrorFound(viewModel: MainEntry.Detail.ViewModel.ErrorFound(indexPath: response.indexPath))
             return
         }
-        viewController?.displayDetailSuccessFul(viewModel: MainEntry.Detail.ViewModel.Successful(url: url))
+        viewController?.displayDetailSuccessFul(viewModel: MainEntry.Detail.ViewModel.Successful(item: response.item))
     }
     
     func presentFavorite(response: MainEntry.Favorite.Response) {

@@ -95,9 +95,10 @@ extension TopEntriesInteractor {
     
     func validateInformationWithDB(errorMessage: String?) {
         if entryDBWorker == nil {
-            DispatchQueueHelper.executeInMainThread {
-                self.entryDBWorker = EntryWorker(store: EntryRealmStore())
-                self.startListeningDBChanges()
+            //start observing a realm instace requires to run it in the main thread
+            DispatchQueueHelper.executeInMainThread { [weak self] in
+                self?.entryDBWorker = EntryWorker(store: EntryRealmStore())
+                self?.startListeningDBChanges()
             }
         } else {
             presentDataSource(errorMessage: errorMessage)

@@ -15,6 +15,7 @@ struct Storyboard {
         case favorites = "Favorites"
         case topEntry = "TopEntry"
         case main = "Main"
+        case urlDetail = "URLDetail"
     }
 }
 
@@ -23,7 +24,7 @@ struct ViewControllerReference {
         case settingsViewController = "SettingsViewController"
         case favoritesViewController = "FavoritesViewController"
         case topEntriesViewController = "TopEntriesViewController"
-        case urlViewController = "URLViewController"
+        case urlDetailViewController = "URLDetailViewController"
     }
 }
 

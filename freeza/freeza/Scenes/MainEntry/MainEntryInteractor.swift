@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MainEntryInteractor: MainEntryBusinessLogic, MainEntryDataStore {
+class MainEntryInteractor: MainEntryBusinessLogic {
     var presenter: MainEntryPresentationLogic?
     
     var entriesDataSource = [EntryModel]()
