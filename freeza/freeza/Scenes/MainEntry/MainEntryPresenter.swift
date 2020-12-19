@@ -26,7 +26,11 @@ class MainEntryPresenter: MainEntryPresentationLogic {
     func presentDataSource(response: MainEntry.DataStore.Response) {
         guard let errorMessage = response.errorMessage else {
             let itemsToDisplay = response.items.map({MainEntry.ItemToDisplay(thumbnailImageURL: $0.thumbnailURL, author: $0.author ?? "", commentCount: " \($0.commentsCount ?? 0) ", time: formatTime(date: $0.creation ?? Date()), title: $0.title ?? "", heartImage: MainEntryPresenter.getHeartImage(isFavorite: $0.isFavorite), shouldHideContent: shouldHideContent(item: $0, safePreference: response.safePreference))})
-            viewController?.displayDataSourceSuccessFul(viewModel: MainEntry.DataStore.ViewModel.Successful(items: itemsToDisplay))
+            if itemsToDisplay.isEmpty {
+                viewController?.displayDataSourceErrorFound(viewModel: MainEntry.DataStore.ViewModel.ErrorFound(message: Localized.Strings.weDontHaveElementsToShow.rawValue))
+            } else {
+                viewController?.displayDataSourceSuccessFul(viewModel: MainEntry.DataStore.ViewModel.Successful(items: itemsToDisplay))
+            }
             return
         }
         viewController?.displayDataSourceErrorFound(viewModel: MainEntry.DataStore.ViewModel.ErrorFound(message: errorMessage))
