@@ -14,10 +14,10 @@ import UIKit
 
 
 protocol URLDetailDataPassing {
-  var dataStore: URLDetailDataStore? { get set}
+    var dataStore: URLDetailDataStore? { get set}
 }
 
 class URLDetailRouter: NSObject, URLDetailDataPassing {
-  weak var viewController: URLDetailViewController?
-  var dataStore: URLDetailDataStore?
+    weak var viewController: URLDetailViewController?
+    var dataStore: URLDetailDataStore?
 }

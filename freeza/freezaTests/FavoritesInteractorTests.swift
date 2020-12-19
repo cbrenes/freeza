@@ -14,18 +14,19 @@ class FavoritesInteractorTests: XCTestCase {
     var interactor: FavoritesInteractor!
     
     override func setUpWithError() throws {
+        RealmHelper.deleteAllDB()
         interactor = FavoritesInteractor()
+        interactor.entriesDataSource = [EntryModel(title: "title", author: "author", creation: Date(), thumbnailURL: nil, commentsCount: 0, url: nil, id: "1", isOver18: true)]
     }
     
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        RealmHelper.deleteAllDB()
     }
     
     class FavoritesPresentationLogicSpy: MainEntryPresentationLogic {
         
         var presentDataSourceWasCalled = false
         var presentDetailWasCalled = false
-        var presentFavoriteWasCalled = false
         
         func presentDataSource(response: MainEntry.DataStore.Response) {
             presentDataSourceWasCalled = true
@@ -36,7 +37,25 @@ class FavoritesInteractorTests: XCTestCase {
         }
         
         func presentFavorite(response: MainEntry.Favorite.Response) {
-            presentFavoriteWasCalled = true
+            // this delegate isn't necessary for this scene
         }
+    }
+    
+    func testRequestDataSourceShouldAskPresenterToFormatData() throws {
+        let presenter = FavoritesPresentationLogicSpy()
+        interactor.presenter = presenter
+        
+        interactor.requestDataStore(request: MainEntry.DataStore.Request())
+        
+        XCTAssert(presenter.presentDataSourceWasCalled)
+    }
+    
+    func testRequestDetailShouldAskPresenterToFormatData() throws {
+        let presenter = FavoritesPresentationLogicSpy()
+        interactor.presenter = presenter
+        
+        interactor.requestDetail(request: MainEntry.Detail.Request(indexPath: IndexPath(row: 0, section: 0)))
+        
+        XCTAssert(presenter.presentDetailWasCalled)
     }
 }

@@ -25,7 +25,6 @@
 		78321E4B258BF650001A2A5B /* SettingsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E4A258BF650001A2A5B /* SettingsInteractorTests.swift */; };
 		78321E4F258BF662001A2A5B /* SettingsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E4E258BF662001A2A5B /* SettingsPresenterTests.swift */; };
 		78321E55258BF6F8001A2A5B /* FavoritesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E54258BF6F8001A2A5B /* FavoritesInteractorTests.swift */; };
-		78321E5D258BF721001A2A5B /* FavoritesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E5C258BF721001A2A5B /* FavoritesViewControllerTests.swift */; };
 		78321E62258BF953001A2A5B /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E61258BF953001A2A5B /* TestUtilities.swift */; };
 		78321E66258BFA09001A2A5B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78321E65258BFA09001A2A5B /* Constants.swift */; };
 		78321E7F258C0218001A2A5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78321E7D258C0218001A2A5B /* Main.storyboard */; };
@@ -46,7 +45,6 @@
 		78474BD4258C5F6400C78ACE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78474BD3258C5F6400C78ACE /* Favorites.storyboard */; };
 		78474BD8258C60ED00C78ACE /* UIImage+Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BD7258C60ED00C78ACE /* UIImage+Effects.swift */; };
 		78474BE2258CDBD900C78ACE /* MainEntryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDC258CDBD900C78ACE /* MainEntryPresenter.swift */; };
-		78474BE3258CDBD900C78ACE /* MainEntryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */; };
 		78474BE4258CDBD900C78ACE /* MainEntryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */; };
 		78474BE5258CDBD900C78ACE /* MainEntryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BDF258CDBD900C78ACE /* MainEntryModels.swift */; };
 		78474BE6258CDBD900C78ACE /* MainEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */; };
@@ -107,7 +105,6 @@
 		78321E4A258BF650001A2A5B /* SettingsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorTests.swift; sourceTree = "<group>"; };
 		78321E4E258BF662001A2A5B /* SettingsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterTests.swift; sourceTree = "<group>"; };
 		78321E54258BF6F8001A2A5B /* FavoritesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractorTests.swift; sourceTree = "<group>"; };
-		78321E5C258BF721001A2A5B /* FavoritesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerTests.swift; sourceTree = "<group>"; };
 		78321E61258BF953001A2A5B /* TestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestUtilities.swift; path = freeza/Utilities/TestUtilities.swift; sourceTree = SOURCE_ROOT; };
 		78321E65258BFA09001A2A5B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
 		78321E7D258C0218001A2A5B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
@@ -128,7 +125,6 @@
 		78474BD3258C5F6400C78ACE /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = Scenes/Favorites/Favorites.storyboard; sourceTree = "<group>"; };
 		78474BD7258C60ED00C78ACE /* UIImage+Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+Effects.swift"; path = "Utilities/UIImage+Effects.swift"; sourceTree = "<group>"; };
 		78474BDC258CDBD900C78ACE /* MainEntryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryPresenter.swift; path = Scenes/MainEntry/MainEntryPresenter.swift; sourceTree = "<group>"; };
-		78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryWorker.swift; path = Scenes/MainEntry/MainEntryWorker.swift; sourceTree = "<group>"; };
 		78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryRouter.swift; path = Scenes/MainEntry/MainEntryRouter.swift; sourceTree = "<group>"; };
 		78474BDF258CDBD900C78ACE /* MainEntryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryModels.swift; path = Scenes/MainEntry/MainEntryModels.swift; sourceTree = "<group>"; };
 		78474BE0258CDBD900C78ACE /* MainEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainEntryViewController.swift; path = Scenes/MainEntry/MainEntryViewController.swift; sourceTree = "<group>"; };
@@ -319,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				78321E54258BF6F8001A2A5B /* FavoritesInteractorTests.swift */,
-				78321E5C258BF721001A2A5B /* FavoritesViewControllerTests.swift */,
 			);
 			name = Favorites;
 			sourceTree = "<group>";
@@ -440,7 +435,6 @@
 			isa = PBXGroup;
 			children = (
 				78474BDC258CDBD900C78ACE /* MainEntryPresenter.swift */,
-				78474BDD258CDBD900C78ACE /* MainEntryWorker.swift */,
 				78474BDE258CDBD900C78ACE /* MainEntryRouter.swift */,
 				78474BDF258CDBD900C78ACE /* MainEntryModels.swift */,
 				7879A65E258D762300E0896F /* MainEntryInteractor.swift */,
@@ -739,7 +733,6 @@
 				78321E1F258BF12A001A2A5B /* SettingsWorker.swift in Sources */,
 				7879A670258D7A9E00E0896F /* URLDetailModels.swift in Sources */,
 				78474BD8258C60ED00C78ACE /* UIImage+Effects.swift in Sources */,
-				78474BE3258CDBD900C78ACE /* MainEntryWorker.swift in Sources */,
 				7879A671258D7A9E00E0896F /* URLDetailViewController.swift in Sources */,
 				78321F34258C3CC4001A2A5B /* EntryRealmStore.swift in Sources */,
 				7879A66D258D7A9E00E0896F /* URLDetailPresenter.swift in Sources */,
@@ -754,7 +747,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78321E5D258BF721001A2A5B /* FavoritesViewControllerTests.swift in Sources */,
 				78971BF1258D837A00B5E0E9 /* URLDetailViewControllerTests.swift in Sources */,
 				78321E45258BF62A001A2A5B /* SettingsViewControllerTests.swift in Sources */,
 				78971BF7258D839800B5E0E9 /* URLDetailInteractorTests.swift in Sources */,

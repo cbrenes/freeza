@@ -16,10 +16,9 @@ protocol MainEntryRoutingLogic {
     func goToDetailViewController(item: EntryModel)
 }
 
-
 class MainEntryRouter: NSObject, MainEntryRoutingLogic {
-  weak var viewController: MainEntryViewController?
-  
+    weak var viewController: MainEntryViewController?
+    
     func goToDetailViewController(item: EntryModel) {
         let storyboard = UIStoryboard(name: Storyboard.ReferenceName.urlDetail.rawValue, bundle: nil)
         if let urlViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerReference.Name.urlDetailViewController.rawValue) as? URLDetailViewController {

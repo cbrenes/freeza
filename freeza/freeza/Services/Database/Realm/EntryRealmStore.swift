@@ -72,6 +72,21 @@ class EntryRealmStore: EntryStoreProtocol {
         }
     }
     
+    func fetch(id: String, withObserver: Bool, completionHandler: @escaping (_ entries: [EntryModel]) -> (), errorHandler: @escaping (_ message: String) -> ()) {
+        autoreleasepool {
+            guard let realm = RealmHelper.realmInstance else {
+                errorHandler("Error trying to create the Realm Instace")
+                return
+            }
+            let predicate = NSPredicate(format: "id = %@", id)
+            let results = realm.objects(RealmEntryModel.self).filter(predicate)
+            if notificationToken == nil && withObserver {
+                fetchAllObserver(results: results, completionHandler: completionHandler, errorHandler: errorHandler)
+            }
+            completionHandler(results.map({$0.toEntryModel()}))
+        }
+    }
+    
     private func fetchAllObserver(results: Results<RealmEntryModel>, completionHandler: @escaping ([EntryModel]) -> (), errorHandler: @escaping (String) -> ()) {
         notificationToken?.invalidate()
         notificationToken = results.observe { [weak self] (changes: RealmCollectionChange) in
