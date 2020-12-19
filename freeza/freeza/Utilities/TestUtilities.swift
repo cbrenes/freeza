@@ -10,8 +10,6 @@
 import Foundation
 import UIKit
 
-
-
 struct TestUtilities {
     static func loadView(window: inout UIWindow, viewController: UIViewController) {
         window.addSubview(viewController.view)

@@ -1,5 +1,5 @@
 //
-//  MainEntryWorker.swift
+//  URLDetailRouter.swift
 //  freeza
 //
 //  Created by Cesar Brenes on 12/18/20.
@@ -12,10 +12,12 @@
 
 import UIKit
 
-class MainEntryWorker {
-    
-    
-  func doSomeWork()
-  {
-  }
+
+protocol URLDetailDataPassing {
+    var dataStore: URLDetailDataStore? { get set}
+}
+
+class URLDetailRouter: NSObject, URLDetailDataPassing {
+    weak var viewController: URLDetailViewController?
+    var dataStore: URLDetailDataStore?
 }

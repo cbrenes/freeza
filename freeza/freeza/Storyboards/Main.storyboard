@@ -7,44 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--URL View Controller-->
-        <scene sceneID="IJ4-nv-52n">
-            <objects>
-                <viewController storyboardIdentifier="URLViewController" id="aCN-S2-Zc5" customClass="URLViewController" customModule="freeza" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="t9w-D2-lMu"/>
-                        <viewControllerLayoutGuide type="bottom" id="JKD-gb-plb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DT3-yg-Xda">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXP-eS-FZn">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="fXP-eS-FZn" secondAttribute="trailing" id="JNQ-Zf-Y03"/>
-                            <constraint firstItem="JKD-gb-plb" firstAttribute="top" secondItem="fXP-eS-FZn" secondAttribute="bottom" id="Jwo-VT-14p"/>
-                            <constraint firstItem="fXP-eS-FZn" firstAttribute="leading" secondItem="DT3-yg-Xda" secondAttribute="leading" id="sZt-wb-tM4"/>
-                            <constraint firstItem="fXP-eS-FZn" firstAttribute="top" secondItem="t9w-D2-lMu" secondAttribute="bottom" id="tL2-15-US9"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="riG-7v-xwa"/>
-                    <connections>
-                        <outlet property="webView" destination="fXP-eS-FZn" id="FTK-qN-dbx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Rw-Qg-pjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1319" y="403"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FOr-Ti-2u1">
             <objects>

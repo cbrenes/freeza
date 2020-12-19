@@ -8,9 +8,9 @@
 
 import Foundation
 
-class MainEntryInteractor: MainEntryBusinessLogic, MainEntryDataStore {
-    var presenter: MainEntryPresentationLogic?
+class MainEntryInteractor: MainEntryBusinessLogic {
     
+    var presenter: MainEntryPresentationLogic?
     var entriesDataSource = [EntryModel]()
     var entryDBWorker: EntryWorker?
     var userDefaultObserver: NSKeyValueObservation?
@@ -35,7 +35,7 @@ class MainEntryInteractor: MainEntryBusinessLogic, MainEntryDataStore {
     }
     
     func requestDataStore(request: MainEntry.DataStore.Request) {
-        //This method will be override per the child
+        //This method will be overridden per the child
     }
     
     func requestDetail(request: MainEntry.Detail.Request) {
@@ -43,11 +43,11 @@ class MainEntryInteractor: MainEntryBusinessLogic, MainEntryDataStore {
     }
     
     func requestFavorite(request: MainEntry.Favorite.Request) {
-        //This method will be override per the child
+        //This method will be overridden per the child
     }
     
     func updateDataSource() {
-        //This method will be override per the child
+        //This method will be overridden per the child
     }
     
     func presentDataSourceWithError(errorMessage: String) {

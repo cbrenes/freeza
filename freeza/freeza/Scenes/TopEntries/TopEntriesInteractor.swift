@@ -76,8 +76,8 @@ class TopEntriesInteractor: MainEntryInteractor {
 
 extension TopEntriesInteractor {
     func presentDataSource(errorMessage: String?) {
-        let items = updateFavoritePropertyInApiList(apiEntries: entriesDataSource, favoritesId: favorites)
-        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: items, errorMessage: errorMessage, safePreference: safeMode))
+        entriesDataSource = updateFavoritePropertyInApiList(apiEntries: entriesDataSource, favoritesId: favorites)
+        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: entriesDataSource, errorMessage: errorMessage, safePreference: safeMode))
         indexPathToUpdate = nil
     }
     
@@ -95,9 +95,10 @@ extension TopEntriesInteractor {
     
     func validateInformationWithDB(errorMessage: String?) {
         if entryDBWorker == nil {
-            DispatchQueueHelper.executeInMainThread {
-                self.entryDBWorker = EntryWorker(store: EntryRealmStore())
-                self.startListeningDBChanges()
+            //start observing a realm instace requires to run it in the main thread
+            DispatchQueueHelper.executeInMainThread { [weak self] in
+                self?.entryDBWorker = EntryWorker(store: EntryRealmStore())
+                self?.startListeningDBChanges()
             }
         } else {
             presentDataSource(errorMessage: errorMessage)

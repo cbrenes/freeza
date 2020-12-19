@@ -34,7 +34,7 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     }
     
     // MARK: Setup
-    
+
     private func setup() {
         let viewController = self
         let interactor = SettingsInteractor()
@@ -107,7 +107,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.01 // this code reduce the size of the header to almost zero, zero is not valid as an output for this reason I used 0.01
+        return 0.01 // this code reduces the size of the header to almost zero, zero is not valid as an output for this reason I used 0.01
     }
 }
 

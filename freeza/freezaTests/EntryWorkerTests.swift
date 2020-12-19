@@ -14,6 +14,7 @@ class EntryWorkerTests: XCTestCase {
     var worker: EntryWorker!
 
     override func setUpWithError() throws {
+        RealmHelper.deleteAllDB()
         worker = EntryWorker(store: EntryRealmStore())
     }
 

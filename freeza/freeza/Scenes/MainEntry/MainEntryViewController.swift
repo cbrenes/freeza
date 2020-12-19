@@ -22,7 +22,7 @@ protocol MainEntryDisplayLogic: class {
 
 class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
     var interactor: MainEntryStoreInteractor?
-    var mainRouter: (NSObjectProtocol & MainEntryRoutingLogic & MainEntryDataPassing)?
+    var mainRouter: (NSObjectProtocol & MainEntryRoutingLogic)?
     
     @IBOutlet weak var tableView: UITableView!
     var items = [MainEntry.ItemToDisplay]()
@@ -42,7 +42,6 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
         interactor.presenter = presenter
         presenter.viewController = viewController
         mainRouter.viewController = viewController
-        mainRouter.dataStore = interactor
     }
     
     // MARK: Routing
@@ -96,42 +95,46 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
     }
     
     func dataFinishedToReload() {
-        self.activityIndicatorView.stopAnimating()
+        DispatchQueueHelper.executeInMainThread { [weak self] in
+            self?.activityIndicatorView.stopAnimating()
+        }
     }
     
     // MARK: Display methods
     func displayDataSourceSuccessFul(viewModel: MainEntry.DataStore.ViewModel.Successful) {
         items = viewModel.items
-        DispatchQueueHelper.executeInMainThread {
-            self.dataFinishedToReload()
-            self.navigationController?.setToolbarHidden(true, animated: true)
-            self.tableView.reloadData()
+        DispatchQueueHelper.executeInMainThread { [weak self] in
+            self?.dataFinishedToReload()
+            self?.navigationController?.setToolbarHidden(true, animated: true)
+            self?.tableView.reloadData()
         }
     }
     
     func displayDataSourceErrorFound(viewModel: MainEntry.DataStore.ViewModel.ErrorFound) {
-        DispatchQueueHelper.executeInMainThread {
-            self.dataFinishedToReload()
-            self.errorLabel.text = viewModel.message
-            self.navigationController?.setToolbarHidden(false, animated: true)
+        DispatchQueueHelper.executeInMainThread { [weak self] in
+            self?.dataFinishedToReload()
+            self?.errorLabel.text = viewModel.message
+            self?.navigationController?.setToolbarHidden(false, animated: true)
         }
     }
     
     func displayDetailSuccessFul(viewModel: MainEntry.Detail.ViewModel.Successful) {
-        mainRouter?.goToDetailViewController(url: viewModel.url)
+        mainRouter?.goToDetailViewController(item: viewModel.item)
     }
     
     func displayDetailErrorFound(viewModel: MainEntry.Detail.ViewModel.ErrorFound) {
-        guard let cell = tableView.cellForRow(at: viewModel.indexPath) as? EntryCustomTableViewCell else {
-            return
+        DispatchQueueHelper.executeInMainThread { [weak self] in
+            guard let cell = self?.tableView.cellForRow(at: viewModel.indexPath) as? EntryCustomTableViewCell else {
+                return
+            }
+            cell.containerView.shake()
         }
-        cell.containerView.shake()
     }
     
     func displayFavorite(viewModel: MainEntry.Favorite.ViewModel) {
-        DispatchQueueHelper.executeInMainThread {
-            self.items[viewModel.indexPath.row] = viewModel.item
-            self.tableView.reloadRows(at: [viewModel.indexPath], with: .automatic)
+        DispatchQueueHelper.executeInMainThread { [weak self] in
+            self?.items[viewModel.indexPath.row] = viewModel.item
+            self?.tableView.reloadRows(at: [viewModel.indexPath], with: .automatic)
         }
     }
     
@@ -178,7 +181,7 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
 extension MainEntryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.01 // this code reduce the size of the header to almost zero, zero is not valid as an output for this reason I used 0.01
+        return 0.01 // this code reduces the size of the header to almost zero, zero is not valid as an output for this reason I used 0.01
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
