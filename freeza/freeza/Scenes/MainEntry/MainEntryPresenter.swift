@@ -25,7 +25,7 @@ class MainEntryPresenter: MainEntryPresentationLogic {
     
     func presentDataSource(response: MainEntry.DataStore.Response) {
         guard let errorMessage = response.errorMessage else {
-            let itemsToDisplay = response.items.map({MainEntry.ItemToDisplay(thumbnailImageURL: $0.thumbnailURL, author: $0.author ?? "", commentCount: " \($0.commentsCount ?? 0) ", time: formatTime(date: $0.creation ?? Date()), title: $0.title ?? "", heartImage: getHeartImage(isFavorite: $0.isFavorite), shouldHideContent: shouldHideContent(item: $0, safePreference: response.safePreference))})
+            let itemsToDisplay = response.items.map({MainEntry.ItemToDisplay(thumbnailImageURL: $0.thumbnailURL, author: $0.author ?? "", commentCount: " \($0.commentsCount ?? 0) ", time: formatTime(date: $0.creation ?? Date()), title: $0.title ?? "", heartImage: MainEntryPresenter.getHeartImage(isFavorite: $0.isFavorite), shouldHideContent: shouldHideContent(item: $0, safePreference: response.safePreference))})
             viewController?.displayDataSourceSuccessFul(viewModel: MainEntry.DataStore.ViewModel.Successful(items: itemsToDisplay))
             return
         }
@@ -45,11 +45,11 @@ class MainEntryPresenter: MainEntryPresentationLogic {
     }
     
     func presentFavorite(response: MainEntry.Favorite.Response) {
-        let item = MainEntry.ItemToDisplay(thumbnailImageURL: response.item.thumbnailURL, author: response.item.author ?? "", commentCount: " \(response.item.commentsCount ?? 0) ", time: formatTime(date: response.item.creation ?? Date()), title: response.item.title ?? "", heartImage: getHeartImage(isFavorite: response.item.isFavorite), shouldHideContent: shouldHideContent(item: response.item, safePreference: response.safePreference))
+        let item = MainEntry.ItemToDisplay(thumbnailImageURL: response.item.thumbnailURL, author: response.item.author ?? "", commentCount: " \(response.item.commentsCount ?? 0) ", time: formatTime(date: response.item.creation ?? Date()), title: response.item.title ?? "", heartImage: MainEntryPresenter.getHeartImage(isFavorite: response.item.isFavorite), shouldHideContent: shouldHideContent(item: response.item, safePreference: response.safePreference))
         viewController?.displayFavorite(viewModel: MainEntry.Favorite.ViewModel(indexPath: response.indexPath, item: item))
     }
     
-    private func getHeartImage(isFavorite: Bool) -> UIImage? {
+    class func getHeartImage(isFavorite: Bool) -> UIImage? {
         return isFavorite ? UIImage(named: Assets.images.heartEnabled.rawValue) :  UIImage(named: Assets.images.heartDisabled.rawValue)
     }
     

@@ -76,8 +76,8 @@ class TopEntriesInteractor: MainEntryInteractor {
 
 extension TopEntriesInteractor {
     func presentDataSource(errorMessage: String?) {
-        let items = updateFavoritePropertyInApiList(apiEntries: entriesDataSource, favoritesId: favorites)
-        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: items, errorMessage: errorMessage, safePreference: safeMode))
+        entriesDataSource = updateFavoritePropertyInApiList(apiEntries: entriesDataSource, favoritesId: favorites)
+        presenter?.presentDataSource(response: MainEntry.DataStore.Response(items: entriesDataSource, errorMessage: errorMessage, safePreference: safeMode))
         indexPathToUpdate = nil
     }
     

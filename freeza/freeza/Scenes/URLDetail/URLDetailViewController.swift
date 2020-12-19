@@ -15,6 +15,8 @@ import WebKit
 
 protocol URLDetailDisplayLogic: class {
     func displayUIInfo(viewModel: URLDetail.UIInfo.ViewModel)
+    func displayFavoriteActionSuccessful(viewModel: URLDetail.FavoriteAction.ViewModel.Successful)
+    func displayFavoriteActionErrorFound(viewModel: URLDetail.FavoriteAction.ViewModel.ErrorFound)
 }
 
 class URLDetailViewController: UIViewController, URLDetailDisplayLogic {
@@ -70,7 +72,7 @@ class URLDetailViewController: UIViewController, URLDetailDisplayLogic {
     }
     
     @objc func didTapFavoriteButton(sender: AnyObject){
-        print("👻👻👻")
+        requestFavoriteAction()
     }
     
     func setupViewController() {
@@ -97,6 +99,12 @@ class URLDetailViewController: UIViewController, URLDetailDisplayLogic {
         interactor?.requestUIInfo(request: request)
     }
     
+    func requestFavoriteAction() {
+        favoriteButtonOutlet.isUserInteractionEnabled = false
+        let request = URLDetail.FavoriteAction.Request()
+        interactor?.requestFavoriteAction(request: request)
+    }
+    
     // MARK: Display methods
     func displayUIInfo(viewModel: URLDetail.UIInfo.ViewModel) {
         DispatchQueueHelper.executeInMainThread { [weak self] in
@@ -104,6 +112,21 @@ class URLDetailViewController: UIViewController, URLDetailDisplayLogic {
             self?.favoriteButtonOutlet.setImage(viewModel.image, for: .normal)
         }
     }
+    
+    func displayFavoriteActionSuccessful(viewModel: URLDetail.FavoriteAction.ViewModel.Successful) {
+        DispatchQueueHelper.executeInMainThread { [weak self] in
+            self?.favoriteButtonOutlet.isUserInteractionEnabled = true
+            self?.favoriteButtonOutlet.setImage(viewModel.image, for: .normal)
+        }
+    }
+    
+    func displayFavoriteActionErrorFound(viewModel: URLDetail.FavoriteAction.ViewModel.ErrorFound) {
+        DispatchQueueHelper.executeInMainThread { [weak self] in
+            self?.favoriteButtonOutlet.isUserInteractionEnabled = true
+            self?.present(viewModel.alertController, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 extension URLDetailViewController: WKNavigationDelegate {

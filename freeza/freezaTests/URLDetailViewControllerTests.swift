@@ -10,7 +10,7 @@ import XCTest
 @testable import freeza
 
 class URLDetailViewControllerTests: XCTestCase {
-
+    
     var viewController: URLDetailViewController!
     var window: UIWindow!
     
@@ -31,10 +31,16 @@ class URLDetailViewControllerTests: XCTestCase {
     }
     
     class URLDetailBusinessLogicSpy: URLDetailBusinessLogic {
+        
         var requestUIInfoWasCalled = false
+        var requestFavoriteActionWasCalled = false
         
         func requestUIInfo(request: URLDetail.UIInfo.Request) {
             requestUIInfoWasCalled = true
+        }
+        
+        func requestFavoriteAction(request: URLDetail.FavoriteAction.Request) {
+            requestFavoriteActionWasCalled = true
         }
     }
     
@@ -46,5 +52,17 @@ class URLDetailViewControllerTests: XCTestCase {
         viewController.viewDidLoad()
         
         XCTAssert(interactor.requestUIInfoWasCalled)
+    }
+    
+    func testFavoriteButtonActionShouldRequestFavoriteAction() throws {
+        let interactor = URLDetailBusinessLogicSpy()
+        viewController.interactor = interactor
+        TestUtilities.loadView(window: &window, viewController: viewController)
+        
+        viewController.viewDidLoad()
+        
+        viewController.didTapFavoriteButton(sender: self)
+        
+        XCTAssert(interactor.requestFavoriteActionWasCalled)
     }
 }
