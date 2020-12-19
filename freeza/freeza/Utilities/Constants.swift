@@ -8,13 +8,13 @@
 
 import Foundation
 
-
 struct Storyboard {
     enum ReferenceName: String {
         case settings = "Settings"
         case favorites = "Favorites"
         case topEntry = "TopEntry"
         case main = "Main"
+        case urlDetail = "URLDetail"
     }
 }
 
@@ -23,7 +23,7 @@ struct ViewControllerReference {
         case settingsViewController = "SettingsViewController"
         case favoritesViewController = "FavoritesViewController"
         case topEntriesViewController = "TopEntriesViewController"
-        case urlViewController = "URLViewController"
+        case urlDetailViewController = "URLDetailViewController"
     }
 }
 
@@ -46,6 +46,9 @@ struct Localized {
     enum Strings: String {
         case safe = "Safe (NSFW disabled)"
         case older = "Older"
+        case issuesWiththeDB = "Issues with the Database found"
+        case ok = "ok"
+        case weDontHaveElementsToShow = "We don't have elements to show"
     }
 }
 

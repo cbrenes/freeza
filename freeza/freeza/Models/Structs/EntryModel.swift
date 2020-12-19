@@ -22,7 +22,7 @@ import Foundation
 //}
 
 struct EntryModel {
-
+    
     let title: String?
     let author: String?
     let creation: Date?
