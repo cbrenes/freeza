@@ -14,6 +14,7 @@ import UIKit
 
 protocol URLDetailBusinessLogic {
     func requestUIInfo(request: URLDetail.UIInfo.Request)
+    func requestFavoriteAction(request: URLDetail.FavoriteAction.Request)
 }
 
 protocol URLDetailDataStore {
@@ -24,10 +25,37 @@ class URLDetailInteractor: URLDetailBusinessLogic, URLDetailDataStore {
     var presenter: URLDetailPresentationLogic?
     
     var item: EntryModel?
+    var entryDBWorker = EntryWorker(store: EntryRealmStore())
     
     func requestUIInfo(request: URLDetail.UIInfo.Request) {
         if let item = item {
             presenter?.presentUIInfo(response: URLDetail.UIInfo.Response(item: item))
+        }
+    }
+    
+    func requestFavoriteAction(request: URLDetail.FavoriteAction.Request) {
+        if let item = item {
+            if item.isFavorite {
+                entryDBWorker.delete(id: item.id ?? "") { [weak self] in
+                    self?.item?.isFavorite = !item.isFavorite
+                    self?.presentFavoriteAction(errorMessage: nil)
+                } errorHandler: { [weak self] (errorMessage) in
+                    self?.presentFavoriteAction(errorMessage: errorMessage)
+                }
+            } else {
+                entryDBWorker.insert(entryModel: item) { [weak self] in
+                    self?.item?.isFavorite = !item.isFavorite
+                    self?.presentFavoriteAction(errorMessage: nil)
+                } errorHandler: {[weak self] (errorMessage) in
+                    self?.presentFavoriteAction(errorMessage: errorMessage)
+                }
+            }
+        }
+    }
+    
+    func presentFavoriteAction(errorMessage: String?) {
+        if let item = item {
+            presenter?.presentFavoriteAction(response: URLDetail.FavoriteAction.Response(item: item, errorFound: errorMessage))
         }
     }
 }

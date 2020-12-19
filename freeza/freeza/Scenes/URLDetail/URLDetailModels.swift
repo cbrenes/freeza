@@ -25,4 +25,21 @@ enum URLDetail {
             var image: UIImage?
         }
     }
+    
+    enum FavoriteAction {
+        struct Request {
+        }
+        struct Response {
+            var item: EntryModel
+            var errorFound: String?
+        }
+        struct ViewModel {
+            struct Successful {
+                var image: UIImage?
+            }
+            struct ErrorFound {
+                var alertController: UIAlertController
+            }
+        }
+    }
 }

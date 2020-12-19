@@ -14,6 +14,7 @@ import UIKit
 
 protocol URLDetailPresentationLogic {
     func presentUIInfo(response: URLDetail.UIInfo.Response)
+    func presentFavoriteAction(response: URLDetail.FavoriteAction.Response)
 }
 
 class URLDetailPresenter: URLDetailPresentationLogic {
@@ -21,8 +22,21 @@ class URLDetailPresenter: URLDetailPresentationLogic {
     
     func presentUIInfo(response: URLDetail.UIInfo.Response) {
         if let url = response.item.url {
-            let heartImage = response.item.isFavorite ? UIImage(named: Assets.images.heartEnabled.rawValue) :  UIImage(named: Assets.images.heartDisabled.rawValue)
+            let heartImage = MainEntryPresenter.getHeartImage(isFavorite: response.item.isFavorite)
             viewController?.displayUIInfo(viewModel: URLDetail.UIInfo.ViewModel(url: url, image: heartImage))
         }
     }
+    
+    func presentFavoriteAction(response: URLDetail.FavoriteAction.Response) {
+        guard let errorMessage = response.errorFound else {
+            let heartImage = MainEntryPresenter.getHeartImage(isFavorite: response.item.isFavorite)
+            viewController?.displayFavoriteActionSuccessful(viewModel: URLDetail.FavoriteAction.ViewModel.Successful(image: heartImage))
+            return
+        }
+        let alertController = UIAlertController(title: Localized.Strings.issuesWiththeDB.rawValue, message: errorMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Localized.Strings.ok.rawValue, style: .default, handler: nil)
+        alertController.addAction(okAction)
+        viewController?.displayFavoriteActionErrorFound(viewModel: URLDetail.FavoriteAction.ViewModel.ErrorFound(alertController: alertController))
+    }
+    
 }
