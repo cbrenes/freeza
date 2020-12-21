@@ -39,7 +39,7 @@ class SettingsPresenterTests: XCTestCase {
         presenter.presentDataSource(response: Settings.DataSource.Response(items: [Settings.Item(type: .safe, value: true)]))
         
         XCTAssert(viewController.displayDataSourceWasCalled)
-        XCTAssertEqual(viewController.displayDataSourceViewModel?.items.first?.title, Localized.Strings.safe.rawValue)
+        XCTAssertEqual(viewController.displayDataSourceViewModel?.items.first?.title, Localized.Strings.allowNsfwContent.rawValue)
         XCTAssertEqual(viewController.displayDataSourceViewModel?.items.first?.value, true)
     }
 }
