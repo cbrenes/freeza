@@ -27,7 +27,7 @@ class MainEntryViewController: UIViewController, MainEntryDisplayLogic {
     @IBOutlet weak var tableView: UITableView!
     var items = [MainEntry.ItemToDisplay]()
     
-    let activityIndicatorView = UIActivityIndicatorView(style: .gray)
+    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
     let errorLabel = UILabel()
     
     // MARK: Setup

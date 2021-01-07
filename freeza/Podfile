@@ -2,6 +2,7 @@ inhibit_all_warnings!
 
 def generalPods
  pod 'RealmSwift'
+ pod 'Kingfisher'
 end
 
 target 'freeza' do

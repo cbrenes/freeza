@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol EntryCustomTableViewCellDelegate: class {
     func favoriteIconWasTouched(indexPath: IndexPath)
@@ -59,13 +60,19 @@ class EntryCustomTableViewCell: UITableViewCell {
         favoriteImageView.image = item.heartImage
         self.indexPath = indexPath
         heartContainerView.isUserInteractionEnabled = true
-        loadThumbnail(thumbnailURL: item.thumbnailImageURL) { [weak self](image) in
-            if item.shouldHideContent {
-                self?.thumbnailImageView.image = image.blur(10)
+        displayImage(urlImage: item.thumbnailImageURL, shouldHideContent: item.shouldHideContent)
+    }
+    
+    func displayImage(urlImage: URL?, shouldHideContent: Bool) {
+        thumbnailImageView.kf.indicatorType = .activity
+        let processor = DownsamplingImageProcessor(size: thumbnailImageView.frame.size)
+        thumbnailImageView.kf.setImage(with: urlImage, placeholder: nil, options: [.processor(processor), .scaleFactor(UIScreen.main.scale), .transition(.fade(1)), .cacheOriginalImage], completionHandler:  { [weak self] (_) in
+            if shouldHideContent {
+                self?.thumbnailImageView.image = self?.thumbnailImageView.image?.blur(10)
             } else {
-                self?.thumbnailImageView.image = image
+                self?.thumbnailImageView.image = self?.thumbnailImageView.image?.blur(0)
             }
-        }
+        })
     }
     
     @IBAction func favoriteIconWasTouched(_ sender: Any) {

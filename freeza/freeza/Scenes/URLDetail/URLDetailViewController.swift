@@ -25,7 +25,7 @@ class URLDetailViewController: UIViewController, URLDetailDisplayLogic {
     
     @IBOutlet weak var webView: WKWebView!
     var favoriteButtonOutlet = UIButton(type: .custom)
-    let activityIndicatorView = UIActivityIndicatorView(style: .gray)
+    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
